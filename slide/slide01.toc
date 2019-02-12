@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{计算机的硬件介绍}{5}{0}{1}
+\beamer@sectionintoc {2}{计算机的基本软件组成}{17}{0}{2}
+\beamer@sectionintoc {3}{数制}{23}{0}{3}
+\beamer@sectionintoc {4}{汇编语言简介}{41}{0}{4}
+\beamer@sectionintoc {5}{C语言简介}{73}{0}{5}
+\beamer@sectionintoc {6}{使用C语言的七个步骤}{85}{0}{6}
+\beamer@sectionintoc {7}{编译C程序的工作原理}{91}{0}{7}

@@ -1,0 +1,68 @@
+\documentclass[10pt]{beamer}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+\setbeameroption{show notes}
+
+\usetheme[sectionpage=simple,subsectionpage=simple]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\include{asset/global_usepackage}
+\include{asset/global_newcommand}
+\include{asset/global_theorem_fancybox}
+
+% Changing font size of selected slides in beamer
+% You can use \fontsize:
+% \fontsize{<font size>}{<value for \baselineskip>}\selectfont
+% For example,
+% \fontsize{6pt}{7.2}\selectfont
+% changes the font size to 6 points and the \baselineskip to 7.2 points. 
+\newcommand\Fontvi{\fontsize{6.5}{7.2}\selectfont}
+
+% https://stackoverflow.com/questions/26878002/beamer-second-screen-with-xelatex
+\renewcommand\pgfsetupphysicalpagesizes{%
+  \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+}
+\makeatletter
+\def\beamer@framenotesbegin{% at beginning of slide
+\usebeamercolor[fg]{normal text}
+\gdef\beamer@noteitems{}%
+\gdef\beamer@notes{}%
+}
+\makeatother
+
+\title{Data structure and algorithm in Python}
+\subtitle{Object-Oriented Programming}
+\date{}%{\today}
+\author{Xiaoping Zhang}
+\institute{School of Mathematics and Statistics, Wuhan University}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \Fontvi
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+\input{ch02/sec01.tex}
+\input{ch02/sec02.tex}
+\input{ch02/sec03.tex}
+%\input{ch02/sec04.tex}
+% \input{ch02/sec05.tex}
+% \input{ch02/sec06.tex}
+
+\end{document}

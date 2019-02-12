@@ -1,0 +1,92 @@
+\section{示例程序}
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/shoe1.c} 
+
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+$ gcc shoe1.c
+$ ./a.out 
+Shoe size (men's)   foot length
+       9.0           10.56 inches
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/shoe2.c} 
+\end{frame}
+
+
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+$ gcc shoe2.c
+$ ./a.out 
+Shoe size (men's)  foot length
+      12.0           11.54 inches
+      13.0           11.87 inches
+      14.0           12.19 inches
+      15.0           12.52 inches
+      16.0           12.84 inches
+      17.0           13.16 inches
+      18.0           13.49 inches
+If shoes fit, wear it.
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{while循环}
+\begin{lstlisting}[language=c,frame=single]
+while (condition)
+  statement
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,frame=single]
+while (condition)
+{
+  statements
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,frame=single]
+while (condition){
+  statements
+}
+\end{lstlisting}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{while循环}
+\begin{figure}
+\centering
+\tikzstyle{startstop}=[rectangle,rounded corners,minimum width=3cm,minimum height=1cm,text centered,draw=black,fill=red!30]
+\tikzstyle{process}=[rectangle,minimum width=3cm,minimum height=1cm,text centered,draw=black,fill=orange!30]
+\tikzstyle{decision}=[diamond,aspect=2,minimum width=3cm,minimum height=.5cm,text centered,draw=black,fill=green!30]
+\tikzstyle{arrow}=[thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance=3cm]
+\node (start) [process] {\tf shoe = 10.0;};
+\node (dec) [decision,below of=start] {\tf shoe < 18.5};
+\node (pro) [process,below of=dec,align=left] 
+{\tf foot = SCALE * shoe + ADJUST;\\
+\tf printf("...");\\
+\tf shoe = shoe + 1; 
+};
+\node (right) [right of=pro] {};
+
+\draw [arrow] (start) -- (dec);
+\draw [arrow] (dec) -- node[anchor=east] {\tf yes} (pro);
+\draw [thick] (pro) -- ++(4,0);
+\draw [arrow] (pro)++(4,0)|- (dec);
+\draw [arrow] (dec) -- node[anchor=south] {\tf no}
+node[align=left,anchor=north] {\tf go to next  \\ \tf statement} ++(-4,0);
+\end{tikzpicture}
+
+\end{figure}
+\end{frame}

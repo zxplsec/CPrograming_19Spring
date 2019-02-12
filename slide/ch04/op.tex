@@ -1,0 +1,178 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+
+\documentclass[12pt,notheorems]{beamer}
+
+\usetheme[style=beta]{epyt} % alpha, beta, delta, gamma, zeta
+
+\usepackage[UTF8,noindent]{ctex}
+\input{Macro/usepackage}
+\usepackage{courier}
+\usepackage{animate}
+\usepackage{dcolumn}
+
+
+
+\newcommand{\mylead}[1]{\textcolor{acolor1}{#1}}
+\newcommand{\mybold}[1]{\textcolor{acolor2}{#1}}
+\newcommand{\mywarn}[1]{\textcolor{acolor3}{#1}}
+
+\input{Macro/newcommand}
+
+
+
+%\newtheorem{theorem}{定理}
+%\newtheorem{definition}[theorem]{定义}
+%\newtheorem{example}[theorem]{例子}
+%\newtheorem{dingli}[theorem]{定理}
+%\newtheorem{li}[theorem]{例}
+%
+%\newtheorem*{theorem*}{定理}
+%\newtheorem*{definition*}{定义}
+%\newtheorem*{example*}{例子}
+%\newtheorem*{dingli*}{定理}
+%\newtheorem*{li*}{例}
+
+\renewcommand{\proofname}{证明}
+\newtheorem*{jie}{解}
+\newtheorem*{zhu}{注}
+\newtheorem*{dingli}{定理} 
+\newtheorem*{dingyi}{定义} 
+\newtheorem*{xingzhi}{性质} 
+\newtheorem*{tuilun}{推论} 
+\newtheorem*{li}{例} 
+\newtheorem*{jielun}{结论} 
+\newtheorem*{zhengming}{证明}
+\newtheorem*{wenti}{问题}
+\newtheorem*{jieshi}{解释}
+\newtheorem{biancheng}{编程}
+
+\renewcommand{\proofname}{证明}
+
+\begin{document}
+
+\title{C语言}
+\subtitle{第四次上机\\ 字符串简介及格式化输入输出}
+\author{张晓平}
+\institute{武汉大学数学与统计学院}
+
+
+\begin{frame}[plain]\transboxout
+\titlepage
+\end{frame}
+
+\begin{frame}\transboxin
+\begin{center}
+\tableofcontents[]%hideallsubsections]
+\end{center}
+\end{frame}
+
+\AtBeginSection[]{
+\begin{frame}[allowframebreaks]
+\tableofcontents[currentsection,sectionstyle=show/hide]
+\end{frame}
+}
+%\AtBeginSubsection[]{
+%\begin{frame}[allowframebreaks]
+%\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]
+%\end{frame}
+%}
+
+\begin{frame}[fragile] 
+\begin{enumerate}\setcounter{enumi}{0} 
+\item 编写程序，输入名和姓，然后以“名, 姓”的格式打印。
+\end{enumerate}
+
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+Ming Li
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile] 
+\lstinputlisting[language=c,numbers=left,frame=single]{Code_OP/ex01.c}
+\end{frame}
+
+\begin{frame}[fragile] 
+\begin{enumerate}\setcounter{enumi}{1} 
+\item 编写程序，输入名字，并执行以下操作：\\[0.05in]
+\begin{itemize}
+\item 把名字括在双引号中打印出来\\[0.1in]
+\item 在宽度为20个字符的字段内打印名字，并且整个字段括在引号内\\[0.1in]
+\item 在宽度为20个字符的字段的左端打印名字，并且整个字段括在引号内\\[0.1in]
+\item 在比名字宽3个字符的字段内打印它。
+\end{itemize}
+\end{enumerate}
+
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+"Xiaoping"
+"            Xiaoping"
+"Xiaoping            "
+"   Xiaoping"
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks] 
+\lstinputlisting[language=c,numbers=left,frame=single]{Code_OP/ex02.c}
+\end{frame}
+
+\begin{frame}[fragile] 
+\begin{enumerate}\setcounter{enumi}{2} 
+\item 编写程序，读取一点浮点数，以如下方式打印：
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+a. The input is 21.3 or 2.1e+01
+b. The input is +21.290 or 2.129E+01
+\end{lstlisting}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks] 
+\lstinputlisting[language=c,numbers=left,frame=single]{Code_OP/ex03.c}
+\end{frame}
+
+\begin{frame}[fragile] 
+\begin{enumerate}\setcounter{enumi}{3} 
+\item 编写程序，要求输入身高(以cm为单位)和名字，然后以如下形式显示：
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+Xiaoping, you are 1.70m tall.
+\end{lstlisting}
+使用float类型，使用/作为除号。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks] 
+\lstinputlisting[language=c,numbers=left,frame=single]{Code_OP/ex04.c}
+\end{frame}
+
+\begin{frame}[fragile] 
+\begin{enumerate}\setcounter{enumi}{4} 
+\item 编写程序，首先输入名字，然后输入姓氏。在一行打印输入的姓名，在下一行打印每个名字中字母的个数，把字母个数与相应名字的结尾对齐。以如下形式显示：
+\begin{lstlisting}[showspaces=true]
+Xiaoping Zhang
+       8     5
+\end{lstlisting}
+然后打印相同的信息，但是字母个数与相应单词的开始对齐。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks] 
+\lstinputlisting[language=c,numbers=left,frame=single]{Code_OP/ex05.c}
+\end{frame}
+
+\begin{frame}[fragile] 
+\begin{enumerate}\setcounter{enumi}{5} 
+\item 编写程序，设置一个值为1.0/3.0的double类型变量和一个值为1.0/3.0的float类型变量。每个变量的值显示三次：\\[0.05in]
+\begin{itemize}
+\item 一次在小数点后显示4位；\\[0.1in]
+\item 一次在小数点后显示12位；\\[0.1in]
+\item 一次在小数点后显示16位。\\[0.05in]
+\end{itemize}
+同时让程序包含float.h文件，并显示FLT\_DIG和DBL\_DIG的值。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks] 
+\lstinputlisting[language=c,numbers=left,frame=single]{Code_OP/ex06.c}
+\end{frame}
+
+
+\end{document}

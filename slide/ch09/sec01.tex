@@ -1,0 +1,536 @@
+\section{函数概述}
+
+\begin{frame}\ft{为什么使用函数？}
+\begin{itemize}
+\item 使用函数可以减少代码的重复。若程序需要多次使用某种特定的功能，只需编写一个合适的函数，然后程序可以在任何需要的地方调用该函数。\\[0.2in]
+\item 即使某种功能在程序中只使用一次，将其以函数的形式实现也有必要，因为函数使得程序更加模块化，从而有利于程序的阅读、修改和完善。
+\end{itemize}
+\end{frame}
+
+\begin{frame}\ft{为什么使用函数？}
+假设你想编写一个程序，以实现如下功能：\vspace{0.1in}
+
+\begin{itemize}
+\item  读入一行数字 \\[0.1in]
+\item  对数字进行排序 \\[0.1in]
+\item  求他们的平均值 \\[0.1in]
+\item  打印出一个柱状图
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{为什么使用函数？}
+\begin{lstlisting}[language=c,numbers=left,frame=single]
+#include <stdio.h>
+#define SIZE 50
+int main(void)
+{
+  float list[SIZE];  
+  readlist(list, SIZE);
+  sort(list, SIZE);
+  average(list, SIZE);
+  bargragh(list, SIZE);  
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{为什么使用函数？}
+如何实现这四个函数需要你自行完成。描述性的函数名可以清楚地表明程序的功能和组织结构，然后对每个函数进行独立设计，若这些函数足够通用化，则可以在其他程序中调用它们。
+\end{frame}
+
+\begin{frame}[fragile]\ft{为什么使用函数？}
+\begin{itemize}
+\item
+函数可看做是一个“黑盒子”，你只需关注函数的功能及使用方法，而其内部行为你无需考虑，除非你是该函数的编写者。\\[0.1in]
+\item
+如我们在使用{\tf printf()}时，只需输入一个控制字符串，或者还有其它一些参数，就可以预测{\tf printf()}的执行结果，而无须了解{\tf printf()}内部的代码。
+\\[0.1in]
+\item
+以这种方式看待函数，有助于集中精力投入到程序的整体设计而不是实现细节。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{对于函数需要了解些什么？}
+\begin{itemize}
+\item 如何正确定义函数\\[0.1in]
+\item 如何调用函数\\[0.1in]
+\item 如何建立函数间的通信
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{一个简单的例子}
+请打印一个简单的信头：
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+****************************************
+Wuhan University
+299 Bayi Road Wuchang District,
+Wuhan, PR China 430072
+****************************************
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{一个简单的例子}
+\lstinputlisting
+[language=c,numbers=left,frame=single]
+{Code/letterhead1.c}
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{程序分析}
+{\tf starbar}在不同位置出现了三次：\vspace{0.1in}
+
+\begin{itemize}
+\item 函数原型{\tf (function prototype)}：告知编译器starbar的函数类型\\[0.1in]
+\item 函数调用{\tf (function call)}：使函数执行\\[0.1in]
+\item 函数定义{\tf (function definition)}：实现函数的具体功能
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{程序分析}
+
+函数同变量一样有多种类型。 
+函数在被使用之前都要声明其类型，故{\tf main()}之前出现了代码
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+void starbar(void);
+\end{lstlisting}
+\begin{itemize}
+\item
+圆括号表明{\tf starbar}是一个函数名。\\[0.1in]
+\item 
+第一个{\tf void}指的是函数类型，表明该函数没有返回值。\\[0.1in]
+\item 
+第二个{\tf void}表明该函数不接受任何参数。\\[0.1in]
+\item 
+分号表示该语句是进行函数声明，而不是函数定义。 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{程序分析}
+函数原型也可以放在main函数内变量声明的任何位置，故以下两种写法都正确：
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+...
+void starbar(void);
+int main(void)
+{
+  ...
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+...
+int main(void)
+{
+  void starbar(void);
+}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{程序分析}
+程序在{\tf main()}中通过使用以下方式调用{\tf starbar()}：
+\begin{lstlisting}
+starbar();
+\end{lstlisting}
+\begin{itemize}
+\item
+当程序执行到该语句时，它找到{\tf starbar()}并执行其中的指令。\\[0.1in]
+\item 
+执行完{\tf starbar()}中的代码后，程序将返回到调用函数{\tf (calling function)}的下一条语句继续执行。 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{程序分析}
+\begin{itemize}
+\item
+程序中，{\tf starbar()}和{\tf main()}有相同的定义格式，即首先以类型、名称和圆括号开始，接着是开始花括号、变量声明、函数语句定义以及结束花括号。\\[0.1in]
+\item 
+注意此处的{\tf starbar()}后跟花括号，告诉编译器这是在定义函数，而不是调用它或声明其原型。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{程序分析}
+\begin{itemize}
+\item
+该程序中，{\tf starbar()}和{\tf main()}在同一个文件中，也可以将它们放在不同文件中。\\[0.1in]
+\item 
+单文件形式比较容易编译，而使用多个文件则有利于在不同的程序中使用相同的函数。\\[0.1in]
+\item 
+若使用多文件形式，则每个文件中都必须包含{\tf \#define}和{\tf \#include}指令。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{程序分析}
+\begin{itemize}
+\item
+{\tf starbar()}中的变量{\tf count}是一个局部变量，这意味着该变量只在{\tf starbar()}中可用。\\[0.1in]
+\item 
+即使你在其它函数中使用名称{\tf count}，也不会出现任何冲突。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数参数}
+改写以上程序，让信头的文字居中，形如
+\begin{lstlisting}
+****************************************
+            Wuhan University
+    299 Bayi Road, Wuchang District,
+         Wuhan, PR China 430072
+****************************************
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{如何做到？}
+假设一行是40个字符宽度。\vspace{0.1in} \pause 
+
+\begin{enumerate}
+\item
+打印一行星号很容易做到，直接输出40个星号即可。\\[0.1in] \pause 
+\item 
+如何让Wuhan University居中呢？。
+\\[0.1in] \pause 
+\item[]
+在输出文字之前输出若干空格即可。\\[0.1in] \pause 
+\item 
+那到底输出多少个空格呢？。
+\\[0.1in] \pause 
+\item[]
+设文字长度为$l$，则一行中除文字外还需$40-l$个空格。想要文字居中，左边应输出$(40-l)/2$个空格。
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{程序实现}
+\lstinputlisting
+[language=c,numbers=left,frame=single]
+{Code/letterhead2.c}
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{定义带参数的函数（形式参数，简称“形参”）}
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10},title=函数头]
+  void show_n_char(char ch, int num)
+\end{lstlisting}
+\begin{itemize}
+\item
+这行代码告诉编译器，{\tf show\_n\_char()}使用了两个参数{\tf ch}和{\tf num}，它们的类型分别为{\tf char}和{\tf int}。\\[0.1in]
+\item
+变量{\tf ch}和{\tf num}被称为形式参数{\tf (formal argument)}或形式参量{\tf (formal parameter)}。\\[0.1in]
+\item 形式参量是局部变量，为函数所私有，这意味着可以在其它函数中使用相同的变量名。\\[0.1in]
+\item 调用函数时，形式参量会被赋值。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{定义带参数的函数（形式参数，简称“形参”）}
+必须在每个形参前声明其类型，不能像通常的变量声明那样使用变量列表来声明同一类型的变量。比如
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+void func1(int x, y, z)  // wrong 
+void func2(int x, int y, int z)  // right
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{定义带参数的函数（形式参数，简称“形参”）}
+古老的函数定义方式1：
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+void show_n_char(ch, num)
+char ch;
+int num;
+{
+  ...
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{定义带参数的函数（形式参数，简称“形参”）}
+古老的函数定义方式2：
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+void func1(x, y, z)
+int x, y, z;
+{
+  ... 
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{带参数函数的声明}
+\begin{itemize}
+\item
+使用函数之前需要用ANSI原型声明该函数
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+void show_n_char(char ch, int num);
+\end{lstlisting}
+\vspace{0.1in}
+
+\item
+当函数接受参数时，函数原型通过使用一个逗号分隔的类型列表指明参数的个数和类型。在函数原型中可根据你的喜好省略变量名：
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+void show_n_char(char, int);
+\end{lstlisting}
+\vspace{0.1in}
+
+\item
+在原型中使用变量名并没有实际地创建变量。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{带参数函数的声明}
+ANSI C也支持旧的函数声明形式，即圆括号内不带任何参数：
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+void show_n_char();
+\end{lstlisting}
+该方式请不要使用。了解该形式的主要原因只是为了让你能正确识别并理解以前的代码。
+\end{frame}
+
+\begin{frame}[fragile]\ft{调用带参数的函数：实际参数，简称“实参”}
+函数调用中，通过使用实际参数{\tf (actual argument)}对{\tf ch}和{\tf num}赋值。
+\begin{itemize}
+\item
+第一次调用中
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+show_n_char(SPACE, 12);
+\end{lstlisting}
+实参是空格字符和{\tf 12}，它们被赋给{\tf show\_n\_char()}中相应的形参：{\tf ch}和{\tf num}。\\[0.1in]
+\item \textcolor{acolor1}{实参可以是常量、变量或一个复杂的表达式。}\\[0.1in]
+\item 但无论何种形式的实参，执行时首先要计算其值，然后将该值赋值给被调函数中相应的形参。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{调用带参数的函数：实际参数，简称“实参”}
+实参赋值给形参，被调函数使用的值是从调用函数中复制而来的，故不管在被调函数中对赋值数值进行了什么操作，调用函数中的原数值不受影响。
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+\begin{itemize}
+\item
+将实参赋值给形参，实现了从调用函数到被调函数的通信。\\[0.1in]
+\item
+而想从被调函数往调用函数传递信息，可以使用函数返回值。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+  \begin{wenti}
+    编写函数，比较两个整数的大小，并返回较小值。同时编制一个驱动程序来测试该函数。
+  \end{wenti}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{使用return从函数中返回一个值}
+\lstinputlisting
+[language=c,numbers=left,frame=single]
+{Code/lesser.c}
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+Enter two integers (q to quit):
+509 333
+The lesser of 509 and 333 is 333.
+Enter two integers (q to quit):
+-9333 6
+The lesser of -9333 and 6 is -9333.
+Enter two of integers (q to quit):
+q
+Bye.
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+\begin{itemize}
+\item
+关键字{\tf return}指明了其后的表达式的值即为该函数的返回值。\\[0.1in]
+\item 
+{\tf imin()}中的变量{\tf min}是其私有的，但{\tf return}语句将它的值返回给了调用函数。\\[0.1in]
+\item 
+语句
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+lesser = imin(m, n);
+\end{lstlisting}
+相当于把min的值赋给了lesser。
+\\[0.1in]
+\item
+能否这么写？
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+imin(m, n);
+lesser = min;
+\end{lstlisting} \pause
+{\Huge 当然不行的啦！！！}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+返回值不仅可以被赋给一个变量，也可以被用作表达式的一部分。如
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+answer = 2*imin(m, n) + 5;
+printf("%d\n", imin(answer+2, LIMIT));
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+返回值可以由任何表达式计算而得到，而不仅仅来自于一个变量。如imin函数可以改写为
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+int imin(int n,int m)
+{  
+  return ((n < m) ? n : m);
+}
+\end{lstlisting}
+这里并不要求使用圆括号，但如果想让程序更清晰，可以把添上一个圆括号。
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+观察以下代码：
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+int what_if(int n)
+{  
+  double z = 100.0 / (double) n;
+  return z;
+}
+\end{lstlisting}
+这里，返回值的类型和声明的类型不一致，{\Large What will happen?}
+\pause 
+\vspace{0.1in}
+
+\textcolor{acolor1}{将把{\tf doule}型变量{\tf z}的值强制转换为{\tf int}型。}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+{\tf return}的另一个作用是终止函数的执行，并把控制返回给调用函数的下一条语句，即使{\tf return}语句不在函数尾部。如{\tf imin()}可以写成
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+int imin(int n, int m)
+{  
+  if (n < m)
+    return n;
+  else
+    return m;  
+  printf("Oh my god!\n");    
+}
+\end{lstlisting}
+{\tf return}语句使得{\tf printf}语句永远不会执行。
+\end{frame}
+
+\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+也可以使用语句
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+return;
+\end{lstlisting}
+该语句会终止执行函数，并把控制返回给调用函数。此时，{\tf return}后没有任何表达式，故没有返回值，该形式只能用于{\tf void}类型的函数。
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+\begin{itemize}
+\item
+函数应该进行类型声明，同时其类型应和返回值类型相同。\\[0.1in]
+\item
+无返回值的函数应该被声明为{\tf void}类型。\\[0.1in]
+\item
+类型声明是函数定义的一部分，该类型指的是返回值类型。如函数头
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+double klink(int a, int b)
+\end{lstlisting}
+表示函数使用两个{\tf int}型的参数，而返回值类型为{\tf double}。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+为正确使用函数，程序在首次调用函数之前需要知道该函数的类型。
+\begin{itemize}
+\item 方式一：
+调用之前给出完整的函数定义。\\[0.1in]
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+int imin(int n, int m)
+{
+  ... 
+}
+
+int main(void)
+{
+  ...
+  n = imin(n1, n2);
+  ...
+}
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+\begin{itemize}
+\item 方式二：
+对函数进行声明，以便将函数信息通知编译器。\\[0.1in]
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+int imin(int, int);
+
+int main(void)
+{
+  int n1, n2, lesser;
+  ...
+  n = imin(n1, n2);
+  ...
+}
+
+int imin(int n, int m)
+{
+  ... 
+}
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+也可将函数声明放在调用函数内部。 
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+int main(void)
+{
+  int imin(int, int);
+  int n1, n2, lesser;
+  ...
+  n = imin(n1, n2);
+  ...
+}
+
+int imin(int n, int m)
+{
+  ... 
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+在ANSI C标准库中，函数被分为几个系列，每一系列都有各自的头文件，这些头文件中包含了本系列函数的声明部分。
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+  \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+// stdio.h 
+int getchar();
+int putchar(int c);
+int printf(const char *format , ... );
+int scanf (const char *format , ... );
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{函数类型}
+  \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+// math.h
+double sin(double);   
+double cos(double);   
+double tan(double);   
+double asin(double);  
+double acos(double); 
+double atan(double); 
+double log(double);  
+double log10(double); 
+double pow(double x,double y); 
+double exp(double); 
+double sqrt(double); 
+int abs(int);  
+double fabs(double); 
+\end{lstlisting}
+\end{frame}

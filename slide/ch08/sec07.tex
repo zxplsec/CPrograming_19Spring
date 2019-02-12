@@ -1,0 +1,63 @@
+\section{菜单浏览}
+\begin{frame}[fragile]\ft{\secname}
+菜单作为用户界面的一部分，会使程序对用户更友好，但也给程序员提出了一些新问题。
+\begin{lstlisting}
+Enter the letter of your choice:
+a. advice       b. bell
+c. count        q. quit   
+\end{lstlisting}
+编程目标：
+\begin{itemize}
+\item 让程序在用户遵循指令时顺利进行
+\item 让程序在用户没有遵循指令时也能顺利进行
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+编写程序，确保有如下输出：
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}
+Enter the letter of your choice:
+a. advice    b. bell
+c. count     q. quit
+a[enter]
+Buy low, sell high.
+Enter the letter of your choice:
+a. advice    b. bell
+c. count     q. quit
+b[enter]
+Enter the letter of your choice:
+a. advice    b. bell
+c. count     q. quit
+c[enter]
+Count how far? Enter an integer:
+two[enter]
+two is not an integer.
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}
+Please enter an integer value, 
+such as 25, -178, or 3: 5[enter]
+1
+2
+3
+4
+5
+Enter the letter of your choice:
+a. advice    b. bell
+c. count     q. quit
+q
+Bye.
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+\lstinputlisting
+[language=c,numbers=left,frame=single]
+{Code/menu.c}
+\end{frame}
+

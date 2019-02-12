@@ -1,0 +1,34 @@
+\section{多个函数}
+\begin{frame}[fragile]\ft{\secname}
+  当程序比较复杂时，使用多个函数会可实现程序的模块化，使程序可读性更强。
+\end{frame}
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+\begin{lstlisting}[language=c,numbers=left,frame=single]
+#include<stdio.h>
+float mile2km(float mile);
+int main(void) 
+{
+  float mile, km;	
+  
+  km = mile2km(mile);
+  printf("%d mile = %d km\n",mile, km);	
+  	
+  return 0;
+}
+
+float mile2km(float mile)
+{
+  return 1.6 * mile;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+mile\_km函数出现了三次：\vspace{0.1in}
+
+\begin{enumerate}
+\item 函数声明：通知编译器要用到该函数。\\[0.1in]
+\item 函数调用\\[0.1in]
+\item 函数定义
+\end{enumerate}
+\end{frame}

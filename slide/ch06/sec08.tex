@@ -1,0 +1,96 @@
+\section{退出条件循环(do while)}
+\begin{frame}[fragile]\ft{\secname}
+\begin{itemize}
+\item
+while循环和for循环都是入口条件循环，在每次执行循环之前先检查判断条件，这样循环中的语句可能一次也不执行。\\[0.1in]
+\item 
+do while循环为退出条件循环，判断条件在执行循环之后进行检查，这可保证循环体中的语句至少被执行一次。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+\lstinputlisting[language=c,numbers=left,frame=single]{Code/do_while.c}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+ \begin{lstlisting}[backgroundcolor=\color{red!10}]
+To withdraw money from ATM.
+Please enter the secret code number: 11
+To withdraw money from ATM. 
+Please enter the secret code number: 12
+To withdraw money from ATM. 
+Please enter the secret code number: 13
+Congratulations! You are permitted!
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+若用while循环改写这段程序，代码会长一些。
+
+\lstinputlisting[language=c,numbers=left,frame=single]{Code/entry.c}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{figure}
+\centering
+\tikzstyle{startstop}=[rectangle,rounded corners,minimum width=3cm,minimum height=1cm,text centered,draw=black,fill=red!30]
+\tikzstyle{process}=[rectangle,minimum width=3cm,minimum height=1cm,text centered,draw=black,fill=orange!30]
+\tikzstyle{decision}=[diamond,aspect=2,minimum width=3cm,minimum height=.5cm,text centered,draw=black,fill=green!30]
+\tikzstyle{arrow}=[thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance=2.5cm]
+\node (start) [] {};
+\node (pro) [process,below of=start,yshift=1cm] {\tf 
+printf("ba la ba la!");
+};
+\node (dec) [decision,below of=pro,align=left] 
+{ \tf 
+count++ <= limit;
+};
+
+
+\draw [arrow] (start) -- node [anchor=east]{do} (pro);
+\draw [arrow] (pro) -- node [anchor=east]{while}(dec);
+\draw [arrow] (dec) -- node[anchor=east] {yes} ++ (0,-2)
+-- ++(4,0) |- (pro);
+%\draw [arrow] (pro) -| (right);
+%\draw [arrow] (right) -- (dec);
+\draw [arrow] (dec) -- node[anchor=south] {no}
+node[anchor=north,align=left] {go to next \\ statement}
+ ++(-4,0);
+\end{tikzpicture}
+
+\end{figure}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}[language=c,frame=single]
+do {
+        statements
+} while (condition);
+
+do 
+        statement 
+while (condition);
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+
+\begin{itemize}
+\item
+请注意do while本身是一条语句，它需要一个结束的分号。\\[0.1in]
+\item
+应该把do while\textcolor{acolor3}{仅用于}那些至少需要执行一次循环的情况。
+\end{itemize}
+\end{frame}
+
+
+
+ 

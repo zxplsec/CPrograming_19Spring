@@ -1,0 +1,222 @@
+\section{指针}
+\begin{frame}[fragile]\ft{\secname}
+指针是一个变量，其值为一个地址。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+假如你把某个指针变量命名为{\tf ptr}，就可以使用以下语句
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+ptr = &var;
+\end{lstlisting}
+即把变量{\tf var}的地址赋给指针变量{\tf ptr}，称为\textcolor{acolor1}{\tf ptr“指向”var}。
+\pause \vspace{0.1in}
+
+{\tf ptr}和{\tf \&var}的区别在于，前者为一变量，后者是一个常量。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+{\tf ptr}可以指向任何地址，即可以把任何地址赋值给{\tf ptr}：
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+ptr = &var1;
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+  \begin{wenti}
+    如何创建一个指针变量？
+  \end{wenti}
+  \pause \vskip.1in
+  
+  首先需要声明其类型。在介绍其类型之前，我们先介绍一个新运算符{\tf *}。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：间接运算符或取值运算符：*}
+假定{\tf ptr}指向{\tf var}，即
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+ptr = &var;
+\end{lstlisting}
+就可以用间接运算符{\tf *}来获取{\tf var}中存放的数值：
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+value = *ptr;
+\end{lstlisting}
+\pause \vspace{0.1in}
+
+\begin{minipage}{0.4\textwidth}
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+ptr = &var;
+value = *ptr;
+\end{lstlisting}
+\end{minipage}
+~~~$\Longleftrightarrow$~~~
+\begin{minipage}{0.4\textwidth}
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+value = var;
+\end{lstlisting}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：指针声明}
+能否如以下方式声明一个指针？
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+pointer ptr;
+\end{lstlisting}
+\pause \vspace{0.1in}
+
+\begin{center}
+{\Large NO!}
+\end{center}
+\pause\vspace{0.1in}
+
+\begin{center}
+{\Large Why?} 
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：指针声明}
+原因在于，仅声明一个变量为指针是不够的，还需说明指针所指向变量的类型。
+\vspace{0.1in}
+
+\begin{itemize}
+\item 不同的变量类型占用的存储空间大小不同，而有些指针需要知道变量类型所占用的存储空间。\\[0.1in]
+\item 程序也需要知道地址中存储的是何种数据。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：指针声明}
+  \begin{lstlisting}[backgroundcolor=\color{blue!10}]
+// `正确的指针声明方式`    
+int * pi;           // pi`是指向一个整型变量的指针`
+char * pc;          // pc`是指向一个字符变量的指针`
+float * pf, * pg;   // pf`和`pg`是指向浮点变量的指针`
+\end{lstlisting} \pause \vspace{0.1in}
+
+\begin{itemize}
+\item
+类型标识符表明了被指向变量的类型，{\tf *}表示该变量为一个指针。\\[0.1in]
+\item 
+声明{\tf int * pi;}的含义是：{\tf pi}是一个指针，且{\tf *pi}是{\tf int}类型的。\\[0.1in]
+\item 
+{\tf *}与指针名之间的空格可选。通常在声明中使用空格，在指向变量时将其省略。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：指针声明}
+\begin{itemize}
+\item
+{\tf pc}所指向的值{\tf (*pc)}是{\tf char}类型的，而{\tf pc}本身是“指向{\tf char}的指针”类型。\\[0.1in]
+\item 
+{\tf pc}的值是一个地址，在大多数系统中，它由一个无符号整数表示。但这并不表示可以把指针看做是整数类型。\\[0.1in]
+\item 
+一些处理整数的方法不能用来处理指针，反之亦然。如两个整数可以相乘，但指针不能。\\[0.1in]
+\item 
+指针是一种新的数据类型，而不是一种整数类型。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：使用指针在函数间通信}
+这里将重点介绍如何通过指针解决函数间的通信问题。
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname：使用指针在函数间通信}
+  \lstinputlisting
+  [language=c,numbers=left,frame=single]  
+  {Code/swap3.c}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+Originally: x =  5, y = 10.
+Now       : x = 10, y =  5.
+\end{lstlisting}
+\pause \vspace{0.1in}
+
+\begin{center}
+{\Large Oh Ye!!!}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：使用指针在函数间通信}
+\begin{itemize}
+\item 
+函数调用语句为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+interchange(&x, &y);
+\end{lstlisting}
+故函数传递的是{\tf x}和{\tf y}的地址而不是它们的值。\\[0.15in]
+\item 
+函数声明为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+void interchange(int * u, int * v);
+\end{lstlisting}
+也可简化为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+void interchange(int *, int *);
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：使用指针在函数间通信}
+\begin{itemize}
+\item
+函数体中声明了一个临时变量
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+int temp;
+\end{lstlisting}
+\item
+为了把{\tf x}的值存在{\tf temp}中，需使用以下语句
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+temp = *u; 
+\end{lstlisting}
+因{\tf u}的值为{\tf \&x}，即{\tf x}的地址，故{\tf *u}代表了{\tf x}的值。\\[0.1in]
+\item 
+同理，为了把{\tf y}的值赋给{\tf x},需用以下语句
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+*u = *v;
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：使用指针在函数间通信}
+该例中，用一个函数实现了{\tf x}和{\tf y}的数值交换。\vspace{0.1in}
+
+\begin{itemize}
+\item
+首先函数使用{\tf x}和{\tf y}的地址作为参数，这使得它可以访问{\tf x}和{\tf y}变量。\\[0.1in]
+\item 
+通过使用指针和运算符{\tf *}，函数可以获得相应存储地址的数据，从而就可以改变这些数据。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：使用指针在函数间通信}
+通常情况下，可以把变量的两类信息传递给一个函数，即传值与传址。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：传值}
+\begin{itemize}
+\item 调用方式为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+function1(x);
+\end{lstlisting}
+\item 定义方式为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+int function1(int num)
+\end{lstlisting}
+\item 适用范围：使用函数进行数据计算等操作。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：传址}
+\begin{itemize}
+\item 调用方式为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+function2(&x);
+\end{lstlisting}
+\item 定义方式为
+\begin{lstlisting}[backgroundcolor=\color{blue!10}]
+int function2(int * ptr)
+\end{lstlisting}
+\item 适用范围：改变调用函数中的多个变量的值。
+\end{itemize}
+
+\end{frame}

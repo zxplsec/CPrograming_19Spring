@@ -1,0 +1,177 @@
+\section{while语句}
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+while (condition)
+  statement
+\end{lstlisting}
+\begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
+while (condition)
+{
+  statements
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+\begin{figure}
+\centering
+\tikzstyle{startstop}=[rectangle,rounded corners,minimum width=3cm,minimum height=1cm,text centered,draw=black,fill=red!30]
+\tikzstyle{process}=[rectangle,minimum width=3cm,minimum height=1cm,text centered,draw=black,fill=orange!30]
+\tikzstyle{decision}=[diamond,aspect=2,minimum width=3cm,minimum height=.5cm,text centered,draw=black,fill=green!30]
+\tikzstyle{arrow}=[thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance=2.5cm]
+\node (start) [] {};
+\node (dec) [decision,below of=start] {condition};
+\node (pro) [process,below of=dec,align=left] 
+{\{\\
+~~~~~statements;\\
+\}
+};
+\node (right) [right of=pro] {};
+
+\draw [arrow] (start) -- (dec);
+\draw [arrow] (dec) -- node[anchor=east] {yes} (pro);
+\draw [thick] (pro) -- ++(4,0);
+\draw [arrow] (pro)++(4,0)|- (dec);
+\draw [arrow] (dec) -- node[anchor=south] {no}
+node[align=left,anchor=north] {go to next  \\ statement} ++(-4,0);
+\end{tikzpicture}
+
+\end{figure}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：终止while循环}
+构造一个while循环时，必须能改变判断表达式的值，并最终使其为假，否则循环永远不会终止。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：终止while循环}
+\begin{lstlisting}[language=c]
+index = 1;
+while (index < 5)
+{
+  printf("Good morning!\n");
+}
+\end{lstlisting} 
+\rule{\textwidth}{1mm}\pause \vspace{0.1in}
+
+这一段代码无法终止循环，因为在循环中不能改变index的值。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：终止while循环}
+\begin{lstlisting}[language=c]
+index = 1;
+while (--index < 5)
+{
+  printf("Good morning!\n");
+}
+\end{lstlisting} 
+\rule{\textwidth}{1mm}\pause \vspace{0.1in}
+
+虽然改变了index的值，但却朝着错误的方向，故仍无法退出循环。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：终止while循环}
+\begin{lstlisting}[language=c]
+index = 1;
+while (++index < 5)
+{
+  printf("Good morning!\n");
+}
+\end{lstlisting} 
+\rule{\textwidth}{1mm}\pause \vspace{0.1in}
+
+这段代码可以正常退出循环。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：何时终止循环}
+只有在计算判断条件的值时才能决定是否终止循环。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：何时终止循环}
+  \begin{minipage}{0.65\textwidth}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/when.c}    
+  \end{minipage}~~~~
+  \begin{minipage}{0.3\textwidth}
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+n = 5
+Now n = 6
+n = 6
+Now n = 7
+\end{lstlisting}
+    
+  \end{minipage}
+
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：while：入口条件循环}
+while循环是使用入口条件的有条件循环。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：何时终止循环}
+\begin{lstlisting}[language=c]
+index = 10;
+while (index++ < 5)
+  printf("Have a fair day or better.\n");
+\end{lstlisting}
+\rule{\textwidth}{1mm}\pause 
+
+把第一行改为
+\begin{lstlisting}
+index = 3;
+\end{lstlisting}
+就可以执行这个循环了。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：语法要点}
+在使用while时，请确定循环体的范围。缩进是为了帮助读者而不是计算机。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：语法要点}
+  \begin{minipage}{0.6\textwidth}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/while1.c}    
+  \end{minipage} ~~~~\pause 
+  \begin{minipage}{0.3\textwidth}
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+n = 0
+n = 0
+n = 0
+n = 0
+... 
+\end{lstlisting}    
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：语法要点}
+while语句在语法上算作一条单独的语句，即使它使用了复合语句。
+该语句从while开始，到第一个分号结束；在使用了复合语句的情况下，到终结花括号结束。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：语法要点}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/while2.c}
+\pause 
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+n = 4
+That's all this program does.
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：语法要点}
+在C语言中，\textcolor{acolor1}{单独的分号代表空语句(null statement)。}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：语法要点}
+有些时候，程序员会有意地使用带空语句的while语句。例如，假定你想要跳过输入直到第一个不为空或数字的字符，可以这样做。
+\rule{\textwidth}{1mm}\pause 
+
+\begin{lstlisting}[language=c]
+while(scanf("%d",&num)==1)
+  ;
+\end{lstlisting}\pause
+
+请注意，为了清楚起见，请把分号单独置于while的下一行。
+\end{frame}
+

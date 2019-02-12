@@ -1,0 +1,88 @@
+\documentclass[10pt]{beamer}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+\setbeameroption{show notes}
+
+\usetheme[sectionpage=simple,subsectionpage=simple]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\include{asset/global_usepackage}
+\include{asset/global_newcommand}
+\include{asset/global_theorem_fancybox}
+
+% Changing font size of selected slides in beamer
+% You can use \fontsize:
+% \fontsize{<font size>}{<value for \baselineskip>}\selectfont
+% For example,
+% \fontsize{6pt}{7.2}\selectfont
+% changes the font size to 6 points and the \baselineskip to 7.2 points. 
+\newcommand\Fontvi{\fontsize{6.5}{7.2}\selectfont}
+
+% https://stackoverflow.com/questions/26878002/beamer-second-screen-with-xelatex
+\renewcommand\pgfsetupphysicalpagesizes{%
+  \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+}
+\makeatletter
+\def\beamer@framenotesbegin{% at beginning of slide
+\usebeamercolor[fg]{normal text}
+\gdef\beamer@noteitems{}%
+\gdef\beamer@notes{}%
+}
+\makeatother
+
+\title{Data structure and algorithm in Python}
+\subtitle{Linked Lists}
+\date{}%{\today}
+\author{Xiaoping Zhang}
+\institute{School of Mathematics and Statistics, Wuhan University}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  %\Fontvi
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\begin{frame}
+  Python’s list class is highly optimized, and often a great choice for storage. With that said, there are some notable disadvantages:
+  \begin{enumerate}
+  \item The length of a dynamic array might be longer than the actual number of elements that it stores.
+  \item Amortized bounds for operations may be unacceptable in real-time systems.
+  \item Insertions and deletions at interior positions of an array are expensive.
+  \end{enumerate}
+
+  In this lecture, we introduce a data structure known as a \red{linked list}, which provides an alternative to an \blue{array-based sequence} (such as a Python list).
+\end{frame}
+
+\begin{frame}
+   Both array-based sequences and linked lists keep elements in a certain order, but using a very different style.
+  \begin{itemize}
+  \item An \blue{array} provides the more centralized representation, with one large chunk of memory capable of accommodating references to many elements.
+  \item A \blue{linked list}, in contrast, relies on a more distributed representation in which a lightweight object, known as a \red{node}, is allocated for each element.
+  \item[] Each node maintains a reference to its element and one or more references to neighboring nodes in order to collectively represent the linear order of the sequence.
+  \end{itemize}
+\end{frame}
+
+\input{ch07/sec01.tex}
+\input{ch07/sec02.tex}
+\input{ch07/sec03.tex}
+\input{ch07/sec04.tex}
+\input{ch07/sec05.tex}
+\input{ch07/sec06.tex}
+
+
+\end{document}

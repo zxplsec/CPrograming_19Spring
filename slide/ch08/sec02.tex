@@ -1,0 +1,23 @@
+\section{缓冲区(Buffer)}
+
+\begin{frame}[fragile]\ft{\secname} 
+\begin{itemize}
+\item    非缓冲输入\\[0.1in]
+\item[]  立即回显：键入的字符对正在等待的程序立即变为可用
+\begin{lstlisting}
+HHeelllloo wwoorrlldd[enter]
+II  aamm  hhaappppyy[enter]
+\end{lstlisting}
+\vspace{0.1in}
+
+\item 缓冲输入\\[0.1in]
+\item[] 延迟回显：键入的字符被存储在缓冲区中，按下回车键使字符块对程序变为可用。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：为什么需要缓冲区？}
+\begin{itemize}
+\item 将若干个字符作为一个块传输比逐个发送耗时要少。   \\[0.1in]
+\item 若输入有误，可以使用键盘来修正错误。当最终按下回车键时，便可发送正确的输入。
+\end{itemize}
+\end{frame}

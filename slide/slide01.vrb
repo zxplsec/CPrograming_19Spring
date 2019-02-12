@@ -1,0 +1,11 @@
+\ft{\secname}
+在命令行中输入以下命令，可看出从目标文件到可执行文件时文件大小的变化。这是因为链接器为我们的程序添加了额外的代码。
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize,backgroundcolor=\color{red!10}]
+$ size add2num.o
+__TEXT  __DATA  __OBJC  others    dec         hex
+  145     0       0       32      177         b1
+$ size add2num
+__TEXT  __DATA  __OBJC  others    dec         hex
+4096      4096    0  4294971392 4294979584 100003000
+\end{lstlisting}
+

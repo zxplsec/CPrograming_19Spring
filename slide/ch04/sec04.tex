@@ -1,0 +1,232 @@
+\section{格式化输入}
+\begin{frame}[fragile]\ft{\secname}
+\tf 同printf()一样，scanf()也使用控制字符串和参数列表，主要区别在参数列表。printf()使用变量名、常量和表达式；而scanf()使用指向变量的指针。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的参数列表}
+\begin{itemize}
+\item 
+\tf 若使用scanf()来读取某种基本类型的值，请在变量名前加一个\&。 \\[0.1in]
+\item
+若使用scanf()把一个字符串读入一个字符数组，请不要使用\&。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的参数列表}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/input.c}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的参数列表}
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+$ gcc input.c
+$ ./a.out
+Enter your name, age and weight:
+Xiaoming
+23 100
+Xiaoming: 23 100.000000
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的参数列表}
+\begin{itemize}
+\item
+\tf scanf()使用空格（换行、制表符和空格）来决定如何把输入分成几个字段。
+它依次把格式说明符与字段相匹配，并跳过它们之间的空格。\\[0.1in]
+\item
+也可以分一行或多行输入，只要每个输入项目之间至少有一个换行符、空格或制表符。\\[0.1in]
+\item
+\%c是个例外，即使下一个字符是空白字符，它也会读取。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：printf与scanf格式说明符的区别}
+\begin{itemize}
+\item
+\tf printf()把\%f、\%e、\%E、\%g和\%G同时用于float和double类型\\[0.1in]
+\item
+scanf()只把它们用于float类型，而用于double类型时要求加上l修饰符。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+\begin{table}
+\centering
+\begin{tabular}{p{3cm}|p{7cm}}\hline
+格式说明符 & 意义 \\\hline\hline
+\tf\%c & 把输入解释成一个字符 \\[2mm]
+\tf\%d & 把输入解释成一个有符号十进制数 \\[2mm]
+\tf\%e,\%f,\%g,\%a & 把输入解释成一个浮点数\\[2mm]
+\tf\%E,\%F,\%G,\%A & 把输入解释成一个浮点数\\[2mm]
+\tf\%i & 把输入解释成一个有符号十进制数\\[2mm]
+\tf\%o & 把输入解释成一个有符号八进制数\\[2mm]
+\tf\%p & 把输入解释成一个指针\\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+\begin{table}
+\centering
+\begin{tabular}{p{2cm}|p{8cm}}\hline
+格式说明符 & 意义 \\\hline\hline
+\tf\%s & 把输入解释成一个字符串：输入内容以第一个非空白字符作为开始，并且包含到下一个空白字符的全部字符 \\[2mm]
+\tf\%u & 把输入解释成一个无符号十进制数 \\[2mm]
+\tf\%x,\%X & 把输入解释成一个有符号十六进制数\\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+\tf 可在格式说明符中使用修饰符，修饰符出现在\%与格式字符之间。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+
+\begin{table}
+\centering
+\begin{tabular}{p{2cm}|p{8cm}}\hline
+修饰符 & 意义 \\\hline\hline
+\tf * &  滞后赋值，如{"\tf \%*d"} \\[2mm]
+\tf digit & 最大字段宽度：在达到最大字段宽度或遇到第一个空白字符时停止对输入项的读取，如{\tf "\%10s"} \\[2mm]
+\tf hh & 把整数读作{\tf signed char}或{\tf unsigned char}，如{\tf "\%hhd"}或{\tf "\%hhu"} \\[2mm]
+\tf ll & 把整数读作{\tf long long}或{\tf unsigned long long}，如{\tf "\%lld"}或{\tf "\%llu"}\\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+\begin{table}
+\centering
+%\caption{修饰符h, l 或 L}
+\begin{tabular}{p{3.5cm}|p{6cm}}\hline
+修饰符 & 意义 \\\hline\hline
+\tf "\%hd", "\%hi" & 以{\tf short}存储 \\[2mm]\hline
+\tf "\%ho", "\%hx", "\%hu" & 以{\tf unsigned short}存储\\[2mm]\hline
+\tf "\%ld", "\%li" & 以{\tf long}存储\\[2mm]\hline
+\tf "\%lo", "\%lx", "\%lu" & 以{\tf unsigned long}存储\\[2mm]\hline
+\tf "\%le", "\%lf", "\%lg" & 以{\tf double}存储
+\\[2mm]\hline
+\tf "\%Le", "\%Lf", "\%Lg" & 以{\tf long double}存储 \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+\tf 若没有这些修饰符，则\%d, \%i, \%o和\%x指示int类型，而\%e, \%f和\%g指示float类型。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
+\tf scanf()允许把普通字符放在格式字符串中，除了空格字符之外的普通字符一定要与输入字符串准确匹配。  
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+scanf("%d, %d", &n, &m);
+\end{lstlisting}
+
+\rule{\textwidth}{0.1em}
+\begin{lstlisting}[title=合法的输入方式,showspaces=true,backgroundcolor=\color{red!20}]
+12, 23
+
+12,     23
+
+12 , 23
+
+12,
+23
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+scanf("%d and %d", &n, &m);
+\end{lstlisting}
+
+\rule{\textwidth}{0.1em}
+\begin{lstlisting}[title=合法的输入方式,showspaces=true,backgroundcolor=\color{red!20}]
+12 and 23
+
+12 and     23
+
+12and23
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
+
+除了{\tf \%c}之外的说明符会自动跳过输入项之前的空格，故以下两条语句的效果相同：
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+scanf("%d%d",&n,&m);
+
+scanf("%d %d",&n,&m);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
+对于{\tf \%c}来说，向格式字符串中添加一些空格将导致一些差别。如：
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+scanf("%c",&ch)
+\end{lstlisting}
+读取在输入中遇到的第一个字符，而
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+scanf(" %c",&ch)
+\end{lstlisting}
+则读取遇到的第一个非空白字符。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf的返回值}
+{\tf scanf()}返回成功读入的项目个数。
+
+\begin{itemize}
+\item
+\tf 若没有读取任何项目，则返回0；
+\item
+若检测到文件结尾(end of file)，则返回EOF。
+（EOF是stdio.h中定义的特殊值，一般为-1）
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{\secname：printf()的*修饰符}
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/varwidth.c}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：printf的*修饰符}
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+$ gcc varwidth.c
+$ ./a.out
+What field width?
+6
+The number is:   256
+Now enter a width and a precision:
+8 3
+Weight= 123.500
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的*修饰符}
+\tf 在scanf()中，把*放在\%与格式字符之间时，会使函数跳过相应的输入项目。
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的*修饰符}
+
+\lstinputlisting[language=c,frame=single,numbers=left]{Code/skip2.c}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：scanf()的*修饰符}
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+$ gcc skip2.c
+$ ./a.out
+Please enter three integers:
+10 20 30
+The last integer was 30
+\end{lstlisting}
+\end{frame}
+
+
+
+
+

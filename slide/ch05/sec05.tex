@@ -1,0 +1,186 @@
+\section{表达式和语句}
+
+\begin{frame}[fragile]\ft{表达式}
+\begin{dingyi}
+  \textcolor{acolor3}{表达式}由运算符和操作数组合而成。最简单的表达式是一个单独的操作数，以此为基础可建立复杂的表达式。
+\end{dingyi}
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+4
+-6
+4 + 21
+a * (b + c/d) / 20
+q = 5 * 2
+x = ++q % 3
+q > 3
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{表达式}
+\begin{itemize}
+\item 操作数可以是常量、变量，或者是二者的组合。\\[0.15in]
+\item 一些表达式是多个较小的表达式的组合，这些小的表达式被称为子表达式(subexpression)。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{表达式}
+\textcolor{acolor3}{每一个表达式都有一个值}
+
+\begin{table}
+\centering
+\begin{tabular}{c|c} \hline
+表达式 & 值 \\ \hline \hline
+-4 + 6 & 2\\\hline
+c = 3 + 8 & 11 \\ \hline
+5 > 3 & 1 \\ \hline
+6 + (c = 3 + 8) & 17 \\ \hline
+\end{tabular}
+\end{table}
+最后一个表达式是两个子表达式的和，而每一个子表达式都有值，故它在C中是完全合法的，但不建议使用。
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{语句}
+\begin{itemize}
+\item 
+  语句(statement)是程序的基本成分。\\[0.15in]
+\item
+  程序(program)是一系列语句的集合，一条语句是一条完整的计算机指令。\\[0.15in]
+\item
+\textcolor{acolor3}{在C中，语句以分号结尾。}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{语句}
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+i = 4
+\end{lstlisting}
+只是一个表达式，而
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+i = 4;
+\end{lstlisting}
+是一条语句。
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{语句}
+C把任何后面带分号的表达式都看做一条语句。所以，C允许
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+4;
+3 + 4; 
+\end{lstlisting}
+但这些语句不做任何事情。
+\end{frame}
+
+\begin{frame}[fragile]\ft{语句}
+一般地，语句会改变值和调用函数：
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+x = 25;
+++x;
+y = sqrt(x); 
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{语句}
+尽管一条语句是一条完整的指令，但不是所有完整的指令都是语句。如
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+x = 6 + (y = 5); 
+\end{lstlisting}
+在此语句中，子表达式y = 5是一个完整的指令，但它只是一条语句的一部分。
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]\ft{语句}
+\lstinputlisting[language=c,numbers=left,frame=single]{Code/addemup.c}
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{副作用(side effect)}
+  副作用是对数据对象或文件的修改。\tf  如，以下语句
+  \begin{lstlisting}[backgroundcolor=\color{red!10}]
+i = 50;
+  \end{lstlisting}
+  的副作用是将变量i的值设置为50。\pause 
+\textcolor{acolor3}{\Huge Why? } \pause 
+\vspace{0.1in} 
+
+\begin{itemize}
+\item
+从C的角度来看，主要目的是求表达式的值。\\[0.1in]
+\item 给C一个表达式4+6，C将计算它的值为10\\[0.1in]
+\item 给C一个表达式i=50，C将计算它的值为50，而计算这个表达式的副作用就是把i的值改变为50。
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{顺序点(sequence point)}
+一个顺序点是程序执行中的一点：在该点处，所有的副作用都在进入下一步前被计算。
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{顺序点(sequence point)}
+
+
+\begin{itemize}
+\item
+\textcolor{acolor1}{语句中的分号标志了一个顺序点。} \\[0.1in]
+\item[] 它意味着一条语句中赋值运算符、自增和自减运算符所做的全部改变必须在程序进入下一条语句前发生。\\[0.1in]
+\item \textcolor{acolor1}{任何一个完整表达式的结束也是一个顺序点。}\\[0.1in]
+\item[] 所谓的完整表达式(full expression)，它不是一个更大的表达式的子表达式。\\[0.1in]
+\item[]  如一个表达式语句中的表达式和在一个while循环里作为判断条件的表达式。
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\ft{顺序点可帮助理解后缀自增动作何时发生}
+
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+while(i++ < 10)
+  printf("%d\n", i);
+\end{lstlisting}
+
+\begin{itemize}
+\item\tf 因i++ < 10是while循环的判断条件，故它是一个完整表达式，其结束就是一个顺序点。\\[0.1in] 
+\item C保证副作用在进入printf前发生，同时使用后缀模式保证了i在与10比较后才增加。
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{顺序点可帮助理解后缀自增动作何时发生}
+
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+y = (4 + x++) + (6 + x++);
+\end{lstlisting}
+
+\begin{itemize}
+\item \tf 表达式4 + x++不是一个完整表达式，故C不能保证在计算它后立即自增x。\\[0.1in] 
+\item 完整表达式是整个赋值语句，并且分号标记了顺序点，故C能保证在进入后续语句前x被增加两次。\\[0.1in] 
+\item C没有指明x是在每个子表达式倍计算后增加还是在整个表达式被计算后增加，故建议避免。
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{复合语句（代码块）}
+  \begin{dingyi}
+    \textcolor{acolor3}{复合语句}(compound statement)是使用花括号组织起来的两个或更多的语句；它也被称为一个代码块(block)。    
+  \end{dingyi}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{复合语句（代码块）}
+比较
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+index = 0;
+while (index++ < 10)
+  sam = 10 * index + 2;
+printf("sam = %d\n", sam);
+\end{lstlisting}
+
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+index = 0;
+while (index++ < 10) {
+  sam = 10 * index + 2;
+  printf("sam = %d\n", sam);
+}
+\end{lstlisting}
+\end{frame}
