@@ -35,9 +35,9 @@
 }
 \makeatletter
 \def\beamer@framenotesbegin{% at beginning of slide
-\usebeamercolor[fg]{normal text}
-\gdef\beamer@noteitems{}%
-\gdef\beamer@notes{}%
+  \usebeamercolor[fg]{normal text}
+  \gdef\beamer@noteitems{}%
+  \gdef\beamer@notes{}%
 }
 \makeatother
 
@@ -52,20 +52,19 @@
 
 \maketitle
 
-\begin{frame}{目录}
-  \Fontvi
+\begin{frame}{目录}  
+  % \Fontvi
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents[hideallsubsections]
 \end{frame}
 
-\input{ch01/sec00.tex}
-\input{ch01/sec01.tex}
-\input{ch01/sec02.tex}
-\input{ch01/sec03.tex}
-\input{ch01/sec04.tex}
-\input{ch01/sec05.tex}
-\input{ch01/sec06.tex}
+% \input{ch01/sec00.tex}
+% \input{ch01/sec01.tex}
+% \input{ch01/sec02.tex}
+% \input{ch01/sec03.tex}
+% \input{ch01/sec04.tex}
+% \input{ch01/sec05.tex}
+% \input{ch01/sec06.tex}
 \input{ch01/sec07.tex}
-
 
 \end{document}
