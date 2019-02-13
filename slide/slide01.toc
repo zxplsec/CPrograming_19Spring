@@ -1,1 +1,8 @@
-\beamer@sectionintoc {1}{编译C程序的工作原理}{3}{0}{1}
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{计算机的硬件介绍}{7}{0}{1}
+\beamer@sectionintoc {2}{计算机的基本软件组成}{19}{0}{2}
+\beamer@sectionintoc {3}{数制}{25}{0}{3}
+\beamer@sectionintoc {4}{汇编语言简介}{43}{0}{4}
+\beamer@sectionintoc {5}{C语言简介}{75}{0}{5}
+\beamer@sectionintoc {6}{C++简介}{86}{0}{6}
+\beamer@sectionintoc {7}{编译C程序的工作原理}{93}{0}{7}
