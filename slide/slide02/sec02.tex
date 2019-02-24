@@ -1,266 +1,236 @@
 \section{程序解释}
 \begin{frame}\ft{\#include指示和头文件}
 
-\lstinputlisting[
-language=c,
-linerange={2-2},
-firstnumber=2,
-numbers=left,
-frame=tb
-]{Code/first.c}
+  % \lstinputlisting[
+  % language=c,
+  % linerange={2-2},
+  % firstnumber=2,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
 
-\begin{itemize}
-\item
-相当于在此处复制文件stdio.h的完整内容，以方便在多个程序间共享公用信息。\\[0.1in]
-\item
-\#include语句是C预处理器指令的一个例子。通常，C编译器在编译前要对源代码做一些准备工作，这称为预处理。
-\\[0.1in]
-\item
-stdio.h文件包含了有关输入和输出函数的信息，以供编译器使用。
-\end{itemize}
+  \begin{itemize}
+  \item
+    相当于在此处复制文件 \lstinline|stdio.h| 的完整内容，以方便在多个程序间共享公用信息。\\[0.1in]
+  \item
+    \lstinline|\#include| 语句是C预处理器指令的一个例子。通常，C编译器在编译前要对源代码做一些准备工作，这称为预处理。
+    \\[0.1in]
+  \item
+    \lstinline|stdio.h|文件包含了有关输入和输出函数的信息，以供编译器使用。
+  \end{itemize}
 \end{frame}
 
 \begin{frame}\ft{main函数}
-\lstinputlisting[
-language=c,
-linerange={3-3},
-firstnumber=3,
-numbers=left,
-frame=tb
-]{Code/first.c}
- 
-C程序至少包含一个函数，函数是C程序的基本模块。\\[0.1in]
-\begin{table}
-\centering
-\begin{tabular}{ll}
-表达式 & 含义 \\ \hline
-(~) & main是一函数名\\[0.1in]
-int & main函数返回一整数\\[0.1in]
-void & main函数不接受任何参数 \\ \hline
-\end{tabular}
-\end{table}
- 
-注：main函数是任何C程序的唯一入口。
+  % \lstinputlisting[
+  % language=c,
+  % linerange={3-3},
+  % firstnumber=3,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
+  
+  C程序至少包含一个函数，函数是C程序的基本模块。\\[0.1in]
+  \begin{table}
+    \centering
+    \begin{tabular}{ll}
+      表达式 & 含义 \\ \hline
+      \lstinline|( )| & \lstinline|main| 为函数名\\[0.1in]
+      \lstinline|int| & \lstinline|main()| 返回一整数\\[0.1in]
+      \lstinline|void| & \lstinline|main()| 不接受任何参数 \\ \hline
+    \end{tabular}
+  \end{table}
+  
+  注：\lstinline|main()| 是任何C程序的唯一入口。
 \end{frame}
 
 \begin{frame}[fragile]\ft{main函数}
-main()函数有三种定义：
-\begin{lstlisting}[language=c,frame=single]
-// Definition 1: NOT RECOMMENDED
-void main() { /* ... */ }
+  \lstinline|main()| 有三种定义：
+  \begin{lstlisting}[language=c,frame=single]
+void main()
+{
+  /* Definition 1: NOT RECOMMENDED */
+}
 
-// Definition 2
-int main() { /* ... */ }
-
-// Definition 3
-int main(int argc, char* argv[]) { /* ... */ }
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]\ft{main函数}
-考虑main()的两种定义，它们的差别是什么？
-\begin{lstlisting}[language=c,frame=single]
 int main()
 {
-   /*  */
-   return 0;
+  /* Definition 2 */
 }
 
+int main(int argc, char* argv[])
+{
+  /* Definition 3 */
+}
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{main函数}
+  考虑main()的两种定义，它们的差别是什么？
+  \begin{minipage}{0.45\linewidth}
+  \begin{lstlisting}
+int main()
+{
+  /* ... */
+  return 0;
+}
+  \end{lstlisting}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\linewidth}
+  \begin{lstlisting}
 int main(void)
 {
-   /*  */
-   return 0;
+  /* ... */
+  return 0;
 }
-\end{lstlisting}
+  \end{lstlisting}
+    
+  \end{minipage}
+% \end{frame}
+
+% \begin{frame}[fragile]\ft{main函数}
+  \pause
+  \begin{itemize}
+  \item  在C++中，两种定义没有差别，完全一致。\\[.1in]
+  \item  在C中，两种定义都可以，但是第二种定义更好，因它清晰地表明 \lstinline|main()| 在调用时不接受任何参数。    
+  \end{itemize}
+  \pause 
+  \begin{free}[注意]{}
+    在C中，如果一个函数在定义时没有指定任何参数，就意味着在调用该函数时允许接受任意多个参数或不接受参数。
+  \end{free}
 \end{frame}
 
 \begin{frame}[fragile]\ft{main函数}
-在C++中，两种没有差别，完全一致。
-
-两种定义在C中都可以，但是第二种定义更好，因它清晰地表明main()在调用时不允许有参量。
-在C中，如果一个函数没有指定任何参量，就意味着该函数允许在调用时有任意多个参量或者无参量。
-\end{frame}
-
-\begin{frame}[fragile]\ft{main函数}
-\begin{lstlisting}[language=c,frame=single]
-// Program 1 (Compiles and runs fine in C, but not in C++)
+  \begin{lstlisting}[language=c,frame=single]
+// Program 1:
+//   Compiles and runs fine in C, but not in C++
 void fun() {  } 
 int main(void)
 {
-    fun(10, "GfG", "GQ");
-    return 0;
+  fun(10, "GfG", "GQ");
+  return 0;
 }
-\end{lstlisting}
-上述程序能编译和运行，但以下程序编译会失败。
-\end{frame}
-
-\begin{frame}[fragile]\ft{main函数}
-\begin{lstlisting}[language=c,frame=single]
-// Program 2 (Fails in compilation in both C and C++)
+  \end{lstlisting}
+  \pause
+  \begin{lstlisting}[language=c,frame=single]
+// Program 2
+// Fails in compilation in both C and C++
 void fun(void) {  }
 int main(void)
 {
-    fun(10, "GfG", "GQ");
-    return 0;
+  fun(10, "GfG", "GQ");
+  return 0;
 }
-\end{lstlisting}
-不同于C，在C++中，以上两个程序在编译时都会失败，因为在C++中，fun()和fun(void)无差别。
+  \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{main函数}
-
-因此， 在C中int main()和int main(void)差别在，前者允许在调用时有任意多个参量，而后者在调用时不能有任何参量。尽管两者在大多数时候无任何差别，但在实践中更推荐使用int main(void)。
-\end{frame}
-
-\begin{frame}[fragile]\ft{main函数}
-练习：以下C程序的输出是什么？
-\end{frame}
-
-\begin{frame}[fragile]\ft{main函数}
-\begin{lstlisting}[language=c,frame=single]
-// Question 1
-#include <stdio.h>
-int main()
-{
-    static int i = 5;
-    if (--i){
-        printf("%d ", i);
-        main(10);
-    }
-}
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]\ft{main函数}
-\begin{lstlisting}[language=c,frame=single]
-// Question 2
-
-#include <stdio.h>
-int main(void)
-{
-    static int i = 5;
-    if (--i){
-        printf("%d ", i);
-        main(10);
-    }
-}
-\end{lstlisting}
-
-\end{frame}
 
 \begin{frame}\ft{注释}
- 
-\lstinputlisting[
-language=c,
-linerange={4-4},
-firstnumber=4,
-numbers=left,
-frame=tb
-]{Code/first.c}
- 
+  
+  % \lstinputlisting[
+  % language=c,
+  % linerange={4-4},
+  % firstnumber=4,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
+  
 
 
-\begin{overprint}
-\begin{itemize}
-\item {\tf /* ... */}之间的内容是程序注释。\\[0.1in]
-\item 注释可以让阅读者更容易理解程序。\\[0.1in]
-\item 注释可以放在任意位置，甚至和它要解释的语句在同一行。\\[0.1in]
-\item 一个较长的注释可以单独放一行，也可以是多行。\\[0.1in]
-\item {\tf /* ... */}之间的所有内容都会被编译器忽略。
-\end{itemize}
-\end{overprint}
+  \begin{overprint}
+    \begin{itemize}
+    \item {\tf /* ... */}之间的内容是程序注释。\\[0.1in]
+    \item 注释可以让阅读者更容易理解程序。\\[0.1in]
+    \item 注释可以放在任意位置，甚至和它要解释的语句在同一行。\\[0.1in]
+    \item 一个较长的注释可以单独放一行，也可以是多行。\\[0.1in]
+    \item {\tf /* ... */}之间的所有内容都会被编译器忽略。
+    \end{itemize}
+  \end{overprint}
 
 \end{frame}
 
 \begin{frame}[fragile]\ft{注释}
-\begin{lstlisting}[language=c]
-/* `这是有效的C注释`*/
+  \begin{lstlisting}[language=c]
+/* valid comment  */
 
-/* `将注释分成两行写`
-   `也是可以的` */
+/* vomment can be seperated 
+   into multiple lines */
 
 /*
-   `也可以这样写`
+   valid comment
 */
 
-/* `但这是无效的注释，因为没有结束标记`
-\end{lstlisting}
-\end{frame}
+/* invalid comment
+  \end{lstlisting}
 
-\begin{frame}[fragile]\ft{注释}
-C99增加另一种风格的注释，使用{\tf //}符号。 \vspace{0.2in}
+  \begin{lstlisting}[language=c]
+// Such a comment must restricted in one line
 
-
-\begin{lstlisting}[language=c]
-// `这种注释必须限制在一行内`
-
-int n; // `这种注释也可以写在此处`
-\end{lstlisting}
+int n; // comment can be here
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]\ft{花括号，程序体和代码块}
- 
-\begin{lstlisting}[language=c,frame=tb]
+  
+  \begin{lstlisting}[language=c,frame=tb]
 {
   ...
 }
-\end{lstlisting}
- 
-\begin{itemize}
-\item
-C函数使用花括号表示函数体的开始和结束。\\[0.2in]
-\item
-花括号还可以用来把函数中的语句聚集到一个单元或代码块中。
-\end{itemize}
+  \end{lstlisting}
+  
+  \begin{itemize}
+  \item
+    C函数使用花括号表示函数体的开始和结束。\\[0.2in]
+  \item
+    花括号还可以用来把函数中的语句聚集到一个单元或代码块中。
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{声明}
-\lstinputlisting[
-language=c,
-linerange={6-6},
-firstnumber=6,
-numbers=left,
-frame=tb
-]{Code/first.c}
+  % \lstinputlisting[
+  % language=c,
+  % linerange={6-6},
+  % firstnumber=6,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
 
- 
-该语句为声明语句（declaration statement），做两件事情：\vspace{0.1in}
-\begin{itemize}
-\item[(1)]
-在内存中为变量num分配了空间。\\[0.1in]
-\item[(2)]
-int说明变量num的类型（整型）。
-\end{itemize} \vspace{0.1in}
+  
+  该语句为声明语句(declaration statement)，做两件事情：\vspace{0.1in}
+  \begin{itemize}
+  \item[(1)]
+    在内存中为变量 \lstinline|num| 分配了空间。\\[0.1in]
+  \item[(2)]
+    \lstinline|int| 说明变量 \lstinline|num| 的类型（整型）。
+  \end{itemize} \vspace{0.1in}
 
-\pause 
+  \pause 
 
-注意：分号指明该行是C的一个语句。分号是语句的一部分。
- 
+  注意：分号指明该行是C的一个语句。分号是语句的一部分。
+  
 \end{frame}
 
 \begin{frame}[fragile]\ft{声明}
-Ansi C要求必须在一个代码块的开始处声明变量，在这之前不允许其他任何语句。
+  Ansi C要求必须在一个代码块的开始处声明变量，在这之前不允许其他任何语句。
 
-\begin{lstlisting}[
-language=c,
-numbers=left,
-frame=tb
-]
-int main(void)
-{
-  int n;
-  int m;
-  n = 5;
-  m = 3;
-  // other statements
-}
-\end{lstlisting}
+  \begin{lstlisting}[
+    language=c,
+    numbers=left,
+    frame=tb
+    ]
+    int main(void)
+    {
+      int n;
+      int m;
+      n = 5;
+      m = 3;
+      // other statements
+    }
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]\ft{声明}
-C99遵循C++的惯例，允许把声明放在代码块的任何位置。但是在首次使用变量之前仍必须先声明它。
+  C99遵循C++的惯例，允许把声明放在代码块的任何位置。但是在首次使用变量之前仍必须先声明它。
 
-\begin{lstlisting}[
+  \begin{lstlisting}[
 language=c,
 numbers=left,
 frame=tb
@@ -274,162 +244,168 @@ int main(void)
   m = 3;
   // other statements
 }
-\end{lstlisting}
+  \end{lstlisting}
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{声明}
-\begin{wenti}
-\begin{itemize}
-\item 数据类型是什么？
-\item 可以选择什么样的名字？
-\item 为什么必须对变量进行声明？
-\end{itemize}
-\end{wenti}
+  \begin{question}[]{}
+    \begin{itemize}
+    \item 数据类型是什么？
+    \item 可以选择什么样的名字？
+    \item 为什么必须对变量进行声明？
+    \end{itemize}
+  \end{question}
 \end{frame}
 
 \begin{frame}[fragile]\ft{声明}
-\begin{enumerate}[1]
-\item 数据类型\\[0.1in]
-\item[] C可以处理多个数据种类，如整数、字符和浮点数。\\[0.1in]
-\item[] 把一个变量声明为整数类型、字符类型或浮点数类型，是计算机正确地存储、获取和解释该数据的基本前提。
-\end{enumerate}
-\end{frame}
+  \begin{enumerate}[1]
+  \item 数据类型\\[0.1in]
+    \begin{itemize}
+    \item C可以处理多种数据类型，如整数、字符和浮点数。\\[0.1in]
+    \item \red{把一个变量声明为整数类型、字符类型或浮点数类型，是计算机正确地存储、获取和解释该数据的基本前提。}
+    \end{itemize}
+  \end{enumerate}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{声明}
-\begin{enumerate}[2]
-\item 名字的选取\\[0.1in]
-\item[] 应尽量使用有意义的变量名。\\[0.1in]
-\item[] 若名字不能表达清楚，可以用注释解释变量所代表的意思。\\[0.1in]
-\item[] 通过这些方式使程序更易读是良好编程的基本技巧之一。
-\end{enumerate}
-\end{frame}
-
-
-\begin{frame}[fragile]\ft{声明}
-\textcolor{acolor3}{命名规则：} \vspace{0.1in}
-\begin{enumerate}
-\item 只能使用字母、数字和下划线，且第一个字符不能为数字。 \\[0.1in]
-\item 操作系统和C库通常使用以一个或两个下划线开始的名字，因此最好避免这种用法。 \\[0.1in]
-\item C区分大小写，如stars不同于Stars或STARS。
-
-\end{enumerate}
-
+% \begin{frame}[fragile]\ft{声明}
+  \begin{enumerate}[2]
+  \item 如何命名？\\[0.1in]
+    \begin{itemize}
+    \item 应尽量使用有意义的变量名。\\[0.1in]
+    \item 若名字不能表达清楚，可以用注释解释变量所代表的意思。\\[0.1in]
+    \item 通过这些方式使程序更易读是良好编程的基本技巧之一。 
+    \end{itemize}
+  \end{enumerate}
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{声明}
-
-\begin{table}
-\centering
-\caption{正确和错误的名字}
-\begin{tabular}{c|c}\hline
-${\checkmark}$&${\texttimes}$\\[0.1in]\hline
-wiggles &   \$zj**\\[0.1in]
-cat2 &  2cat\\[0.1in]
-Hot\_Dog &  Hot-Dog\\[0.1in]
-taxRate &  tax Rate\\[0.1in]
-\_kcab &  don't\\\hline
-\end{tabular}
-\end{table}
+  \begin{free}[命名规则]{} 
+      \begin{enumerate}
+      \item 只能使用字母、数字和下划线，且第一个字符不能为数字。 \\[0.1in]
+      \item 操作系统和C库通常使用以一个或两个下划线开始的名字，因此最好避免这种用法。 \\[0.1in]
+      \item C区分大小写，如 \lstinline|stars| 不同于 \lstinline|Stars| 或 \lstinline|STARS|.
+      \end{enumerate}
+    \end{free}
+% \end{frame}
 
 
+% \begin{frame}[fragile]\ft{声明}
+
+  \begin{table}
+    \centering
+    % \caption{正确和错误的名字}
+    \begin{tabular}{c|c}\hline
+      Yes& No\\[0.1in]\hline
+      \lstinline|wiggles|  &  \lstinline|$zj**|\\[0.1in]
+      \lstinline|cat2|     &  \lstinline|2cat|\\[0.1in]
+      \lstinline|Hot_Dog|  &  \lstinline|Hot-Dog|\\[0.1in]
+      \lstinline|taxRate|  &  \lstinline|tax Rate|\\[0.1in]
+      \lstinline|_kcab|    &  \lstinline|don't|\\\hline
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{声明}
-\begin{enumerate}[3]
-\item 声明变量的好处\\[0.1in]
-\item[] 把所有变量放在一起，可以让读者更容易掌握程序的内容。
-\\[0.1in]
-\item[] 在开始编写程序之前，考虑一下需要声明的变量会促使你做一些计划。\\[0.1in]
-\item[] 声明变量可以帮助避免程序中出现一类很难发现的细微错误，即变量名的错误拼写。\\[0.1in]
-\item[] 若没有声明所有变量，将不能编译C程序。
-\end{enumerate}
+  \begin{enumerate}[3]
+  \item 声明变量的好处\\[0.1in]
+    \begin{itemize}
+    \item 把所有变量放在一起，可以让读者更容易掌握程序的内容。
+      \\[0.1in]
+    \item 在开始编写程序之前，考虑一下需要声明的变量会促使你做一些计划。\\[0.1in]
+    \item 声明变量可以帮助避免程序中出现一类很难发现的细微错误，即变量名的错误拼写。\\[0.1in]
+    \item 若没有声明所有变量，将不能编译C程序。
+
+    \end{itemize}
+  \end{enumerate}
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{赋值}
-\lstinputlisting[
-language=c,
-linerange={7-7},
-firstnumber=7,
-numbers=left,
-frame=tb
-]{Code/first.c}
+  % \lstinputlisting[
+  % language=c,
+  % linerange={7-7},
+  % firstnumber=7,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
 
- 
-该语句是赋值语句（Assignment statement）。赋值语句是C语言的一种基本操作。\vspace{0.1in}
+  
+  该语句是赋值语句(Assignment statement)。赋值语句是C语言的一种基本操作。\vspace{0.1in}
 
-含义：把值赋给变量num。
- 
+  含义：把值赋给变量 \lstinline|num|。
+  
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{printf函数}
-\lstinputlisting[
-language=c,
-linerange={8-10},
-firstnumber=8,
-numbers=left,
-frame=tb
-]{Code/first.c}
- 
+  % \lstinputlisting[
+  % language=c,
+  % linerange={8-10},
+  % firstnumber=8,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
+  
 
-每行都使用了C的一个标准函数printf，其信息由头文件stdio.h指定。
-\vspace{0.1in}
+  每行都使用了C的一个标准函数 \lstinline|printf()|，其信息由头文件 \lstinline|stdio.h| 指定。
+  \vspace{0.1in}
 
-圆括号表明printf为函数名，圆括号内为参数（argument）。这里的参数都是字符串，即双引号之间的内容。
- 
+  圆括号 \lstinline|()| 表明 \lstinline|printf| 为函数名，圆括号内为参数(argument)。这里的参数都是字符串，即双引号之间的内容。
+  
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{转义字符}
- 
-转义字符通常用于代表难以表达或无法键入的字符，以“$\backslash$”开头。
- 
-\begin{table}
-\centering
-\begin{tabular}{cc} \hline
-转移字符 & 含义 \\ \hline  
-$\backslash$n & 换行\\
-$\backslash$t & Tab键\\
-$\backslash$b & 退格\\
-$\backslash$' & 单引号\\
-$\backslash$" & 双引号\\
-$\backslash\backslash$ & 反斜杠\\
-\hline 
-\end{tabular}
-\end{table}
+      
+  转义字符通常用于代表难以表达或无法键入的字符，以 \lstinline|\| 开头。
+  
+  \begin{table}
+    \centering
+    \begin{tabular}{cc} \hline
+      转移字符 & 含义 \\ \hline  
+      \lstinline|\n| & 换行\\
+      \lstinline|\t| & Tab键\\
+      \lstinline|\b| & 退格\\
+      \lstinline|\'| & 单引号\\
+      \lstinline|\"| & 双引号\\
+      \lstinline|\\| & 反斜杠\\
+      \hline 
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{格式化字符串}
-格式化字符串，也称占位符，用以指定输出项的数据类型和输出格式，以“\%”开头。
+  格式化字符串，也称占位符，用以指定输出项的数据类型和输出格式，
+  以 \lstinline|%| 开头。
 
-\begin{table}
-\centering
-\begin{tabular}{p{2cm}|p{8cm}}\hline
-占位符 & 含义 \\ \hline  
-\%d & 用于输出十进制整数（实际长度）\\[0.1in]
-\%c & 输出一个字符\\[0.1in]
-\%s & 输出一个字符串\\[0.1in]
-\%f & 以小数形式输出实数（整数部分全部输出，小数部分6位）\\
-\hline 
-\end{tabular}
-\end{table}
- 
+  \begin{table}
+    \centering
+    \begin{tabular}{p{2cm}|p{8cm}}\hline
+      占位符 & 含义 \\ \hline  
+      \lstinline|%d| & 用于输出十进制整数（实际长度）\\[0.1in]
+      \lstinline|%c| & 输出一个字符\\[0.1in]
+      \lstinline|%s| & 输出一个字符串\\[0.1in]
+      \lstinline|%f| & 以小数形式输出实数（整数部分全部输出，小数部分6位）\\
+      \hline 
+    \end{tabular}
+  \end{table}
+  
 \end{frame}
 
 \begin{frame}[fragile]\ft{return语句}
-\lstinputlisting[
-language=c,
-linerange={11-11},
-firstnumber=11,
-numbers=left,
-frame=tb
-]{Code/first.c}
+  % \lstinputlisting[
+  % language=c,
+  % linerange={11-11},
+  % firstnumber=11,
+  % numbers=left,
+  % frame=tb
+  % ]{Code/first.c}
 
-带有返回值的C函数要求使用一个return语句，该语句包含关键字return，后面紧跟要返回的值。
+  带有返回值的C函数要求使用一个 \lstinline|return| 语句，
+  该语句包含关键字 \lstinline|return|，后面紧跟要返回的值。
 
 \end{frame}

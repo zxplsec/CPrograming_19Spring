@@ -1,0 +1,11 @@
+\ft{整数的上溢}
+
+当达到最大值时，将溢出到起始点。\vspace{0.05in}
+\begin{itemize}
+\item 对于unsigned int类型，起始点是0；\\[0.1in]
+\item 对于int类型，起始点为-2147483648。
+\end{itemize}
+
+\vspace{0.1in}
+ 注意： 当整数溢出时，编译器不会给出任何提示，故编程时必须谨慎对待此类问题。
+

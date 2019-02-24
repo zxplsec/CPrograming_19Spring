@@ -1,10 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.11.23)  13 FEB 2019 00:46
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.11.23)  23 FEB 2019 22:41
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input slide01.tex
-(./slide01.tex (/usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamer.cls
+**slide01.tex
+(./slide01.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamer.cls
 (/usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasercs.sty
 Package: beamerbasercs 2015/03/08 (rcs-revision 368aa9ba9d38)
 )
@@ -4487,10 +4489,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
 Here is how much of TeX's memory you used:
  64101 strings out of 493591
  1478577 string characters out of 6143545
- 1841563 words of memory out of 5000000
+ 1841565 words of memory out of 5000000
  66239 multiletter control sequences out of 15000+600000
  70977 words of font info for 89 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 73i,16n,107p,10424b,1214s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,16n,107p,10417b,1214s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on slide01.pdf (121 pages).

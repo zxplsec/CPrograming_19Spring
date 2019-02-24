@@ -11,10 +11,9 @@
 %\end{frame}
 
 \begin{frame}\ft{常量}
-\begin{dingyi}\textcolor{acolor3}{常量}
-
-在程序执行过程中，其值不发生改变的量称为常量。
-\end{dingyi} \vspace{0.1in}
+\begin{defn}[\blue{常量}]{}
+在程序执行过程中，值不发生改变的量称为常量。
+\end{defn} \vspace{0.1in}
 
 常量分为两类：\vspace{0.05in}
 
@@ -23,7 +22,6 @@
 \item 符号常量
 \end{enumerate}
 \end{frame}
-
 
 \begin{frame}\ft{直接常量}
 
@@ -36,33 +34,32 @@
 
 \begin{frame}[fragile]\ft{符号常量}
 
-\begin{dingyi}\textcolor{acolor3}{标识符}
-
+\begin{defn}[\blue{标识符}]{}
 用来标识变量名、符号常量名、函数名、数组名、类型名、文件名的有效字符序列。
-\end{dingyi} \pause \vspace{0.1in}
+\end{defn} \pause \vspace{0.1in}
 
-\begin{dingyi}\textcolor{acolor3}{符号常量}
-
-在C语言中，可以用一个标识符来表示一个常量，称之为符号常量。
-\end{dingyi} 
+\begin{defn}[\blue{符号常量}]{}
+在C/C++中，可以用一个标识符来表示一个常量，称之为符号常量。
+\end{defn} 
 \end{frame}
 
 \begin{frame}[fragile]\ft{符号常量}
-符号常量在使用之前必须先定义，其一般形式为：
-\begin{lstlisting}[language=C]
+
+  符号常量在使用之前必须先定义，其一般形式为：
+\begin{lstlisting}
 #define `标识符` `常量`
 \end{lstlisting}
 \vspace{0.05in}
 
 \begin{itemize}
-\item \#define是一条预处理命令，称为宏定义命令。\\[0.1in]
+\item  \lstinline|#define| 是一条预处理命令，称为\red{宏定义}。\\[0.1in]
 \item 功能是把该标识符定义为其后的常量值。\\[0.1in]
-\item 一经定义，以后在程序中所有出现该标识符的地方均代之以该常量值。
+\item 一经定义，在程序的预处理阶段该标识符会被替换成该常量值。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{符号常量}
-\begin{lstlisting}[language=c,title=price.c,frame=single,numbers=left]
+\begin{lstlisting}
 #include<stdio.h>
 #define PRICE 100
 int main(void)
@@ -75,9 +72,10 @@ int main(void)
 }
 \end{lstlisting}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{符号常量}
+% \begin{frame}[fragile]\ft{符号常量}
+\pause 
 使用符号常量的好处是：\vspace{0.05in}
 
 \begin{itemize}
@@ -88,10 +86,9 @@ int main(void)
 
 
 \begin{frame}\ft{变量}
-\begin{dingyi}\textcolor{acolor3}{变量}
-
-在程序执行过程中，其值可以改变的量称为变量。
-\end{dingyi}
+\begin{defn}[\blue{变量}]{}
+在程序执行过程中，值可以改变的量称为变量。
+\end{defn}
 
 \begin{itemize}
 \item
@@ -104,8 +101,8 @@ int main(void)
 
 \begin{frame}\ft{变量}
 \begin{itemize}
-\item
-一般放在函数体的开头部分。\\[0.1in]
+\item 在C中，变量的定义一般放在函数体的开头部分。\\[0.1in]
+\item 在C++中，变量的定义可以放在任何位置。\\[0.1in]  
 \item
 要区分变量名和变量值是两个不同的概念。
 \end{itemize}
@@ -125,11 +122,11 @@ int main(void)
 \end{frame}
 
 
-\begin{frame}\ft{数据类型}
-\begin{figure}
-\includegraphics[width=3.5in]{Fig/datatype}
-\end{figure}
-\end{frame}
+% \begin{frame}\ft{数据类型}
+% \begin{figure}
+% \includegraphics[width=3.5in]{Fig/datatype}
+% \end{figure}
+% \end{frame}
 
 
 \begin{frame}\ft{数据类型}
@@ -146,32 +143,89 @@ int main(void)
 \begin{table}
 \centering
 \begin{tabular}{p{2cm}|p{2cm}|p{2cm}}\hline
-int & signed & \_Bool \\[0.05in]
-long & void & \_Complex \\[0.05in]
-short & & \_Imaginary\\[0.05in]
-unsigned &&\\[0.05in]
-char &&\\[0.05in]
-float &&\\[0.05in]
-double &&\\\hline
+\lstinline|int| & \lstinline|signed| & \lstinline|_Bool| \\[0.05in]
+\lstinline|long| & \lstinline|void| & \lstinline|_Complex| \\[0.05in]
+\lstinline|short| & & \lstinline|_Imaginary|\\[0.05in]
+\lstinline|unsigned| &&\\[0.05in]
+\lstinline|char| &&\\[0.05in]
+\lstinline|float| &&\\[0.05in]
+\lstinline|double| &&\\\hline
 \end{tabular}
 \end{table}
 \end{frame}
 
 \begin{frame}\ft{数据类型关键字}
 \begin{itemize}
-\item 
-int提供基本整型，long、short、unsigned和signed为其变种。\\[0.1in]
-\item
-char用于表示字母及其他字符（如\#、\$、\%、*等），也可表示小的整数。\\[0.1in]
-\item
-float、double和long double表示浮点型数。\\[0.1in]
-\item \_Bool表示布尔值（true和false）。\\[0.1in]
-\item \_Complex和\_Imaginary分别表示复数和虚数。\\[0.2in]
+\item 整型
+  \begin{itemize}
+  \item \lst|int|
+  \item \lst|long|、\lst|short|、\lst|unsigned| 和 \lst|signed|
+  \end{itemize}
+\item 字符型：
+  \begin{itemize}
+  \item \lst|char|
+  \end{itemize}
+\item 浮点型
+  \begin{itemize}
+  \item \lst|float|、\lst|double| 和 \lst|long double| 
+  \end{itemize}
+\item 布尔型：（布尔值为\lst|true| 和 \lst|false|）
+  \begin{itemize}
+  \item C：\lst|_Bool|
+  \item C++: \lst|bool|
+  \end{itemize}
+\item 复数： 
+  \begin{itemize}
+  \item C： \lst|complex|
+  \item C++：\lst|complex| 
+  \end{itemize}
 \end{itemize}
-\textcolor{acolor1}{这些类型按其存储方式被分为两类：整型和浮点型。}
+\end{frame}
+
+\begin{frame}{布尔类型}
+  \lstinputlisting[basicstyle=\ttfamily\small]{slide03/code/bool.c} \pause 
+  \lstinputlisting[basicstyle=\ttfamily\small]{slide03/code/bool.cpp}
+\end{frame}
+
+\begin{frame}{复数类型}
+  \begin{table}
+    \centering
+    \caption{C风格的复数类型及其操作，需要用到头文件 \lst|complex.h|}
+    \begin{tabular}{p{2cm}|p{6cm}}\hline
+      函数&功能\\\hline
+      \lst|creal| & 获取复数的实部\\
+      \lst|cimag| & 获取复数的虚部\\
+      \lst|conj|  & 获取复数的共轭\\
+      \lst|cabs|  & 获取复数的模\\
+      \lst|carg|  & 获取幅角\\\hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{复数类型}
+  \lstinputlisting[basicstyle=\ttfamily\small]{slide03/code/complex.c}
 \end{frame}
 
 
+\begin{frame}{复数类型} 
+  \begin{table}
+    \centering
+    \caption{C++风格的复数类型及其操作，需要用到头文件 \lst|complex|}
+    \begin{tabular}{p{2cm}|p{6cm}}\hline
+      方法&功能\\\hline
+      \lst|real| & 获取复数的实部\\
+      \lst|imag| & 获取复数的虚部\\
+      \lst|conj| & 获取复数的共轭\\
+      \lst|abs|  & 获取复数的模\\
+      \lst|arg|  & 获取复数的幅角\\\hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+
+\begin{frame}{复数类型} 
+  \lstinputlisting[basicstyle=\ttfamily\small]{slide03/code/complex.cpp}
+\end{frame}
 
 
 

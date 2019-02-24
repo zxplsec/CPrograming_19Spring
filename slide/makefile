@@ -1,4 +1,4 @@
-file=slide01
+file=slide03
 
 all: pdf out 
 	make pdf

@@ -4,57 +4,66 @@
 \item 变量命名时做到“见其名知其意”；\\[0.1in]
 \item 合理使用注释；\\[0.1in]
 \item 使用空行分隔一个函数的各个部分，如声明、操作等；\\[0.1in]
-\item 每条语句用一行。注意，C允许把多条语句放在同一行或一条语句放多行。
+\item 每条语句用一行。注意，C允许把多条语句放在同一行或一条语句放多行；\\[0.1in]
+\item 建议在程序开始处用一个注释说明文件名和程序的作用。该过程花不了多少时间，但对以后浏览或打印程序很有帮助；\\[.1in]
+\item 当程序比较复杂时，使用多个函数会可实现程序的模块化，使程序可读性更强。
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{提高程序可读性}
-\begin{lstlisting}[
-language=c,
-frame=single,
-numbers=left
-]
-// mile_km.c: Convert 2 miles to kilometers
-#include<stdio.h>
-int main(void) 
-{
-  float mile, km;	
-  mile = 2;
-  km = 1.6 * mile;
-  printf("%d mile = %d km\n", mile, km);
-  printf("Yes, %d km\n", 1.6 * mile);
-  return 0;
-}
-\end{lstlisting}
-\end{frame}
+% \begin{frame}[fragile]\ft{提高程序可读性}
+% \begin{lstlisting}[
+% language=c,
+% frame=single,
+% numbers=left
+% ]
+% // mile_km.c: Convert 2 miles to kilometers
+% #include<stdio.h>
+% int main(void) 
+% {
+%   float mile, km;       
+%   mile = 2;
+%   km = 1.6 * mile;
+%   printf("%d mile = %d km\n", mile, km);
+%   printf("Yes, %d km\n", 1.6 * mile);
+%   return 0;
+% }
+% \end{lstlisting}
+% \end{frame}
 
 
-\begin{frame}[fragile]\ft{程序说明}
-建议在程序开始处用一个注释说明文件名和程序的作用。该过程花不了多少时间，但对以后浏览或打印程序很有帮助。
-\end{frame}
+% \begin{frame}[fragile]{\secname}
 
-\begin{frame}[fragile]\ft{多个声明}
-\begin{lstlisting}[
-language=c,
-frame=single,
-numbers=left
-]
-  float mile, km;
-\end{lstlisting}
-等同于
-\begin{lstlisting}[
-language=c,
-frame=single,
-numbers=left
-]
-  float mile;
-  float km;
-\end{lstlisting}
-\end{frame}
+% \begin{lstlisting}[
+% language=c,
+% frame=single,
+% % numbers=left
+% ]
+%   float mile, km;
+% \end{lstlisting}
+% 等同于
+% \begin{lstlisting}[
+% language=c,
+% frame=single,
+% % numbers=left
+% ]
+%   float mile;
+%   float km;
+% \end{lstlisting}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{输出多个值}
-第一个printf语句用了两个占位符：第一个\%d为mile占位，第二个\%d为km占位；圆括号中有三个参数，之间用逗号隔开。\vspace{0.1in}
+% \begin{frame}[fragile]\ft{\secname}
 
-第二个printf语句说明输出的值可以是一个表达式。
-\end{frame}
+%   \begin{itemize}
+%   \item 第一个 \lstinline|printf| 语句用了两个占位符：
+%     \begin{itemize}
+%     \item 第一个 \lstinline|%d| 为  \lstinline|mile| 占位
+%     \item 第二个 \lstinline|%d| 为  \lstinline|km| 占位
+%     \item 圆括号 \lstinline|()| 中有三个参数，之间用逗号隔开。
+%     \end{itemize}
+
+%   \item  第二个 \lstinline|printf| 语句说明输出的值可以是一个表达式。
+%   \end{itemize}
+
+
+% \end{frame}

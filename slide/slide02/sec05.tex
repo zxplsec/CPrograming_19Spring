@@ -9,16 +9,16 @@ int main(void)
   /* `该程序含几个错误`    
   n = 5; n2 = n * n;
   n3 = n2 * n2;
-  printf("n = %d, n^2 = %d, n^3 = %d\n", n, n2, n3)	 
+  printf("n = %d, n^2 = %d, n^3 = %d\n", n, n2, n3)      
   return 0;
 )
 \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]\ft{语法错误}
-\begin{dingyi} 
-\textcolor{acolor3}{语法错误}是指把正确的C符号放在了错误的位置。
-\end{dingyi}\pause 
+\begin{defn}[]{} 
+\red{语法错误}是指把正确的C符号放在了错误的位置。
+\end{defn}\pause 
 
 \begin{enumerate}
 \item 使用圆括号而不是花括号来包围函数体。\\[0.1in]
@@ -37,15 +37,15 @@ int n2;
 int n3;
 \end{lstlisting}
 \end{minipage}
-\item 注释应该用“{\tf /* ... */}”或“{\tf // ...}”的形式。\\[0.1in]
-\item printf语句最后漏掉了分号。
+\item 注释应该用 \lstinline|/* ... */| 或 \lstinline|// ...| 的形式。\\[0.1in]
+\item \lstinline|printf| 语句最后漏掉了分号。
 \end{enumerate}
 \end{frame}
 
 \begin{frame}[fragile]\ft{语法错误}
-\begin{wenti}
+\begin{question}[]{}
 如何检测语法错误？
-\end{wenti}\pause 
+\end{question}\pause 
 
 \begin{enumerate}
 \item 在编译前看看源代码是否有明显的错误。\\[0.1in]
@@ -56,9 +56,9 @@ int n3;
 
 
 \begin{frame}[fragile]\ft{语义错误}
-\begin{dingyi}
-语义错误指意思上的错误。当语法没有错误，但结果不正确时，就是犯了语义错误。
-\end{dingyi}\pause 
+\begin{defn}[]{}
+\red{语义错误}指意思上的错误。当语法没有错误，但结果不正确时，就是犯了语义错误。
+\end{defn}\pause 
 
 观察代码
 \begin{lstlisting}[language=c,frame=tb]

@@ -1,16 +1,18 @@
 \section{例子}
 
 \begin{frame}[fragile]\ft{\secname}
+  \begin{question}[]{}
   编制程序，实现华氏温度到摄氏温度的转换。转化公式为
   $$
   C = \frac59 (F-32).
   $$
-  其中$F$表示华氏温度，$C$表示摄氏温度。
+  其中$F$表示华氏温度，$C$表示摄氏温度。    
+  \end{question}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
 
-\lstinputlisting[language=C,numbers=left,frame=single]{Code/fah2cel.c}
+  \lstinputlisting[language=C,numbers=left,frame=single]{slide03/code/fah2cel.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -27,30 +29,36 @@ Please input the Fahrenheit temperature:
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
-\item 新的变量声明：
+\item 变量声明：
 \begin{lstlisting}
 float fah, cel;
 \end{lstlisting}
 float类型可以处理小数。\\[0.1in]
-\item 格式说明符\%f，用于输出浮点型数据。\%.2f可以精确控制输出格式，使浮点数显示到小数点后两位。\\[0.1in]
-\item 使用scanf函数为程序提供键盘输入。
-\item[] \%f指示scanf从键盘读取一个浮点数；
-\item[] \&fah表示变量fah的位置，指定将输入值赋给变量fah。
+\item 格式说明符 \lstinline|%f| 用于输出浮点型数据。 \lstinline|%.2f| 可以精确控制输出格式，使浮点数显示到小数点后两位。\\[0.1in]
+\item 使用 \lstinline|scanf()| 函数为程序提供键盘输入。 \\[.1in]
+  \begin{itemize}
+  \item \lstinline|%f|指示 \lstinline|scanf()| 从键盘读取一个浮点数；\\[.1in]
+  \item \lstinline|&fah| 表示变量 \lstinline|fah| 的地址，指定将输入值赋给变量 \lstinline|fah| 。
+  \end{itemize}
 
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{\secname}
-\begin{itemize}
-\item
-该程序的最大特点是\textcolor{acolor1}{交互性}，交互性使得程序更加灵活。\\[0.1in]
-\item[] 例如，该程序可以输入任意的华氏温度，而不必每次重写。\\[0.2in]
-\item scanf()和printf()使得这种交互成为可能。\\[0.1in]
-\item[] scanf()从键盘读取数据并将其传递给程序；\\[0.1in]
-\item[] printf()则从程序读取数据并将其打印到屏幕。\\[0.1in]
-\item[] 两者一起使用，就建立起了人机之间的双向通信。
-\end{itemize}
+  \begin{itemize}
+  \item
+    该程序的最大特点是\red{交互性}，交互性使得程序更加灵活。\\[0.1in]
+    \begin{itemize}
+    \item 例如，该程序可以输入任意的华氏温度，而不必每次重写。\\[0.2in]
+    \end{itemize}
+  \item  \lstinline|scanf()| 和  \lstinline|printf()| 使得这种交互成为可能。\\[0.1in]
+    \begin{itemize}
+    \item  \lstinline|scanf()| 从键盘读取数据并将其传递给程序；\\[0.1in]
+    \item  \lstinline|printf()| 则从程序读取数据并将其打印到屏幕。\\[0.1in]
+    \item 两者一起使用，就建立起了人机之间的双向通信。
+    \end{itemize}
+  \end{itemize}
 
 \end{frame}
 
