@@ -1,0 +1,14 @@
+----float---
+ range: 1.175494e-38 ~ 3.402823e+38
+ epsilon: 1.192093e-07
+ size:  4 bytes
+
+----double---
+ range: 2.225074e-308 ~ 1.797693e+308
+ epsilon: 2.220446e-16
+ size:  8 bytes
+
+----long double---
+ range: 3.362103e-4932 ~ 1.189731e+4932
+ epsilon: 1.084202e-19
+ size:  16 bytes

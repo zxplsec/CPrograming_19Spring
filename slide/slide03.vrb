@@ -1,11 +1,11 @@
-\ft{整数的上溢}
+\ft{浮点型数据舍入误差}
+  \lstinputlisting{slide03/code/float_error.c}
+  \pause
+  \lstinputlisting{slide03/code/float_error.c.output}
 
-当达到最大值时，将溢出到起始点。\vspace{0.05in}
-\begin{itemize}
-\item 对于unsigned int类型，起始点是0；\\[0.1in]
-\item 对于int类型，起始点为-2147483648。
-\end{itemize}
+  \pause
 
-\vspace{0.1in}
- 注意： 当整数溢出时，编译器不会给出任何提示，故编程时必须谨慎对待此类问题。
+  \begin{free}[解释]{}
+    数字 \lst|2.0e20| 加 \lst|1|， 变化的是第 \lst|21| 位，要计算正确，至少需要存储 \lst|21| 位的数字，而 \lst|float|型数字只有6、7位有效数字，故该计算注定不正确。
+  \end{free}
 

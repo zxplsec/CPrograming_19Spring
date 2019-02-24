@@ -1,2 +1,5 @@
-\beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{整型数据}{3}{0}{1}
+\beamer@sectionintoc {1}{例子}{3}{0}{1}
+\beamer@sectionintoc {2}{基本概念}{9}{0}{2}
+\beamer@sectionintoc {3}{整型数据}{28}{0}{3}
+\beamer@sectionintoc {4}{\lstinline |char| 类型}{57}{0}{4}
+\beamer@sectionintoc {5}{浮点型数据}{69}{0}{5}

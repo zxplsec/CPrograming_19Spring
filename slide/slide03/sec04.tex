@@ -15,23 +15,49 @@ $0.000~056$ & $5.6\times10^{-5}$ & 5.6e-5\\\hline
 
 
 \begin{frame}\ft{浮点数的存储方式}
-C的浮点数包括float（单精度）、double（双精度）和long double类型。 
+  C的浮点数包括
+  \begin{itemize}
+  \item \lst|float|（单精度）
+  \item \lst|double|（双精度）
+  \item \lst|long double| 
+  \end{itemize}
+
 \end{frame}
-%
+% 
 %
 \begin{frame}\ft{浮点数的存储方式}
 
 C标准规定，
 \begin{itemize}
-\item float数据占32位，至少能表示6位有效数字，取值范围至少为$10^{-37}$到$10^{+37}$。
-\item double数据占64位，至少能表示10位有效数字，最小取值范围和float相同。
-\item C只保证long double类型至少同double类型一样精确。
+\item  \lst|float|数据占32位，至少能表示6位有效数字，取值范围至少为$10^{-37}$到$10^{+37}$。
+\item  \lst|double|数据占64位，至少能表示10位有效数字，最小取值范围和 \lst|float|相同。
+\item C只保证 \lst|long double| 类型至少同 \lst|double|类型一样精确。
 \end{itemize}
 \vspace{0.1in}
 
-两者在存储方式上都遵从IEEE规范，float遵从IEEE R32.24，而double遵从IEEE R64.53。
+两者在存储方式上都遵从IEEE规范， \lst|float|遵从IEEE R32.24，而 \lst|double|遵从IEEE R64.53。
 \end{frame}
-%
+
+\begin{frame}[fragile]{\secname}
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float.c} 
+\end{frame}
+
+\begin{frame}[fragile]{\secname}
+    \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float.c.output} 
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]{\secname}
+  \lstinputlisting[basicstyle=\ttfamily\footnotesize]
+  {slide03/code/float.cpp} 
+  \end{frame}
+
+  \begin{frame}[fragile]{\secname}
+    \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float.cpp.output} 
+\end{frame}
+% %
 \begin{frame}\ft{浮点数的存储方式}
 无论是单精度还是双精度在存储中都分为三个部分：
 
@@ -44,56 +70,62 @@ C标准规定，
 尾数部分(mantissa)
 \end{enumerate}
 \end{frame}
-%
-\begin{frame}\ft{浮点数的存储方式}
-\begin{figure}
-\centering
-\input{Tikz/float_storage}
-\caption{float数据的存储方式}
-\end{figure}
-\end{frame}
-%
-\begin{frame}\ft{浮点数的存储方式}
-\begin{figure}
-\centering
-\input{Tikz/double_storage}
-\caption{double数据的存储方式}
-\end{figure}
-\end{frame}
-%
+% %
+% \begin{frame}\ft{浮点数的存储方式}
+% \begin{figure}
+% \centering
+% \input{Tikz/float_storage}
+% \caption{ \lst|float|数据的存储方式}
+% \end{figure}
+% \end{frame}
+% %
+% \begin{frame}\ft{浮点数的存储方式}
+% \begin{figure}
+% \centering
+% \input{Tikz/double_storage}
+% \caption{ \lst|double|数据的存储方式}
+% \end{figure}
+% \end{frame}
+% %
 \begin{frame}\ft{浮点数的存储方式}
 R32.24和R64.53的存储方式都用科学计数法来存储数据。
 
-\begin{li}
-120.5的二进制表示为1110110.1，二进制科学计数法表示为1.1101101$\times 2^6$。
-\end{li}
+\begin{free}[例]{}
+  因$(120.5)_{10} = (1110110.1)_2$，故其二进制科学计数法表示为
+  $$
+  (1.1101101\times 2^6)_2
+  $$
+\end{free}
 
-\end{frame}
-%
-\begin{frame}\ft{浮点数的存储方式}
-\textcolor{acolor5}{任何一个数的二进制科学计数法表示都为
+% \end{frame}
+% %
+% \begin{frame}\ft{浮点数的存储方式}
+
+\pause 
+\begin{free}[注]{}
+任何一个数的二进制科学计数法表示都为
 $$
 1.****\times 2^n.
 $$
-因第一位都是1，不存储，故23位的尾数部分，可表示的精度却是24位。 
-} 
+因第一位都是1，不存储，故23位的尾数部分，可表示的精度却是24位。   
+\end{free}
 \end{frame}
 %
 \begin{frame}\ft{浮点数的存储方式}
  
-\begin{wenti}
+\begin{question}[]{}
 那么24位能精确到小数点后几位呢？ 
-\end{wenti}
+\end{question}
 因$$
 (9)_{10}=(1001)_2,
 $$
-故四位能精确十进制中的1位小数点，24位就能使float能精确表示到小数点后6位。
+故四位能精确十进制中的1位小数点，24位就能使 \lst|float|能精确表示到小数点后6位。
 \end{frame}
-%
+% %       
 \begin{frame}\ft{浮点数的存储方式}
-关于指数部分，因指数可正可负，8位的指数位能表示的指数范围应该是-127~128。所以指数部分的存储采用移位存储，存储的数据为“原数据+127”。
+关于指数部分，因指数可正可负，8位的指数位能表示的指数范围应该是$-127\sim 128$。所以指数部分的存储采用移位存储，存储的数据为“原数据+127”。
 \end{frame}
-%
+% %
 \begin{frame}\ft{浮点数的存储方式}
 以下观察8.25的存储方式： 
 
@@ -116,7 +148,7 @@ $$
 \node at (-27*\x,\x) [] {\footnotesize{1000~0010}};
 \node at (-31.5*\x,\x) [] {\footnotesize{0}};
 
-\node at (-27*\x,-2*\x) [] {\footnotesize{$130=\textcolor{acolor3}{3}+127$}};
+\node at (-27*\x,-2*\x) [] {\footnotesize{$130=\red{3}+127$}};
 \node at (-11*\x,-2*\x) [] {\footnotesize{$000~1$}};
 
 \node at (-17*\x,-4*\x) [] {\footnotesize{$1.0001\times 2^3$}};
@@ -147,7 +179,7 @@ $$
 \node at (-27*\x,\x) [] {\footnotesize{1000~0010}};
 \node at (-31.5*\x,\x) [] {\footnotesize{0}};
 
-\node at (-27*\x,-2*\x) [] {\footnotesize{$133=\textcolor{acolor3}{6}+127$}};
+\node at (-27*\x,-2*\x) [] {\footnotesize{$133=\red{6}+127$}};
 \node at (-11*\x,-2*\x) [] {\footnotesize{$110~1101$}};
 
 \node at (-17*\x,-4*\x) [] {\footnotesize{$1.1101101\times 2^6$}};
@@ -155,15 +187,15 @@ $$
 \end{figure}
 \end{enumerate}
 \end{frame}
-%
+% %
 \begin{frame}\ft{浮点数的存储方式}
-\begin{wenti}
+\begin{question}[]{}
 给出内存中一段数据
 $$
-0 1000 0101 110 0101 1000 0000 0000 0000,
+01000010111001011000000000000000,
 $$
 并告诉你是单精度存储，如何得到该数据的十进制数值？
-\end{wenti} 
+\end{question} 
 
 \end{frame}
 %
@@ -192,36 +224,32 @@ $$
 \end{frame}
 %
 \begin{frame}[fragile]\ft{浮点数的存储方式}
-阅读如下代码，观察运行结果：
-\lstinputlisting[language=c,numbers=left,frame=single]{
-Code/float_double.c
-}
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点数的存储方式}
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc float_double.c
-$ ./a.out
-g1 = 2.2000000476837, g2 = 2.2500000000000
-\end{lstlisting}
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点数的存储方式}
-\begin{wenti}
 
-为什么在单精度转换为双精度时，2.2的数值发生了改变而2.25却没有改变？
-\end{wenti} 
+\lstinputlisting[basicstyle=\ttfamily\small]
+{slide03/code/float2double.c}
+% \end{frame}
+% %
+% \begin{frame}[fragile]\ft{浮点数的存储方式}
+\pause 
+\lstinputlisting[basicstyle=\ttfamily\small]
+{slide03/code/float2double.c.output}
 \end{frame}
-%
+% %
 \begin{frame}[fragile]\ft{浮点数的存储方式}
-
+\begin{question}[]{}
+  为什么在单精度转换为双精度时，$2.2$的数值发生了改变而$2.25$却没有改变？
+\end{question} 
+% \end{frame}
+% % %
+% \begin{frame}[fragile]\ft{浮点数的存储方式}
+\pause 
 \begin{itemize}
 \item 2.25的单精度存储方式为
 \begin{lstlisting}
 0  1000 0001  001 0000 0000 0000 0000
 \end{lstlisting}
 而双精度存储方式为
-\begin{lstlisting}
+\begin{lstlisting}[basicstyle=\ttfamily\tiny]
 0  1000 0001  001 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
 \end{lstlisting}
 故在强制转换时，数值没有改变。
@@ -231,7 +259,7 @@ g1 = 2.2000000476837, g2 = 2.2500000000000
 
 \begin{frame}[fragile]\ft{浮点数的存储方式}
 
-将十进制小数转换为二进制的方法：\textcolor{acolor3}{将小数乘2，取整数部分。}
+将十进制小数转换为二进制的方法：\red{将小数乘2，取整数部分。}
 \begin{figure}
 \centering
 \begin{tikzpicture}[scale=0.8]
@@ -270,7 +298,7 @@ g1 = 2.2000000476837, g2 = 2.2500000000000
 0  1000 0001  000 1100 1100 1100 1100
 \end{lstlisting}
 而双精度存储方式为
-\begin{lstlisting}
+\begin{lstlisting}[basicstyle=\ttfamily\tiny]
 0  1000 0001  000 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100
 \end{lstlisting}
 故在强制转换时，数值会发生改变。
@@ -279,7 +307,7 @@ g1 = 2.2000000476837, g2 = 2.2500000000000
 
 \begin{frame}[fragile]\ft{浮点型常量}
 基本形式为：
-包含小数点的一个带符号的数字序列，接着是字母e或E，然后是代表10的指数的一个有符号值。如
+包含小数点的一个带符号的数字序列，接着是字母 \lst|e| 或 \lst|E|，然后是代表 \lst|10| 的指数的一个有符号值。如
 \begin{lstlisting}
 -1.56E+12, 2.87e-3
 \end{lstlisting}
@@ -312,25 +340,25 @@ g1 = 2.2000000476837, g2 = 2.2500000000000
 \begin{lstlisting}
 1.56 E+12 // wrong
 \end{lstlisting}
-\item 默认情况下，编译器把浮点型常量当做double类型。\\[0.1in]
-\item[] 设some为一float变量，
+\item 默认情况下，编译器把浮点型常量当做 \lst|double|类型。\\[0.1in]
+\item[] 设some为一 \lst|float|变量，
 \begin{lstlisting}
 some = 4.0 * 2.0;
 \end{lstlisting}
-则4.0和2.0会被存储为double类型，用64位存储。
+则 \lst|4.0| 和 \lst|2.0| 会被存储为 \lst|double|类型，用64位存储。
 \\[0.1in]
-\item[] 注意：乘积运算使用双精度，结果被截取为正常的float长度，能保证计算精度，但会减慢程序的运行。
+\item[] 注意：乘积运算使用双精度，结果被截取为正常的 \lst|float|长度，能保证计算精度，但会减慢程序的运行。
 \end{itemize}
 \end{frame}
 %
 \begin{frame}[fragile]\ft{浮点型常量}
 \begin{itemize}
-\item 可以加后缀f或F使编译器把浮点常量当做float型
+\item 可以加后缀 \lst|f|或 \lst|F| 使编译器把浮点常量当做 \lst|float|型
 \begin{lstlisting}
 2.3f
 3.4e9F
 \end{lstlisting}
-\item 可以加后缀l或L使编译器把浮点常量当做long double型（由于字母l和数字1容易混淆，建议使用后缀L）
+\item 可以加后缀 \lst|l| 或 \lst|L| 使编译器把浮点常量当做 \lst|long double| 型（由于字母 \lst|l| 和数字 \lst|1| 容易混淆，建议使用后缀 \lst|L|）
 \begin{lstlisting}
 54.3l
 4.3E9L
@@ -339,115 +367,99 @@ some = 4.0 * 2.0;
 \end{frame}
 
 %% add something here
-\begin{frame}[fragile]\ft{练习}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/float1.c}
+\begin{frame}[fragile]\ft{浮点型常量}
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float1.c}
+\pause 
+
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float1.c.output}
+  \pause
+  
+  \begin{free}[解释]
+    因 \lst|x| 为单精度浮点数 \lst|0.1|，
+    常量 \lst|0.1f| 表示单精度浮点数 \lst|0.1|，
+    常量 \lst|0.1| 表示双精度浮点数 \lst|0.1|，
+    而根据浮点数的存储方式可知 \lst|0.1 != 0.1f|，
+    故 \lst|x == 0.1f|。
+\end{free}
 \end{frame}
 
-\begin{frame}[fragile]\ft{练习}
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc float1.c
-$ ./a.out 
-ELSE IF
-\end{lstlisting}\pause 
+\begin{frame}[fragile]\ft{浮点型常量}
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float2.c}
+  \pause 
 
-
-\begin{jieshi}
-\tf 因x为单精度浮点数0.1，常量0.1f表示单精度浮点数0.1，常量0.1f表示双精度浮点数0.1，而根据浮点数的存储方式可知0.1 != 0.1f，故x == 0.1f。
-\end{jieshi}
-\end{frame}
-
-
-
-\begin{frame}[fragile]\ft{练习}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/float2.c}
-\end{frame}
-
-\begin{frame}[fragile]\ft{练习}
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc float2.c
-$ ./a.out 
-4 8 4
-\end{lstlisting}\pause 
-
-
-\begin{jieshi}
-\tf 原因同上。
-\end{jieshi}
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float2.c.output}
+  \pause
+  
+  \begin{free}[解释]{}
+    原因同上。
+  \end{free}
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{练习}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/float3.c}
+\begin{frame}[fragile]\ft{浮点型常量}
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float3.c}
+  \pause
+  
+  \lstinputlisting[basicstyle=\ttfamily\small]
+  {slide03/code/float3.c.output}
+  \pause
+
+
+  \begin{free}[解释]{}
+    因 \lst|x| 为单精度浮点数 \lst|0.5|，
+    常量 \lst|0.5f| 表示单精度浮点数 \lst|0.5|，
+    常量 \lst|0.5f| 表示双精度浮点数 \lst|0.5|，
+    但是根据浮点数的存储方式可知 \lst|0.5 == 0.5f|，
+    故条件 \lst|x == 0.5| 先满足，从而执行第一个分支。
+  \end{free}
 \end{frame}
 
-\begin{frame}[fragile]\ft{练习}
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc float2.c
-$ ./a.out 
-IF
-\end{lstlisting}\pause 
-
-
-\begin{jieshi}
-\tf 因x为单精度浮点数0.5，常量0.1f表示单精度浮点数0.5，常量0.5f表示双精度浮点数0.5，但是根据浮点数的存储方式可知0.5 == 0.5f，故条件x == 0.5先满足，从而执行第一个分支。
-\end{jieshi}
-\end{frame}
-
-%
+% %
 \begin{frame}[fragile]\ft{打印浮点型数据}
 \begin{itemize}
-\item 使用格式说明符{\tf \%f}打印float和double型数据，{\tf \%e}打印指数计数法的数字。\\[0.1in]
-\item 使用格式说明符{\tf \%Lf}、{\tf \%Le}打印long double型数据。
+\item 使用格式说明符 \lst|%f| 打印 \lst|float|和 \lst|double|型数据，
+  \lst|%e| 打印指数计数法的数字。\\[0.1in]
+\item 使用格式说明符 \lst|%Lf| 、 \lst|%Le| 打印 \lst|long double| 型数据。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{打印浮点型数据}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/showf_pt.c}
+  \lstinputlisting
+  {slide03/code/showf_pt.c}
+  \pause
+  
+  \lstinputlisting
+  {slide03/code/showf_pt.c.output}
+  
 \end{frame}
-
-\begin{frame}[fragile]\ft{打印浮点型数据} 
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc showf_pt.c
-$ ./a.out
-32000.000000 can be written as 3.200000e+04
-2140000000.000000 can be written as 2.140000e+09
-0.000053 can be written as 5.320000e-05
-\end{lstlisting}
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点型数据的上溢和下溢}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/float_overflow.c}
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点型数据的上溢和下溢}\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc float_overflow.c
-$ ./a.out
-toobig = inf
-\end{lstlisting}
-
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点型数据的上溢和下溢}
-当浮点数超出表示范围时，会发生上溢（overflow），C会赋予一个代表无穷大的特殊值，即inf。
+% %
+\begin{frame}[fragile]\ft{浮点型数据的溢出}
+  \lstinputlisting{slide03/code/float_overflow.c}
+  \pause 
+  \lstinputlisting{slide03/code/float_overflow.c.output}
+  \pause
+  \begin{free}[注]{}
+    当浮点数超出表示范围时，会发生上溢（overflow），C会赋予一个代表无穷大的特殊值，即 \lst|inf|。
+  \end{free}
 
 \end{frame}
 %
 \begin{frame}[fragile]\ft{浮点型数据舍入误差}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/float_err.c}
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点型数据舍入误差}\begin{lstlisting}[backgroundcolor=\color{red!10}]
-$ gcc float_err.c
-$ ./a.out
-b = 4008175468544.000000
-\end{lstlisting}
-\end{frame}
-%
-\begin{frame}[fragile]\ft{浮点型数据舍入误差}
-为什么会出现如此奇怪的结果？原因是计算机缺乏足够的进行正确运算所需的十进制位数。
-\vspace{0.1in}
+  \lstinputlisting{slide03/code/float_error.c}
+  \pause
+  \lstinputlisting{slide03/code/float_error.c.output}
 
-数字2.0e20加1，变化的是第21位，要计算正确，至少需要存储21位的数字，而float型数字只有6、7位有效数字，故该计算注定不正确。
+  \pause
+
+  \begin{free}[解释]{}
+    数字 \lst|2.0e20| 加 \lst|1|， 变化的是第 \lst|21| 位，要计算正确，至少需要存储 \lst|21| 位的数字，而 \lst|float|型数字只有6、7位有效数字，故该计算注定不正确。    
+  \end{free}
+
 \end{frame}
 %
 %

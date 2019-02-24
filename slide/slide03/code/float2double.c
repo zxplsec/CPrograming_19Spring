@@ -1,4 +1,4 @@
-// float_double.c: 
+// float2double.c: 
 #include <stdio.h>
 int main(void) 
 {
