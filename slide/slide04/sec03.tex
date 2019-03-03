@@ -6,26 +6,15 @@
 \caption{格式说明符}
 \begin{tabular}{p{2.5cm}|p{7.5cm}} \hline
 格式说明符 & ~~~~~~~~输出 \\ \hline\hline 
-\tf \%a & 浮点数、十六进制和p-计数法 \\
-\tf \%A & 浮点数、十六进制和P-计数法 \\
-\tf \%c & 一个字符\\
-\tf \%d & 有符号十进制数\\\hline
-\end{tabular}
-\end{table}
-\end{frame}
-
-
-\begin{frame}[fragile]\ft{\secname}
-\begin{table}
-\centering
-\caption{格式说明符}
-\begin{tabular}{p{2.5cm}|p{7.5cm}} \hline
-格式说明符 & ~~~~~~~~输出 \\ \hline\hline 
-\tf \%e & 浮点数、e-计数法\\
-\tf \%E & 浮点数、E-计数法\\
-\tf \%f & 浮点数、十进制计数法\\
-\tf \%g & 根据数值不同自动选\%f或\%e。\%e格式在指数小于-4或大于等于精度时使用\\
-\tf \%G & 根据数值不同自动选\%f或\%E。\%E格式在指数小于-4或大于等于精度时使用\\\hline
+\lstinline|%a| & 浮点数、十六进制和p-计数法 \\[.03in]
+\lstinline|%A| & 浮点数、十六进制和P-计数法 \\[.03in]
+\lstinline|%c| & 一个字符\\[.03in]
+\lstinline|%d| & 有符号十进制数\\[.03in] 
+\lstinline|%e| & 浮点数、e-计数法\\[.03in]
+\lstinline|%E| & 浮点数、E-计数法\\[.03in]
+\lstinline|%f| & 浮点数、十进制计数法\\[.03in]
+\lstinline|%g| & 根据数值不同自动选 \lstinline|%f| 或 \lstinline|%e| 。 \lstinline|%e| 格式在指数小于-4或大于等于精度时使用\\[.03in]
+\lstinline|%G| & 根据数值不同自动选 \lstinline|%f| 或 \lstinline|%E| 。 \lstinline|%E| 格式在指数小于-4或大于等于精度时使用\\\hline
 \end{tabular}
 \end{table}
 \end{frame}
@@ -36,35 +25,24 @@
 \caption{格式说明符}
 \begin{tabular}{p{2.5cm}|p{7.5cm}} \hline
 格式说明符 & ~~~~~~~~输出 \\ \hline\hline 
-\tf\%i & 有符号十进制整数（同\%d）\\
-\tf\%o & 无符号八进制整数\\
-\tf\%p & 指针\\
-\tf\%s & 字符串\\\hline
-\end{tabular}
-\end{table}
-\end{frame}
-
-
-\begin{frame}[fragile]\ft{\secname}
-\begin{table}
-\centering
-\caption{格式说明符}
-\begin{tabular}{p{2.5cm}|p{7.5cm}} \hline
-格式说明符 & ~~~~~~~~输出 \\ \hline\hline 
-\%x & 使用十六进制数字0-f的无符号十六进制整数\\
-\%X & 使用十六进制数字0-F的无符号十六进制整数\\
+\lstinline|%i| & 有符号十进制整数（同\%d）\\[.03in]
+\lstinline|%o| & 无符号八进制整数\\[.03in]
+\lstinline|%p| & 指针\\[.03in]
+\lstinline|%s| & 字符串\\[.03in]
+\lstinline|%x| & 使用十六进制数字 \lstinline|0-f| 的无符号十六进制整数\\[.03in]
+\lstinline|%X| & 使用十六进制数字 \lstinline|0-F| 的无符号十六进制整数\\[.03in]
 \hline
 \end{tabular}
 \end{table}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\begin{lstlisting}[title=printf的使用格式]
-printf(Control-string, item1, item2, ...);
-\end{lstlisting} \vspace{0.1in}
+\begin{free}[\lstinline|printf()| 的使用格式]{}
+\lstinline|printf(Control-string, item1, item2, ...);|
+\end{free} \vspace{0.1in}
 
 \begin{itemize}
-\item item1, item2等是要打印的项目，它们可以是变量，也可以是常量，甚至是在打印之前进行计算的表达式。\\[0.1in]
+\item \lstinline|item1, item2, ...| 是要打印的项目，它们可以是变量，也可以是常量，甚至是在打印之前进行计算的表达式。\\[0.1in]
 \item 控制字符串(Control-string)是一个描述项目如何打印的字符串，它为每个要打印的项目包含一个格式说明符。
 
 \end{itemize}
@@ -94,7 +72,7 @@ printf(Control-string, item1, item2, ...);
 \begin{itemize}
 \item 如果只想打印一个语句，则不需要任何格式说明符；\\[0.1in]
 \item 如果只想打印数据，则无须加入任何说明内容。\\[0.1in]
-\item 想打印\%，必须使用两个\%\%符号。
+\item 想打印 \lstinline|%|，必须使用两个 \lstinline|%%| 符号。
 \end{itemize}
 
 \begin{lstlisting}
@@ -106,19 +84,19 @@ printf("%d%% = %f\n", 30, 0.3);
 
 \begin{frame}[fragile]\ft{\secname：格式说明符\%d}
 \begin{itemize}
-\item \tf \%d:  按整型数据的实际长度输出\\[0.1in]
-\item \%md:  输出字段的宽度为m，右对齐\\ 
-\item[] 若数据位数<m，左端补空格；若>=m，按实际位数输出。\\[0.1in]
-\item \%-md: 输出字段的宽度为m，左对齐\\ 
-\item[] 若数据位数<m，右端补空格；若>=m，按实际位数输出。\\[0.1in]
-\item \%0md: 输出字段的宽度为m，右对齐 \\ 
-\item[] 若数据位数<m，右端补0；若>=m，按实际位数输出。
+\item \lstinline|%d|:  按整型数据的实际长度输出\\[0.1in]
+\item \lstinline|%md|:  输出字段的宽度为 \lstinline|m|，右对齐\\ 
+\item[] 若数据位数 \lstinline|< m|，左端补空格；若 \lstinline|>= m|，按实际位数输出。\\[0.1in]
+\item \lstinline|%-md|: 输出字段的宽度为 \lstinline|m|，左对齐\\ 
+\item[] 若数据位数 \lstinline|< m|，右端补空格；若 \lstinline|>= m|，按实际位数输出。\\[0.1in]
+\item \lstinline|%0md|: 输出字段的宽度为 \lstinline|m|，右对齐 \\ 
+\item[] 若数据位数 \lstinline|< m|，右端补 \lstinline|0|；若 \lstinline|>= m|，按实际位数输出。
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%d}
-\lstinputlisting[language=c,frame=single,numbers=left]{Code/width.c}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：格式说明符\%d}
+% \lstinputlisting[language=c,frame=single,numbers=left]{Code/width.c}
+% \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：格式说明符\%d}
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
@@ -131,12 +109,12 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{frame}
 
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname：格式说明符\%f、\%e和\%E}
-\lstinputlisting[language=c,frame=single,numbers=left]
-{Code/floats.c}
-\end{frame}
+% \begin{frame}[fragile,allowframebreaks]\ft{\secname：格式说明符 \lstinline|%f| 、\%e和\%E}
+% \lstinputlisting[language=c,frame=single,numbers=left]
+% {Code/floats.c}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%f、\%e和\%E}
+\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
 *3852.990000*
 *3.852990e+03*
@@ -151,42 +129,42 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%f、\%e和\%E}
+\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
 \begin{lstlisting}[backgroundcolor=\color{red!20}]
 %m.nf     %m.ne      %m.nE
 \end{lstlisting}
 
 \begin{itemize}
-\item \tf m为字段宽度
-\item n为小数点右边数字的个数
+\item \lstinline|m| 为字段宽度
+\item \lstinline|n| 为小数点右边数字的个数
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%f、\%e和\%E}
+\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
 \begin{lstlisting}[backgroundcolor=\color{red!20}] 
 %.nf
 \end{lstlisting}
 
 \begin{itemize}
-\item \tf 整数部分以实际长度输出
-\item n为小数点右边数字的个数
+\item 整数部分以实际长度输出
+\item \lstinline|n| 为小数点右边数字的个数
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%f、\%e和\%E}
+\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
 \begin{lstlisting}[backgroundcolor=\color{red!20}] 
 %m.f
 \end{lstlisting}
 
 \begin{itemize}
-\item \tf 字段宽度为m
+\item 字段宽度为 \lstinline|m|
 \item 不输出小数点后的数字
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname}
-  \lstinputlisting[language=c,frame=single,numbers=left]{Code/flags.c}    
-\end{frame}
+% \begin{frame}[fragile,allowframebreaks]\ft{\secname}
+%   \lstinputlisting[language=c,frame=single,numbers=left]{Code/flags.c}    
+% \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
@@ -205,46 +183,46 @@ printf("%d%% = %f\n", 30, 0.3);
 \begin{frame}[fragile] 
 
 \begin{itemize}
-\item \tf 使用\%x输出1f
-\item 使用\%X输出1F
-\item 使用\%\#x输出0x1f
-\item 使用\%\#X输出0X1F
+\item 使用 \lstinline|%x| 输出1f
+\item 使用 \lstinline|%X| 输出1F
+\item 使用 \lstinline|%#x| 输出0x1f
+\item 使用 \lstinline|%#X| 输出0X1F
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] 
-\tf 使用\%~d在正值之前产生一个前导空格，在负值之前不产生前导空格。
+  使用 \lstinline|% d| 在正值之前产生一个前导空格，在负值之前不产生前导空格。
 这使得有效位相同的正值和负值以相同字段宽度打印输出。
 \end{frame}
 
 \begin{frame}[fragile] 
 \begin{itemize}
-\item\tf \%5.3d为精度说明符，用于在整数格式中来产生足够的前导零以填满要求的最小数字位数。\\[0.1in]
-\item \%05d将会用前导零填满整个字段宽度。\\[0.1in]
-\item 在\%05.3d中，0标志和精度说明符同时出现，此时0标志将会忽略。
+\item\lstinline|%5.3d| 为精度说明符，用于在整数格式中来产生足够的前导零以填满要求的最小数字位数。\\[0.1in]
+\item \lstinline|%05d| 将会用前导零填满整个字段宽度。\\[0.1in]
+\item 在 \lstinline|%05.3d| 中，0标志和精度说明符同时出现，此时0标志将会忽略。
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：关于字符串的打印}
-\lstinputlisting[language=c,frame=single,numbers=left]{Code/strings.c}    
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
+% \lstinputlisting[language=c,frame=single,numbers=left]{Code/strings.c}    
+% \end{frame}
+
+% \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
+% \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+% *Hello World!*
+% *   Hello World!*
+% *          Hello*
+% *Hello          *
+% \end{lstlisting}
+% \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
-\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
-*Hello World!*
-*   Hello World!*
-*          Hello*
-*Hello          *
-\end{lstlisting}
+\lstinline|%15.5s| 为精度说明符，告诉printf函数只打印5个字符。修饰符‘-’使文本左对齐输出。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：关于字符串的打印}
-\tf\%15.5s为精度说明符，告诉printf函数只打印5个字符。修饰符‘-’使文本左对齐输出。
-\end{frame}
-
-\begin{frame}[fragile]\ft{\secname：printf()的返回值}
-\lstinputlisting[language=c,frame=single,numbers=left]{Code/printval.c}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：printf()的返回值}
+% \lstinputlisting[language=c,frame=single,numbers=left]{Code/printval.c}
+% \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：printf()的返回值}
 \begin{lstlisting}[backgroundcolor=\color{red!20}]
@@ -259,13 +237,13 @@ printf()返回所有打印字符的个数，包括空格和不可见的换行字
 
 
 \begin{frame}[fragile]\ft{\secname：printf()中的\%n}
-在{\tf printf()}中，{\tf \%n}是一个格式化说明符，它将获取{\tf \%n}出现之前的所有字符的个数，并将其传递给后面对应的变量。
+在 \lstinline|printf()| 中， \lstinline|%n| 是一个格式化说明符，它将获取 \lstinline|%n| 出现之前的所有字符的个数，并将其传递给后面对应的变量。
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{\secname：printf()中的\%n}
-\lstinputlisting[language=c,frame=single,numbers=left]{Code/printf_n.c}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：printf()中的\%n}
+% \lstinputlisting[language=c,frame=single,numbers=left]{Code/printf_n.c}
+% \end{frame}
 
 
 \begin{frame}[fragile]\ft{\secname：printf()中的\%n}

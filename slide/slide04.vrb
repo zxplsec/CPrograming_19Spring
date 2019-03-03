@@ -1,0 +1,16 @@
+\ft{\secname：sizeof运算符后的圆括号}
+\begin{itemize}
+\item 圆括号对于数据类型是必需的，而对于具体量则是可选的。
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+sizeof(float)
+sizeof(char)
+
+sizeof name
+sizeof 2.15
+\end{lstlisting}
+\item 建议在所有情况下都使用圆括号。
+\begin{lstlisting}[backgroundcolor=\color{red!10}]
+sizeof(name)
+sizeof(2.15)
+\end{lstlisting}
+\end{itemize}
