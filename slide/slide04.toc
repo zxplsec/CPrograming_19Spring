@@ -1,1 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
 \beamer@sectionintoc {1}{字符串简介}{3}{0}{1}
+\beamer@sectionintoc {2}{常量与预处理器}{34}{0}{2}
+\beamer@sectionintoc {3}{格式化输出}{60}{0}{3}

@@ -1,0 +1,10 @@
+// file2screen.c:
+#include<stdio.h>
+int main(int argc, const )
+{
+ch = fgetc(fp);
+    while(ch != EOF)
+    {
+      putchar(ch);
+      ch = fgetc(fp);
+    }  

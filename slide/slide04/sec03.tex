@@ -8,7 +8,7 @@
 格式说明符 & ~~~~~~~~输出 \\ \hline\hline 
 \lstinline|%a| & 浮点数、十六进制和p-计数法 \\[.03in]
 \lstinline|%A| & 浮点数、十六进制和P-计数法 \\[.03in]
-\lstinline|%c| & 一个字符\\[.03in]
+\lstinline|%c| & 字符\\[.03in]
 \lstinline|%d| & 有符号十进制数\\[.03in] 
 \lstinline|%e| & 浮点数、e-计数法\\[.03in]
 \lstinline|%E| & 浮点数、E-计数法\\[.03in]
@@ -45,27 +45,30 @@
 \item \lstinline|item1, item2, ...| 是要打印的项目，它们可以是变量，也可以是常量，甚至是在打印之前进行计算的表达式。\\[0.1in]
 \item 控制字符串(Control-string)是一个描述项目如何打印的字符串，它为每个要打印的项目包含一个格式说明符。
 
-\end{itemize}
-\end{frame}
+\end{itemize} \pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname}
+% \begin{frame}[fragile]\ft{\secname}
 \begin{figure}
 \centering
 \begin{tikzpicture}
 \def\x{0.5}
-\draw[] (0,0) rectangle node[]{printf(}(4*\x,\x);
-\draw[] (4*\x,0) rectangle node[]{"You look great in \%s$\backslash$n"}(12*\x,\x);
-\draw[] (12*\x,0) rectangle node[]{,}(13*\x,\x);
-\draw[] (13*\x,0) rectangle node[]{color}(15*\x,\x);
-\draw[] (15*\x,0) rectangle node[]{);}(16*\x,\x);
+\draw[dotted] (0,0) rectangle node[]{\lstinline|printf(|}(3*\x,\x);
+\draw[dotted] (3*\x,0) rectangle node[]{\lstinline|"You look great in \%s\\n"|}(13*\x,\x);
+\draw[dotted] (13*\x,0) rectangle node[]{\lstinline|,|}(14*\x,\x);
+\draw[dotted] (14*\x,0) rectangle node[]{\lstinline|color|}(16*\x,\x);
+\draw[dotted] (16*\x,0) rectangle node[]{\lstinline|);|}(17*\x,\x);
 \node at (8*\x,0) [below] {\small{控制描述}};
-\node at (14*\x,0) [below] {\small{变量列表}};
+\node at (15*\x,0) [below] {\small{变量列表}};
 \end{tikzpicture}
-\end{figure}
-\end{frame}
+\end{figure} \pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname}
-不要忘记给控制字符串后面的列表中的每个项目都使用一个格式说明符。
+% \begin{frame}[fragile]\ft{\secname}
+\begin{free}[注意]{}
+不要忘记给控制字符串后列表中的每个项目都使用一个格式说明符。  
+\end{free}
+
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -94,12 +97,13 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{itemize}
 \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname：格式说明符\%d}
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/width.c}
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
+  \lstinputlisting
+  {slide04/code/width.c} \pause 
 % \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%d}
-\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+% \begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
+\begin{lstlisting}[showspaces=true,basicstyle=\ttfamily\small]
 *1000*
 *1000*
 *      1000*
@@ -109,12 +113,12 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{frame}
 
 
-% \begin{frame}[fragile,allowframebreaks]\ft{\secname：格式说明符 \lstinline|%f| 、\%e和\%E}
-% \lstinputlisting[language=c,frame=single,numbers=left]
-% {Code/floats.c}
-% \end{frame}
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%f, \%e, \%E|}
+\lstinputlisting[basicstyle=\ttfamily\small]
+{slide04/code/floats.c}
+\end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%f, \%e, \%E|}
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
 *3852.990000*
 *3.852990e+03*
@@ -129,7 +133,7 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%f, \%e, \%E|}
 \begin{lstlisting}[backgroundcolor=\color{red!20}]
 %m.nf     %m.ne      %m.nE
 \end{lstlisting}
@@ -137,10 +141,10 @@ printf("%d%% = %f\n", 30, 0.3);
 \begin{itemize}
 \item \lstinline|m| 为字段宽度
 \item \lstinline|n| 为小数点右边数字的个数
-\end{itemize}
-\end{frame}
+\end{itemize} \pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
+% \begin{frame}[fragile]\ft{\secname：\lstinline|\%f, \%e, \%E|}
 \begin{lstlisting}[backgroundcolor=\color{red!20}] 
 %.nf
 \end{lstlisting}
@@ -148,10 +152,10 @@ printf("%d%% = %f\n", 30, 0.3);
 \begin{itemize}
 \item 整数部分以实际长度输出
 \item \lstinline|n| 为小数点右边数字的个数
-\end{itemize}
-\end{frame}
+\end{itemize} \pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符 \%f 、\%e和\%E}
+% \begin{frame}[fragile]\ft{\secname：\lstinline|\%f, \%e, \%E|}
 \begin{lstlisting}[backgroundcolor=\color{red!20}] 
 %m.f
 \end{lstlisting}
@@ -162,12 +166,13 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{itemize}
 \end{frame}
 
-% \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-%   \lstinputlisting[language=c,frame=single,numbers=left]{Code/flags.c}    
-% \end{frame}
+\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+  \lstinputlisting
+  {slide04/code/flags.c}    
+\end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+\begin{lstlisting}[showspaces=true]
 1f 1F 0x1f 0X1F
 *42*
 * 42*
@@ -181,75 +186,75 @@ printf("%d%% = %f\n", 30, 0.3);
 
 
 \begin{frame}[fragile] 
+  \begin{itemize}
+  \item \lstinline|%x, %#x, %X, %#X|的用法
+    \begin{itemize}
+    \item \lstinline|%x| 输出 \lstinline|1f| \\[0.05in]
+    \item \lstinline|%X| 输出 \lstinline|1F| \\[0.05in]
+    \item \lstinline|%#x| 输出 \lstinline|0x1f| \\[0.05in]
+    \item \lstinline|%#X| 输出 \lstinline|0X1F|
+    \end{itemize} \vspace{.1in}
+    
+  \item \lstinline|% d|的用法
+    \begin{itemize}
+    \item 正值之前产生一个前导空格；\\[0.05in]
+    \item 在负值之前不产生前导空格。    
+    \end{itemize}
+    这使得有效位相同的正值和负值以相同字段宽度打印输出。 \vspace{.1in}
+    
+  \item \lstinline|%m.nd, %0md, %0m.nd| 的用法
+    \begin{itemize}
+    \item\lstinline|%5.3d| 用于在整数格式中来产生足够的前导零以填满要求的最小数字位数。\\[0.05in]
+    \item \lstinline|%05d| 将会用前导零填满整个字段宽度。\\[0.05in]
+    \item 在 \lstinline|%05.3d| 中，0标志和精度说明符同时出现，此时0标志将会忽略。
+    \end{itemize}
 
-\begin{itemize}
-\item 使用 \lstinline|%x| 输出1f
-\item 使用 \lstinline|%X| 输出1F
-\item 使用 \lstinline|%#x| 输出0x1f
-\item 使用 \lstinline|%#X| 输出0X1F
-\end{itemize}
+  \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile] 
-  使用 \lstinline|% d| 在正值之前产生一个前导空格，在负值之前不产生前导空格。
-这使得有效位相同的正值和负值以相同字段宽度打印输出。
-\end{frame}
-
-\begin{frame}[fragile] 
-\begin{itemize}
-\item\lstinline|%5.3d| 为精度说明符，用于在整数格式中来产生足够的前导零以填满要求的最小数字位数。\\[0.1in]
-\item \lstinline|%05d| 将会用前导零填满整个字段宽度。\\[0.1in]
-\item 在 \lstinline|%05.3d| 中，0标志和精度说明符同时出现，此时0标志将会忽略。
-\end{itemize}
-\end{frame}
-
-% \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/strings.c}    
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%s|}
+  \lstinputlisting
+  {slide04/code/strings.c}    \pause 
 % \end{frame}
 
 % \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
-% \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
-% *Hello World!*
-% *   Hello World!*
-% *          Hello*
-% *Hello          *
-% \end{lstlisting}
+\begin{lstlisting}[showspaces=true,basicstyle=\ttfamily\small]
+*Hello World!*
+*   Hello World!*
+*          Hello*
+*Hello          *
+*Hello World!*
+\end{lstlisting}
 % \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：关于字符串的打印}
-\lstinline|%15.5s| 为精度说明符，告诉printf函数只打印5个字符。修饰符‘-’使文本左对齐输出。
+% \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
+% \lstinline|%15.5s| 只打印5个字符。修饰符‘-’使文本左对齐输出。
 \end{frame}
+
+\begin{frame}[fragile]\ft{\secname：\lstinline|printf()|的返回值}
+  \lstinputlisting
+  {slide04/code/printval.c} \pause 
+% \end{frame}
 
 % \begin{frame}[fragile]\ft{\secname：printf()的返回值}
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/printval.c}
-% \end{frame}
-
-\begin{frame}[fragile]\ft{\secname：printf()的返回值}
 \begin{lstlisting}[backgroundcolor=\color{red!20}]
 100 C is water's boiling point.
 the printf function printed 32 character.
 \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]\ft{\secname：printf()的返回值}
-printf()返回所有打印字符的个数，包括空格和不可见的换行字符。
-\end{frame}
-
-
-\begin{frame}[fragile]\ft{\secname：printf()中的\%n}
-在 \lstinline|printf()| 中， \lstinline|%n| 是一个格式化说明符，它将获取 \lstinline|%n| 出现之前的所有字符的个数，并将其传递给后面对应的变量。
-\end{frame}
-
-
-% \begin{frame}[fragile]\ft{\secname：printf()中的\%n}
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/printf_n.c}
 % \end{frame}
 
+% \begin{frame}[fragile]\ft{\secname：printf()的返回值}
+\lstinline|printf()| 返回所有打印字符的个数，包括空格和不可见的换行符。
+\end{frame}
 
-\begin{frame}[fragile]\ft{\secname：printf()中的\%n}
+
+\begin{frame}[fragile]\ft{\secname：\lstinline|printf()| 中的 \lstinline|\%n|}
+在 \lstinline|printf()| 中， 使用 \lstinline|%n| 将获取 \lstinline|%n| 出现之前的所有字符的个数，并将其传递给后面对应的变量。\pause 
+
+\lstinputlisting
+{slide04/code/printf_n.c} \pause 
+
 \begin{lstlisting}[backgroundcolor=\color{red!20}]
-$ gcc printf_n.c
-$ ./a.out 
 Hello Wuhan University!
 c1 = 12, c2 = 23
 \end{lstlisting}

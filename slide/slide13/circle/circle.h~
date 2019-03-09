@@ -1,0 +1,4 @@
+#include<stdio.h>
+#include<math.h>
+
+double pi = 2.0*asin(1.0)

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+  char ch;
+  FILE * fsrc, * fdes;
+  if ((fsrc = fopen("file1.txt", "r")) == NULL ||
+      (fdes = fopen("file2.txt", "w")) == NULL) {
+    printf("Cannot open files!\n");
+    exit(0);
+  }
+  while ((ch = getc(fsrc)) != EOF)
+    fputc(ch, fdes);
+  printf("Successed copy srcfile to desfile\n");
+  fclose(fsrc);
+  fclose(fdes);
+  return 0;
+}

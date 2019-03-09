@@ -1,9 +1,10 @@
+
 \section{常量与预处理器}
 
-% \begin{frame}[fragile]\ft{\secname}
-% \lstinputlisting[language=c,frame=single,numbers=left]
-% {slide04/code/circle1.c}
-% \end{frame}
+\begin{frame}[fragile]\ft{\secname}
+\lstinputlisting
+{slide04/code/circle1.c}
+\end{frame}
 
 % \begin{frame}[fragile]\ft{\secname}
 % \begin{lstlisting}[backgroundcolor=\color{red!10}]
@@ -11,37 +12,38 @@
 % \end{lstlisting}
 % \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname}
-% \lstinputlisting[language=c,frame=single,numbers=left]
-% {slide04/code/circle2.c}
-% \end{frame}
+\begin{frame}[fragile]\ft{\secname}
+\lstinputlisting
+{slide04/code/circle2.c}
+\end{frame}
 
-% \begin{frame}[fragile]\ft{\secname}
-% \lstinputlisting[language=c,frame=single,numbers=left]
-% {slide04/code/circle3.c}
-% \end{frame}
+\begin{frame}[fragile]\ft{\secname}
+\lstinputlisting
+{slide04/code/circle3.c}
+\end{frame}
 
-% \begin{frame}[fragile]\ft{\secname}
-% \lstinputlisting[language=c,frame=single,numbers=left]
-% {slide04/code/circle4.c}
+\begin{frame}[fragile]\ft{\secname}
+\lstinputlisting
+{slide04/code/circle4.c}
 
-% \end{frame}
-
-\begin{frame}[fragile]\ft{\secname：宏定义}
-\begin{lstlisting}[title=宏定义的一般形式,backgroundcolor=\color{red!10}]
-#define NAME value
-\end{lstlisting}
-
-\begin{itemize}
-\item 没有使用分号是因为这是一种替代机制，而不是C的语句。\\[0.1in]
-\item 符号常量请使用大写，其好处在于当看到它时便可立即知道是常量。\\[0.1in]
-\item 符号常量的命名请遵循变量命名规则。
-\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：宏定义}
-\#define语句也可用于定义字符和字符串变量，前者用单引号，后者用双引号。
-\vspace{0.1in}
+  \begin{free}[宏定义的一般形式]{}
+\begin{lstlisting}
+#define NAME value
+\end{lstlisting}
+  \end{free} \pause 
+
+  \begin{free}[注]{}
+    \begin{itemize}
+    \item 不是C语句，不需要分号；是一条预处理指令\\[0.1in]
+    \item 宏名使用大写，以示跟普通变量的差别。\\[0.1in]
+    \item 宏名的命名请遵循变量命名规则。
+    \end{itemize}
+  \end{free} \pause 
+
+  \lstinline|#define| 也可用于定义字符和字符串变量，前者用 \lstinline|' '|，后者用 \lstinline|" "|。
 
 \begin{lstlisting}
 #define BEEP '\a'
@@ -53,15 +55,16 @@
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：宏定义}
-\#define语句也可用于定义字符和字符串变量，前者用单引号，后者用双引号。
-\vspace{0.1in} \pause 
 
-\begin{lstlisting}[title=常见错误]
+  \begin{free}[常见错误]{}
+\begin{lstlisting}
 #define B = 20
 \end{lstlisting}
-\vspace{0.1in}
+  \end{free}
+  
+\pause 
 
-如果这样做，B将会被=~~20而不是20代替。 这样以下语句
+此时，\lstinline|B| 将会被 \lstinline|= 20| 而不是 \lstinline|20| 代替。 若使用以下语句
 \begin{lstlisting}
 c = a + B;
 \end{lstlisting}
@@ -69,6 +72,98 @@ c = a + B;
 \begin{lstlisting}
 c = a + = 20;
 \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：函数宏}
+  \begin{defn}[]{}
+    在宏定义中，也可以像一个“函数”一样实现某种功能，这种用法叫\red{函数宏}。  
+  \end{defn} \pause 
+
+  \lstinputlisting[]{slide04/code/f_macro1.c}
+  \pause 
+  \begin{lstlisting}
+max(1, 2) = 2
+1.0 + max(1.1+2.2, 3.0) = 4.30
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：函数宏}
+
+  错误的用法
+  \lstinputlisting[]{slide04/code/f_macro2.c}
+  \pause 
+  \begin{lstlisting}
+max(1, 2) = 2
+1.0 + max(1.1+2.2, 3.0) = 3.30
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：函数宏}
+
+  \lstinputlisting[]{slide04/code/f_macro3.c}
+  \pause 
+  \begin{lstlisting}
+the square of 3 is 9.
+the square of 3+2 is 25.
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：函数宏}
+  错误的用法
+  \lstinputlisting[]{slide04/code/f_macro4.c}
+  \pause 
+  \begin{lstlisting}
+the square of 3 is 9.
+the square of 3+2 is 11.
+  \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{\secname：函数宏}
+
+  \lstinputlisting[]{slide04/code/f_macro5.c}
+  \pause 
+  \begin{lstlisting}
+3: 3
+3: 3
+3+2: 5
+5: 5
+  \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]\ft{\secname：函数宏}
+
+  \lstinputlisting[]{slide04/code/f_macro6.c}
+  \pause 
+  \begin{lstlisting}
+x1 = 12
+x2 = 24
+x3 = 36
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}\ft{\secname：函数宏}
+  \begin{free}[注意]{}
+    \begin{itemize}
+    \item 宏名中不允许出现空格，因为宏定义把宏名后的第一个空格认作宏名与其替换值的分割符。
+    \item 为了避免一些运算优先级的错误，请注意括号的使用。
+    \item 可以跨行进行宏定义，请使用 \lstinline|\\| 断行。
+    \end{itemize}
+  \end{free}
+
+  \pause 
+  \begin{free}[\lstinline|\#|与\lstinline|\#|\lstinline|\#|在函数宏中的使用]{}  
+    \begin{itemize}
+    \item \lstinline|\#| 把宏参数转换为一个字符串。例如，若 \lstinline|x| 是一个宏参数，则 \lstinline|\#x| 可把参数转换为相应的字符串，该过程称为\red{字符串化}。
+    \item \lstinline|\#|\lstinline|\#| 用于宏参数的连接。
+      \begin{itemize}
+      \item 若有\lstinline|\#define X(n)| \lstinline|x\#\#n|，则 \lstinline|X(2)| 将展开为 \lstinline|x2|.
+      \item 若有\lstinline|\#define CONS(a,b)| \lstinline|(a\#\#e\#\#b)|，则 \lstinline|CONS(2,3)| 将展开为 \lstinline|2e3|.
+      \end{itemize}
+    \end{itemize}
+
+  \end{free}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：const修饰符}
