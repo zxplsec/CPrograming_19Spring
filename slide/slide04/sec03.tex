@@ -64,7 +64,7 @@
 \end{figure} \pause 
 % \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname}
+% \begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
 \begin{free}[注意]{}
 不要忘记给控制字符串后列表中的每个项目都使用一个格式说明符。  
 \end{free}
@@ -85,18 +85,6 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式说明符\%d}
-\begin{itemize}
-\item \lstinline|%d|:  按整型数据的实际长度输出\\[0.1in]
-\item \lstinline|%md|:  输出字段的宽度为 \lstinline|m|，右对齐\\ 
-\item[] 若数据位数 \lstinline|< m|，左端补空格；若 \lstinline|>= m|，按实际位数输出。\\[0.1in]
-\item \lstinline|%-md|: 输出字段的宽度为 \lstinline|m|，左对齐\\ 
-\item[] 若数据位数 \lstinline|< m|，右端补空格；若 \lstinline|>= m|，按实际位数输出。\\[0.1in]
-\item \lstinline|%0md|: 输出字段的宽度为 \lstinline|m|，右对齐 \\ 
-\item[] 若数据位数 \lstinline|< m|，右端补 \lstinline|0|；若 \lstinline|>= m|，按实际位数输出。
-\end{itemize}
-\end{frame}
-
 \begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
   \lstinputlisting
   {slide04/code/width.c} \pause 
@@ -110,6 +98,97 @@ printf("%d%% = %f\n", 30, 0.3);
 *1000      *
 *0000001000*
 \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
+  \begin{lstlisting}[backgroundcolor=\color{red!20}]
+%d
+  \end{lstlisting}
+  按整型数据的实际长度输出 \vspace{.1in}\pause
+
+  \begin{lstlisting}[backgroundcolor=\color{red!20}]
+%md
+  \end{lstlisting}
+  输出字段的宽度为 \lstinline|m|，右对齐
+  \begin{itemize}
+  \item 若 \lstinline|m| 大于实际宽度，则左端补空格；
+  \item 若 \lstinline|m| 小于等于实际宽度，按实际宽度输出。
+  \end{itemize} \vspace{.1in}\pause
+  
+  \begin{lstlisting}[backgroundcolor=\color{red!20}]
+%-md
+  \end{lstlisting}
+  输出字段宽度为 \lstinline|m|，左对齐
+  \begin{itemize}
+  \item 若 \lstinline|m| 大于实际宽度，右端补空格
+  \item 若 \lstinline|m| 小于等于实际宽度，按实际宽度输出。
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
+
+  \begin{lstlisting}[backgroundcolor=\color{red!20}]
+%0md
+  \end{lstlisting}  
+  输出字段宽度为 \lstinline|m|，右对齐。
+  \begin{itemize}
+  \item 若 \lstinline|m| 大于实际宽度，右端补 \lstinline|0|；
+  \item 若 \lstinline|m| 小于等于实际宽度，按实际宽度输出。
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname}
+  \lstinputlisting
+  {slide04/code/flags.c}    
+\end{frame}
+
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%d|}
+\begin{lstlisting}[showspaces=true]
+1f 1F 0x1f 0X1F
+*42*
+* 42*
+*-42*
+*    6*
+*  006*
+*00006*
+*  006*
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{\secname：\lstinline|\%d|}
+
+\begin{lstlisting}[backgroundcolor=\color{red!20},showspaces=true] 
+% d  
+\end{lstlisting}    
+    \begin{itemize}
+    \item 正值之前产生一个前导空格\\[0.05in]
+    \item 在负值之前不产生前导空格\\[0.05in]
+    \end{itemize}
+    这使得有效位相同的正值和负值以相同字段宽度打印输出。 \vspace{.1in}\pause 
+
+\begin{lstlisting}[backgroundcolor=\color{red!20}] 
+%m.nd, %0md, %0m.nd
+\end{lstlisting}     
+    \begin{itemize}
+    \item\lstinline|%5.3d| 用于在整数格式中来产生足够的前导零以填满要求的最小数字位数。\\[0.05in]
+    \item \lstinline|%05d| 将会用前导零填满整个字段宽度。\\[0.05in]
+    \item 在 \lstinline|%05.3d| 中，0标志和精度说明符同时出现，此时0标志将会忽略。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\secname：\lstinline|\%x, \%\#x, \%X, \%\#X|}
+\begin{lstlisting}[backgroundcolor=\color{red!20}] 
+%x, %#x, %X, %#X
+\end{lstlisting}
+    \begin{itemize}
+    \item \lstinline|%x| 输出 \lstinline|1f| \\[0.05in]
+    \item \lstinline|%X| 输出 \lstinline|1F| \\[0.05in]
+    \item \lstinline|%#x| 输出 \lstinline|0x1f| \\[0.05in]
+    \item \lstinline|%#X| 输出 \lstinline|0X1F|
+    \end{itemize}
 \end{frame}
 
 
@@ -166,51 +245,6 @@ printf("%d%% = %f\n", 30, 0.3);
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname}
-  \lstinputlisting
-  {slide04/code/flags.c}    
-\end{frame}
-
-\begin{frame}[fragile]\ft{\secname}
-\begin{lstlisting}[showspaces=true]
-1f 1F 0x1f 0X1F
-*42*
-* 42*
-*-42*
-*    6*
-*  006*
-*00006*
-*  006*
-\end{lstlisting}
-\end{frame}
-
-
-\begin{frame}[fragile] 
-  \begin{itemize}
-  \item \lstinline|%x, %#x, %X, %#X|的用法
-    \begin{itemize}
-    \item \lstinline|%x| 输出 \lstinline|1f| \\[0.05in]
-    \item \lstinline|%X| 输出 \lstinline|1F| \\[0.05in]
-    \item \lstinline|%#x| 输出 \lstinline|0x1f| \\[0.05in]
-    \item \lstinline|%#X| 输出 \lstinline|0X1F|
-    \end{itemize} \vspace{.1in}
-    
-  \item \lstinline|% d|的用法
-    \begin{itemize}
-    \item 正值之前产生一个前导空格；\\[0.05in]
-    \item 在负值之前不产生前导空格。    
-    \end{itemize}
-    这使得有效位相同的正值和负值以相同字段宽度打印输出。 \vspace{.1in}
-    
-  \item \lstinline|%m.nd, %0md, %0m.nd| 的用法
-    \begin{itemize}
-    \item\lstinline|%5.3d| 用于在整数格式中来产生足够的前导零以填满要求的最小数字位数。\\[0.05in]
-    \item \lstinline|%05d| 将会用前导零填满整个字段宽度。\\[0.05in]
-    \item 在 \lstinline|%05.3d| 中，0标志和精度说明符同时出现，此时0标志将会忽略。
-    \end{itemize}
-
-  \end{itemize}
-\end{frame}
 
 \begin{frame}[fragile]\ft{\secname：\lstinline|\%s|}
   \lstinputlisting
@@ -223,12 +257,41 @@ printf("%d%% = %f\n", 30, 0.3);
 *   Hello World!*
 *          Hello*
 *Hello          *
-*Hello World!*
+*Hello*
 \end{lstlisting}
 % \end{frame}
 
 % \begin{frame}[fragile]\ft{\secname：关于字符串的打印}
 % \lstinline|%15.5s| 只打印5个字符。修饰符‘-’使文本左对齐输出。
+\end{frame}
+\begin{frame}[fragile]\ft{\secname：\lstinline|\%f, \%e, \%E|}
+\begin{lstlisting}[backgroundcolor=\color{red!20}]
+%s 
+\end{lstlisting}
+按实际宽度输出。\pause 
+
+\begin{lstlisting}[backgroundcolor=\color{red!20}]
+%ms 
+\end{lstlisting}
+输出字段宽度为 \lstinline|m|，右对齐。
+\begin{itemize}
+\item 若 \lstinline|m| 大于实际宽度，则左端补空格；
+\item 若 \lstinline|m| 小于等于实际宽度，则按实际宽度输出。
+\end{itemize} \pause 
+
+\begin{lstlisting}[backgroundcolor=\color{red!20}]
+%m.ns 
+\end{lstlisting}
+输出字段宽度为 \lstinline|m|，显示前 \lstinline|n| 个字符，右对齐。
+\begin{itemize}
+\item 若 \lstinline|m| 大于 \lstinline|n|，则左端补空格；
+\item 若 \lstinline|m| 小于等于 \lstinline|n|，则按宽度 \lstinline|n| 输出。
+\end{itemize}\pause
+
+\begin{lstlisting}[backgroundcolor=\color{red!20}] 
+%.ns
+\end{lstlisting}
+只显示前 \lstinline|n| 个字符。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：\lstinline|printf()|的返回值}
@@ -241,9 +304,7 @@ printf("%d%% = %f\n", 30, 0.3);
 100 C is water's boiling point.
 the printf function printed 32 character.
 \end{lstlisting}
-% \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname：printf()的返回值}
 \lstinline|printf()| 返回所有打印字符的个数，包括空格和不可见的换行符。
 \end{frame}
 

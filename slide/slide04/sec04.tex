@@ -12,20 +12,19 @@
 \end{itemize}
 \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/input.c}
-% \end{frame}
+\begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
+  \lstinputlisting
+  {slide04/code/input.c}
+\end{frame}
 
-% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
-% \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
-% $ gcc input.c
-% $ ./a.out
-% Enter your name, age and weight:
-% Xiaoming
-% 23 100
-% Xiaoming: 23 100.000000
-% \end{lstlisting}
-% \end{frame}
+\begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+Enter your name, age and weight:
+Xiaoming
+23 100
+Xiaoming: 23 100.000000
+\end{lstlisting}
+\end{frame}
 
 \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
 \begin{itemize}
@@ -77,10 +76,10 @@
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：scanf格式说明符}
- 可在格式说明符中使用修饰符，修饰符出现在 \lstinline|%| 与格式字符之间。
-\end{frame}
+ 可在格式说明符中使用修饰符，修饰符出现在 \lstinline|%| 与格式字符之间。 \pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+% \begin{frame}[fragile]\ft{\secname：scanf格式说明符}
 
 \begin{table}
 \centering
@@ -110,9 +109,9 @@
  \lstinline|%Le, %Lf, %Lg| & 以 long double 存储 \\\hline
 \end{tabular}
 \end{table}
-\end{frame}
-
-\begin{frame}[fragile]\ft{\secname：scanf格式说明符}
+% \end{frame}
+\pause 
+% \begin{frame}[fragile]\ft{\secname：scanf格式说明符}
  若没有这些修饰符，则\lstinline|%d, %i, %o| 和\lstinline|%x| 指示 \lstinline|int| 类型，而\lstinline|%e, %f, %g| 指示 \lstinline|float| 类型。
 \end{frame}
 
@@ -176,7 +175,7 @@ scanf(" %c",&ch)
 则读取遇到的第一个非空白字符。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：scanf的返回值}
+\begin{frame}[fragile]\ft{\secname：\lstinline|scanf()| 的返回值}
   \lstinline|scanf()| 返回成功读入的项目个数。
 
 \begin{itemize}
@@ -189,41 +188,41 @@ scanf(" %c",&ch)
 
 \end{frame}
 
-% \begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|printf()| 的*修饰符}
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/varwidth.c}
+\begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|printf()| 的 \lstinline|*| 修饰符}
+  \lstinputlisting
+  {slide04/code/varwidth.c}
 % \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname：printf的*修饰符}
-% \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
-% $ gcc varwidth.c
-% $ ./a.out
-% What field width?
-% 6
-% The number is:   256
-% Now enter a width and a precision:
-% 8 3
-% Weight= 123.500
-% \end{lstlisting}
-% \end{frame}
+% \begin{frame}[fragile]\ft{\secname：\lstinline|printf()| 的 \lstinline|*| 修饰符}
+  \pause 
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
+What field width?
+6
+The number is:   256
+Now enter a width and a precision:
+8 3
+Weight= 123.500
+\end{lstlisting}
+\end{frame}
 
-\begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的*修饰符}
+\begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
  在 \lstinline|scanf()| 中，把 \lstinline|*| 放在 \lstinline|%| 与格式字符之间时，会使函数跳过相应的输入项目。
 \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的*修饰符}
+\begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
 
-% \lstinputlisting[language=c,frame=single,numbers=left]{Code/skip2.c}
+  \lstinputlisting
+  {slide04/code/skip2.c}
 % \end{frame}
 
-% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的*修饰符}
-% \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
-% $ gcc skip2.c
-% $ ./a.out
-% Please enter three integers:
-% 10 20 30
-% The last integer was 30
-% \end{lstlisting}
-% \end{frame}
+% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
+  \pause 
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+Please enter three integers:
+10 20 30
+The last integer was 30
+\end{lstlisting}
+\end{frame}
 
 
 

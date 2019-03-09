@@ -1,10 +1,13 @@
-\ft{\secname：\lstinline|printf()| 中的 \lstinline|\%n|}
-在 \lstinline|printf()| 中， 使用 \lstinline|%n| 将获取 \lstinline|%n| 出现之前的所有字符的个数，并将其传递给后面对应的变量。\pause
+\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
 
-\lstinputlisting
-{slide04/code/printf_n.c} \pause
+  \lstinputlisting
+  {slide04/code/skip2.c}
+% \end{frame}
 
-\begin{lstlisting}[backgroundcolor=\color{red!20}]
-Hello Wuhan University!
-c1 = 12, c2 = 23
+% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
+  \pause
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+Please enter three integers:
+10 20 30
+The last integer was 30
 \end{lstlisting}
