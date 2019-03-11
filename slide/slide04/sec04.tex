@@ -1,10 +1,12 @@
 \section{格式化输入}
 \begin{frame}[fragile]\ft{\secname}
   同 \lstinline|printf()| 一样， \lstinline|scanf()| 也使用控制字符串和参数列表，主要区别在参数列表。 \lstinline|printf()| 使用变量名、常量和表达式；而 \lstinline|scanf()| 使用指向变量的指针。
-\end{frame}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
-\begin{itemize}
+% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的参数列表}
+  \vspace{.1in}\pause 
+
+  \begin{itemize}
 \item 
   若使用 \lstinline|scanf()| 来读取某种基本类型的值，请在变量名前加一个 \lstinline|&|。 \\[0.1in]
 \item
@@ -31,15 +33,15 @@ Xiaoming: 23 100.000000
 \item
   \lstinline|scanf()| 使用空格（换行、制表符和空格）来决定如何把输入分成几个字段。
 它依次把格式说明符与字段相匹配，并跳过它们之间的空格。\\[0.1in]
+% \item
+% 也可以分一行或多行输入，只要每个输入项目之间至少有一个换行符、空格或制表符。\\[0.1in]
 \item
-也可以分一行或多行输入，只要每个输入项目之间至少有一个换行符、空格或制表符。\\[0.1in]
-\item
-\%c是个例外，即使下一个字符是空白字符，它也会读取。
-\end{itemize}
-\end{frame}
+\lstinline|%c| 是个例外，即使下一个字符是空白字符，它也会读取。\\[0.1in]
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：\lstinline|printf()| 与 \lstinline|scanf()| 格式说明符的区别}
-\begin{itemize}
+% \begin{frame}[fragile]\ft{\secname：\lstinline|printf()| 与 \lstinline|scanf()| 格式说明符的区别}
+% \begin{itemize}
 \item
   \lstinline|printf()| 把\lstinline|%f|、\lstinline|%e|、\lstinline|%E|、\lstinline|%g| 和 \lstinline|%G| 同时用于 \lstinline|float| 和 \lstinline|double| 类型\\[0.1in]
 \item
@@ -116,15 +118,15 @@ Xiaoming: 23 100.000000
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
-  \lstinline|scanf()| 允许把普通字符放在格式字符串中，除了空格字符之外的普通字符一定要与输入字符串准确匹配。  
-\end{frame}
+  \lstinline|scanf()| 允许把普通字符放在格式字符串中，除了空格字符之外的普通字符一定要与输入字符串准确匹配。  \vspace{.1in}\pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
+% \begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
 scanf("%d, %d", &n, &m);
 \end{lstlisting}
-
-\rule{\textwidth}{0.1em}
+\pause 
+% \rule{\textwidth}{0.1em}
 \begin{lstlisting}[title=合法的输入方式,showspaces=true,backgroundcolor=\color{red!20}]
 12, 23
 
@@ -142,8 +144,8 @@ scanf("%d, %d", &n, &m);
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
 scanf("%d and %d", &n, &m);
 \end{lstlisting}
-
-\rule{\textwidth}{0.1em}
+\pause 
+% \rule{\textwidth}{0.1em}
 \begin{lstlisting}[title=合法的输入方式,showspaces=true,backgroundcolor=\color{red!20}]
 12 and 23
 
@@ -155,8 +157,8 @@ scanf("%d and %d", &n, &m);
 
 \begin{frame}[fragile]\ft{\secname：格式字符串中的常规字符}
 
-除了 \lstinline|%c| 之外的说明符会自动跳过输入项之前的空格，故以下两条语句的效果相同：
-\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
+除了 \lstinline|%c| 之外的格式说明符会自动跳过输入项之前的空格，故以下两条语句的效果相同：
+\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
 scanf("%d%d",&n,&m);
 
 scanf("%d %d",&n,&m);
@@ -191,10 +193,9 @@ scanf(" %c",&ch)
 \begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|printf()| 的 \lstinline|*| 修饰符}
   \lstinputlisting
   {slide04/code/varwidth.c}
-% \end{frame}
+\end{frame}
 
-% \begin{frame}[fragile]\ft{\secname：\lstinline|printf()| 的 \lstinline|*| 修饰符}
-  \pause 
+\begin{frame}[fragile]\ft{\secname：\lstinline|printf()| 的 \lstinline|*| 修饰符}
 \begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!20}]
 What field width?
 6
