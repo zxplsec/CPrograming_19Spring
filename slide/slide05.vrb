@@ -1,0 +1,16 @@
+\ft{\secname}
+
+\begin{table}[htbp]
+  \centering
+  \caption{运算符的优先级与结合性}
+  \begin{tabular}{l|l|l}\hline\hline
+    运算符 & 描述 & 结合性 \\\hline
+    \lstinline|=| & 赋值 & 从右到左\\
+    \lstinline|+=  -=| & 加/减赋值 & \\
+    \lstinline|*=  /=| & 乘/除赋值 & \\
+    \lstinline|%=  &=| & 求余/位与赋值 & \\
+    \lstinline|^=  | |= & 位异或/位或赋值 &\\
+    \lstinline|<<=  >>=| & 位左移/位右移赋值 & \\\hline
+    \lstinline|,| & 逗号(分离表达式) & 从左到右\\\hline\hline
+  \end{tabular}
+\end{table}

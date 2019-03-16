@@ -1,0 +1,17 @@
+\beamer@sectionintoc {1}{示例程序}{3}{0}{1}
+\beamer@sectionintoc {2}{基本运算符}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{赋值运算符}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{加减运算符}{22}{0}{2}
+\beamer@subsectionintoc {2}{3}{乘法运算符}{26}{0}{2}
+\beamer@subsectionintoc {2}{4}{除法运算符}{30}{0}{2}
+\beamer@subsectionintoc {2}{5}{运算符优先级}{34}{0}{2}
+\beamer@sectionintoc {3}{其它运算符}{43}{0}{3}
+\beamer@subsectionintoc {3}{1}{取模运算符 \lstinline |\%|}{44}{0}{3}
+\beamer@subsectionintoc {3}{2}{自增自减运算符}{53}{0}{3}
+\beamer@sectionintoc {4}{C与C++中的逗号}{83}{0}{4}
+\beamer@sectionintoc {5}{关系运算符与逻辑运算符}{95}{0}{5}
+\beamer@subsectionintoc {5}{1}{关系运算符}{96}{0}{5}
+\beamer@subsectionintoc {5}{2}{逻辑运算符}{104}{0}{5}
+\beamer@subsectionintoc {5}{3}{逻辑运算符中的短路现象}{109}{0}{5}
+\beamer@sectionintoc {6}{表达式和语句}{114}{0}{6}
+\beamer@sectionintoc {7}{优先级与结合性}{133}{0}{7}

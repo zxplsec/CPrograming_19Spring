@@ -1,12 +1,12 @@
 // addemup.c: 
 #include <stdio.h>
-int main(void)  // find sum of first 20 integers
+int main(void)  
 {
-  int count, sum;     //declaration statement  
-  count = 0;          //assignment statement
+  int count, sum;     
+  count = 0;          
   sum = 0;
-  while (count++ < 20)  //while statement
+  while (count++ < 20)  
     sum = sum + count;  
-  printf("sum = %d\n", sum); //function statement                            
+  printf("sum = %d\n", sum); 
   return 0;
 }

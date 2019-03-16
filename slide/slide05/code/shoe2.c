@@ -10,7 +10,7 @@ int main(void)
   while (shoe < 18.5)  {
     foot = SCALE * shoe + ADJUST;
     printf("%10.1f %15.2f inches\n", shoe, foot);
-    shoe = shoe + 1.0;
+    shoe = shoe + 1;
   }
   printf("If shoes fit, wear it.\n");
   return 0;
