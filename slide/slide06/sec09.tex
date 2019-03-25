@@ -13,7 +13,7 @@
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-要使for循环更像while循环，可以去掉第一个和第三个表达式：
+要使 \lstinline|for| 循环更像 \lstinline|while| 循环，可以去掉第一个和第三个表达式：
 \begin{lstlisting}[language=c,frame=single]
 for (; condition; )
 \end{lstlisting}
@@ -25,7 +25,7 @@ while (condition)
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-要使while循环更像for循环，可以在前面使用初始化语句并包含更新语句：
+要使 \lstinline|while| 循环更像 \lstinline|for| 循环，可以在前面使用初始化语句并包含更新语句：
 \begin{lstlisting}[language=c,frame=single]
 initialization;
 while (condition) {
@@ -44,14 +44,14 @@ for (initialization; condition; update){
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
-\item 在循环中涉及到初始化和更新变量时，使用for循环较为适当，而在其他条件下使用while循环更好一些。while循环对以下条件比较自然：
+\item 在循环中涉及到初始化和更新变量时，使用 \lstinline|for| 循环较为适当，而在其他条件下使用 \lstinline|while| 循环更好一些。 \lstinline|while| 循环对以下条件比较自然：
 \begin{lstlisting}[language=c,frame=single]
 while (scanf("%ld", &num) == 1){
   ...
 }
 \end{lstlisting}
 
-\item 对那些涉及到用索引计数的循环，使用for循环是一个更自然的选择。
+\item 对那些涉及到用索引计数的循环，使用 \lstinline|for| 循环是一个更自然的选择。
 \begin{lstlisting}[language=c,frame=single]
 for (count = 1; count <= 100; count++){
   ...

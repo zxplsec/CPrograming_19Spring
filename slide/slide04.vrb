@@ -1,13 +1,9 @@
-\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
+\frametitle{控制符的使用}
+上面介绍的是使用\lstinline|cout|和\lstinline|cin|时的默认格式。
+  但有时人们在输入输出时有一些特殊的要求，
+  如在输出实数时规定字段宽度，只保留两位小数，数据向左或向右对齐等。
+  C++提供了在输入输出流中使用的控制符。
 
-  \lstinputlisting
-  {slide04/code/skip2.c}
-% \end{frame}
-
-% \begin{frame}[fragile]\ft{\secname： \lstinline|scanf()| 的 \lstinline|*| 修饰符}
-  \pause
-\begin{lstlisting}[showspaces=true,backgroundcolor=\color{red!10}]
-Please enter three integers:
-10 20 30
-The last integer was 30
-\end{lstlisting}
+  需要注意的是: \red{如果使用了控制符，
+    在程序开头除了要加\lstinline|iostream|头文件外，
+    还要加\lstinline|iomanip|头文件｡}

@@ -5,7 +5,6 @@ int main(void)
   long num;
   long sum = 0L;
   int status;
-
   printf("Enter an integer to be summed ");
   printf("(q to quit): \n");
   status = scanf("%ld", &num);
@@ -14,7 +13,6 @@ int main(void)
     printf("Enter next integer (q to quit):\n");
     status = scanf("%ld", &num);
   }
-  printf("Those integers sum to %ld.\n", sum);
-  
+  printf("Those integers sum to %ld.\n", sum);  
   return 0;
 }

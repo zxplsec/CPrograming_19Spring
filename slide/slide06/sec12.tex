@@ -1,11 +1,11 @@
 \section{使用函数返回值的循环}
 \begin{frame}[fragile]\ft{\secname}
-\begin{li}
+\begin{free}[例]{}
 编制一个函数，计算一个数的整数次幂，如$n^p$。
-\end{li}
+\end{free}
 \rule{\textwidth}{1mm}\pause \vspace{0.1in}
 
-请大家记住，头文件math.h中提供了一个名为pow的幂函数，允许计算浮点数次幂。
+请大家记住，头文件 \lstinline|math.h| 中提供了一个名为 \lstinline|pow| 的幂函数，允许计算浮点数次幂。
 
 
 \end{frame}
@@ -13,14 +13,12 @@
 
 \begin{frame}[fragile]\ft{pow函数的使用}
 
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/pow.c}
+\lstinputlisting[language=c,numbers=left,frame=single]{slide06/code/pow.c}
 
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{pow函数的使用}
-
-
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
    2^3   = 8.000000
  sqrt 2  = 1.414214
@@ -35,11 +33,9 @@
 double power(double n, int p)
 {
   double pow = 1;
-  int i;
-  
+  int i;  
   for (i = 1; i <= p; i++)
-    pow *= n;
-    
+    pow *= n;    
   return pow;
 }
 \end{lstlisting}
@@ -51,7 +47,7 @@ double power(double n, int p)
 
 \begin{itemize}
 \item 定义函数时，说明它的返回值类型；\\[0.1in]
-\item 使用关键字return指示要返回的值。
+\item 使用关键字 \lstinline|return| 指示要返回的值。
 \end{itemize}
 \end{frame}
 
@@ -59,7 +55,7 @@ double power(double n, int p)
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
 \item 要声明函数类型，可以在函数名之前写出类型，就像声明一个变量时那样；\\[0.1in]
-\item 关键字return使函数把它后面的值返回给调用函数。可以返回一个值，也可以返回一个表达式。
+\item 关键字 \lstinline|return| 使函数把它后面的值返回给调用函数。可以返回一个值，也可以返回一个表达式。
 \begin{lstlisting}
 return 2 * x + b;
 \end{lstlisting}
@@ -87,7 +83,8 @@ printf("%f", power(1.2, 3));
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{power函数的测试}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/power.c}
+  \lstinputlisting[]
+  {slide06/code/power.c}
 \end{frame}
 
 

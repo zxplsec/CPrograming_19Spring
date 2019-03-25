@@ -9,13 +9,14 @@ for (initialization; condition; increment)
   statement
 \end{lstlisting} 
 
-for循环把初始化、测试与更新三个动作放在一起。
+ \lstinline|for| 循环把初始化、测试与更新三个动作放在一起。
 
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{\secname}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/sweetie2.c}
+  \lstinputlisting[]
+  {slide06/code/sweetie2.c}
 \end{frame}
 
 
@@ -30,10 +31,10 @@ Hello world!
 
 
 \begin{frame}[fragile]\ft{\secname}
-for后面的圆括号中包含由两个分号隔开的三个表达式。\vspace{0.1in}
+ \lstinline|for| 后面的圆括号中包含由两个分号隔开的三个表达式。\vspace{0.1in}
 
 \begin{enumerate}
-\item 第一个表达式进行初始化，在for循环开始时执行一次。\\[0.1in]
+\item 第一个表达式进行初始化，在 \lstinline|for| 循环开始时执行一次。\\[0.1in]
 \item 第二个表达式是判断条件，在每次执行循环前都要对它求值，值为假时，循环结束。\\[0.1in]
 \item 第三个表达式用于更新，在每次循环结束时进行计算。\\[0.1in]
 \end{enumerate}
@@ -41,7 +42,7 @@ for后面的圆括号中包含由两个分号隔开的三个表达式。\vspace{
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_cube.c}
+\lstinputlisting[]{slide06/code/for_cube.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -55,12 +56,12 @@ for后面的圆括号中包含由两个分号隔开的三个表达式。\vspace{
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 1、 可以使用自减运算符来减小计数器。
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_down.c}
+\lstinputlisting[]{slide06/code/for_down.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 4 seconds!
 3 seconds!
@@ -70,12 +71,12 @@ Ignition!
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 2、 若有需要，可让计数器一次加2，加10，等等。
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_13s.c}
+\lstinputlisting[]{slide06/code/for_13s.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 2
@@ -86,12 +87,12 @@ Ignition!
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 3、 可让字符代替数字进行计数。
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_char.c}
+\lstinputlisting[]{slide06/code/for_char.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 The ASCII value of a is 97
 The ASCII value of b is 98
@@ -101,12 +102,12 @@ The ASCII value of z is 122
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 4、 可判断迭代次数之外的条件。
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_cube1.c}
+\lstinputlisting[]{slide06/code/for_cube1.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
   n  n cubed
   1        1
@@ -116,12 +117,12 @@ The ASCII value of z is 122
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 5、 可让数量几何增加而不是算术增加；即不是每一次加一个固定的数，而是乘上一个固定的数。
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_geo.c}
+\lstinputlisting[]{slide06/code/for_geo.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 Your debt is now $100.00
 Your debt is now $110.00
@@ -130,12 +131,12 @@ Your debt is now $133.10
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 6、 第三个表达式中，可以使用任何合法表达式。
-\lstinputlisting[language=c,numbers=left,frame=single]{Code/for_wild.c}
+\lstinputlisting[]{slide06/code/for_wild.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
          1         55
          2         60
@@ -145,22 +146,22 @@ Your debt is now $133.10
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 7、 甚至可以让一个或多个表达式为空，但不要遗漏分号。只需确保在循环中包含了一些能使循环最终结束的语句。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
-  \lstinputlisting[language=c,numbers=left,frame=single]{Code/for_none.c}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
+  \lstinputlisting[]{slide06/code/for_none.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 n = 3; ans = 54.
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 第二个表达式为空会被认为是真，故下面的循环会永远执行：
 \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
 for ( ; ; )
@@ -169,15 +170,15 @@ for ( ; ; )
 
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 8、 第一个表达式不必初始化一个变量，它也可以是某种类型的printf语句。请记住第一个表达式只在执行循环的其他部分之前被求值或执行一次。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
-  \lstinputlisting[language=c,numbers=left,frame=single]{Code/for_show.c}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
+  \lstinputlisting[]{slide06/code/for_show.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 Keep entering numbers!
 2
@@ -186,7 +187,7 @@ That's the one I want!
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：利用for的灵活性}
+\begin{frame}[fragile]\ft{\secname：利用 \lstinline|for| 的灵活性}
 9、 循环中的动作可以改变循环表达式的参数。例如，假定有这样一个循环
 \begin{lstlisting}
 for (n = 1; n < 10000; n = n + delta)
