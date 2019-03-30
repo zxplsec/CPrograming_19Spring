@@ -1,0 +1,10 @@
+\ft{\secname}
+\begin{lstlisting}[frame=single,numbers=left]
+// pseudo code
+ read a character
+ while there is more input
+      increment character count
+      if a line has been read, increment line count
+      if a word has been read, increment word count
+      read next character
+\end{lstlisting}

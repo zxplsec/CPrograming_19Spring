@@ -1,9 +1,8 @@
 \section{if语句}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-\lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/colddays.c}
+\lstinputlisting[]
+{slide07/code/colddays.c}
 \end{frame}
 
 
@@ -18,7 +17,7 @@ q
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-if语句被称为分支语句，其一般形式为
+\lstinline|if| 语句被称为分支语句，其一般形式为
 \begin{lstlisting}[language=c]
 if (condition)
   statement
@@ -29,16 +28,16 @@ if (condition){
 \end{lstlisting}
 \begin{itemize}
 \item
-若condition的值为真，则执行statements；否则跳过该语句。\\[0.1in]
+若 \lstinline|condition| 的值为真，则执行 \lstinline|statements|；否则跳过该语句。\\[0.1in]
 \item
-if结构和while结构相似，主要区别在于，在if结构中，判断和执行仅有一次，而在while结构中，判断和执行可以重复多次。
+\lstinline|if| 结构和 \lstinline|while| 结构相似，主要区别在于，在 \lstinline|if| 结构中，判断和执行仅有一次，而在 \lstinline|while| 结构中，判断和执行可以重复多次。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
 \item
-condition是一个关系表达式，通常是比较两个量的大小。更一般地，condition可以是任何表达式，其值为0就被视为假。\\[0.1in]
+\lstinline|condition| 是一个关系表达式，通常是比较两个量的大小。更一般地，\lstinline|condition| 可以是任何表达式，其值为 \lstinline|0| 就被视为假。\\[0.1in]
 \item
 语句部分可以是一条简单语句，也可以是一个由花括号括起的复合语句：
 \begin{lstlisting}[]

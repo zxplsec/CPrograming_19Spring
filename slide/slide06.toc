@@ -1,1 +1,12 @@
-\beamer@sectionintoc {1}{使用函数返回值的循环}{3}{0}{1}
+\beamer@sectionintoc {1}{示例程序}{3}{0}{1}
+\beamer@sectionintoc {2}{\lstinline |while|语句}{6}{0}{2}
+\beamer@sectionintoc {3}{关系运算符和表达式}{31}{0}{3}
+\beamer@sectionintoc {4}{不确定循环与计数循环}{66}{0}{4}
+\beamer@sectionintoc {5}{for循环}{71}{0}{5}
+\beamer@sectionintoc {6}{更多赋值运算符}{98}{0}{6}
+\beamer@sectionintoc {7}{逗号运算符}{103}{0}{7}
+\beamer@sectionintoc {8}{退出条件循环(\lstinline |do while|)}{121}{0}{8}
+\beamer@sectionintoc {9}{选择哪种循环}{130}{0}{9}
+\beamer@sectionintoc {10}{嵌套循环(nested loop)}{135}{0}{10}
+\beamer@sectionintoc {11}{数组}{141}{0}{11}
+\beamer@sectionintoc {12}{使用函数返回值的循环}{152}{0}{12}

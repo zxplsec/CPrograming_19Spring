@@ -40,11 +40,11 @@
 }
 \makeatother
 
-\title{Data structure and algorithm in Python}
-\subtitle{Linked Lists}
+\title{C/C++语言}
+\subtitle{分支结构}
 \date{}%{\today}
-\author{Xiaoping Zhang}
-\institute{School of Mathematics and Statistics, Wuhan University}
+\author{张晓平}
+\institute{武汉大学数学与统计学院}
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
 \begin{document}
@@ -57,32 +57,14 @@
   \tableofcontents[hideallsubsections]
 \end{frame}
 
-\begin{frame}
-  Python’s list class is highly optimized, and often a great choice for storage. With that said, there are some notable disadvantages:
-  \begin{enumerate}
-  \item The length of a dynamic array might be longer than the actual number of elements that it stores.
-  \item Amortized bounds for operations may be unacceptable in real-time systems.
-  \item Insertions and deletions at interior positions of an array are expensive.
-  \end{enumerate}
 
-  In this lecture, we introduce a data structure known as a \red{linked list}, which provides an alternative to an \blue{array-based sequence} (such as a Python list).
-\end{frame}
-
-\begin{frame}
-   Both array-based sequences and linked lists keep elements in a certain order, but using a very different style.
-  \begin{itemize}
-  \item An \blue{array} provides the more centralized representation, with one large chunk of memory capable of accommodating references to many elements.
-  \item A \blue{linked list}, in contrast, relies on a more distributed representation in which a lightweight object, known as a \red{node}, is allocated for each element.
-  \item[] Each node maintains a reference to its element and one or more references to neighboring nodes in order to collectively represent the linear order of the sequence.
-  \end{itemize}
-\end{frame}
-
-\input{ch07/sec01.tex}
-\input{ch07/sec02.tex}
-\input{ch07/sec03.tex}
-\input{ch07/sec04.tex}
-\input{ch07/sec05.tex}
-\input{ch07/sec06.tex}
+% \input{slide07/sec01.tex}
+% \input{slide07/sec02.tex}
+% \input{slide07/sec03.tex}
+\input{slide07/sec04.tex}
+% \input{slide07/sec05.tex}
+% \input{slide07/sec06.tex}
+% \input{slide07/sec07.tex}
 
 
 \end{document}
