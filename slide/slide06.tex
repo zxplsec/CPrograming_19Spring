@@ -52,9 +52,11 @@
 \maketitle
 
 \begin{frame}{Table of contents}
-  %\Fontvi
+  % \Fontvi
   \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
+  \begin{multicols}{2}
+    \tableofcontents[hideallsubsections]
+  \end{multicols}
 \end{frame}
 
 
@@ -70,5 +72,5 @@
 \input{slide06/sec10.tex}
 \input{slide06/sec11.tex}
 \input{slide06/sec12.tex}
-
+\input{slide06/op.tex}
 \end{document}

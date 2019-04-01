@@ -1,0 +1,12 @@
+// ex02.c: 
+#include <stdio.h>
+#include <string.h>
+#define NAME "Xiaoping"
+int main(void)
+{
+  printf("\"%s\"\n", NAME);
+  printf("\"%20s\"\n", NAME);
+  printf("\"%-20s\"\n", NAME);
+  printf("\"%*s\"\n", (int)strlen(NAME)+3, NAME);
+  return 0;
+}

@@ -1,15 +1,1 @@
-\ft{power函数的测试}
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-Enter a number and the positive integer power
-to which
-the number will be raised. Enter qto quit.
-1.2 12
-1.2 to the power 12 is 8.9161
-Enter next pair of numbers or q to quit.
-2
-16
-2 to the power 16 is 65536
-Enter next pair of numbers or q to quit.
-q
-\end{lstlisting}
-
+\lstinputlisting[]{slide06/code_op/ex16.c}

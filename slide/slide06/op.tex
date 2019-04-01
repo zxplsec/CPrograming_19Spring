@@ -1,0 +1,207 @@
+\section{上机操作}
+\begin{frame}[fragile]
+\begin{free}[问题１]{}
+  编写程序，创建一个具有26个元素的数组，并在其中存储26个小写字母，然后利用该数组打印26个大写字母。
+\end{free}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex01.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题２]{}
+使用嵌套循环产生下列图案
+\begin{lstlisting}
+$
+$$
+$$$
+$$$$
+$$$$$
+\end{lstlisting}
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex02.c}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{free}[问题3]{}
+    使用嵌套循环产生下列图案
+\begin{lstlisting}
+F
+FE
+FED
+FEDC
+FEDCB
+FEDCBA
+\end{lstlisting}
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex03.c}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[问题4]{}
+  编写程序，由用户输入一个大写字母，使用嵌套循环产生如下图案。
+\begin{lstlisting}
+    A
+   ABA
+  ABCBA
+ ABCDCBA
+ABCDEDCBA
+\end{lstlisting}
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex04.c}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[问题5]{}
+  编写一个程序打印一个数，表的每一行都给出一个整数、它的平方以及立方。要求用户输入表的上限和下限，使用一个for循环。
+\end{free}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex05.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题6]{}
+  编写程序，把一个单词读入一个字符数组，然后反向打印出这个词。
+\end{free}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex06.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题7]{}
+  编写程序，要求输入两个浮点数，然后打印出二者的差值以及二者的乘积所得的结果。在用户输入非数字的输入之前程序循环处理每对输入值。
+\end{free}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex07.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题8]{}
+  改写以上程序，让它使用一个函数来返回计算值。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[问题9]{}
+  编写程序，让用户输入一个下限整数和上限整数，然后依次计算从下限到上限的每一个整数的平方和。当上限小于或等于上限时，程序结束。运行结果如下：
+\begin{lstlisting}
+Enter lower and upper integer limit: 5 9
+The sum of the squares from 25 to 81 is 255
+Enter lower and upper integer limit: 3 25
+The sum of the squares from 9 to 625 is 5520
+Enter lower and upper integer limit: 5 5
+Done
+\end{lstlisting}
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[basicstyle=\ttfamily\small]{slide06/code_op/ex09.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题10]{}
+  编写程序，把8个整数读入一个数组，然后以相反顺序打印。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex10.c}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[问题11]{}
+  编写程序，计算级数
+$$
+\begin{aligned}
+&1+\frac12 + \frac13 + \frac14 + \cdots + \frac1n + \cdots\\
+&1-\frac12 + \frac13 - \frac14 + \cdots + (-1)^{n+1}\frac1n + \cdots
+\end{aligned}
+$$
+由用户输入要计算的项数$n$，观察$n=20,100,500$时的结果，判断级数是否会收敛。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[basicstyle=\ttfamily\small]{slide06/code_op/ex11.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题12]{}
+  编写程序，创建一个长度为8的int数组，并把元素分别设为2的前8次幂，然后打印出它们的值。使用for循环来设置值，使用do while循环来显示值。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex12.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题13]{}
+  编写程序，创建两个长度为8的double数组，使用一个循环让用户键入第一个数组的8个元素的值，并把第二个数组第$i$个元素设置为第一个数组的前$i$个元素之和。最后使用一个循环来显示两个数组的内容，第一个数组在一行中显示，而第二个数组中的每个元素在第一个数组的对应元素之下显示。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex13.c}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[问题14]{}
+  编写程序，读入一行输入，然后反向打印该行。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[basicstyle=\ttfamily\small]{slide06/code_op/ex14.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题15]{}
+ 小王以每年10\%的单利投资了￥10000，而小李以每年5\%的复利投资了￥10000。编制一个程序，计算需要多少年小王的投资额才会超过小李，并显示那时两个人的投资额。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[basicstyle=\ttfamily\small]{slide06/code_op/ex15.c}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{free}[问题16]{}
+  小王中奖100万美元，存入一个每年赢得8\%的账户。在每年的最后一天，小王取出10万美元。编写一个程序，计算需要多少年才会清空账户。
+\end{free}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]
+\lstinputlisting[]{slide06/code_op/ex16.c}
+\end{frame}

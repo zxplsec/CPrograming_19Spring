@@ -10,11 +10,11 @@ else if (condition3)
   ...
 else    
 \end{lstlisting}
-但多数情况下，使用switch语句会更加方便。
+但多数情况下，使用 \lstinline|switch| 语句会更加方便。
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-\lstinputlisting[language=c,numbers=left,frame=single]
+\lstinputlisting
 {slide07/code/animals.c}
 \end{frame}
 
@@ -54,21 +54,20 @@ switch (integer expression)
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  1、判断表达式应该具有整数值，包括int，char和enum类型。
+  1、判断表达式应该具有整数值，包括 \lstinline|int|， \lstinline|char| 和 \lstinline|enum| 类型。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  \lstinputlisting[language=c,numbers=left,frame=single]
+  \lstinputlisting
   {slide07/code/switch1.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-2、break使程序跳出switch结构，执行switch之后的下一条语句。
-若没有break语句，从相匹配的标签到switch末尾的每一条语句都会被执行。
+2、 \lstinline|break| 使程序跳出 \lstinline|switch| 结构，执行 \lstinline|switch| 之后的下一条语句。 若没有 \lstinline|break| 语句，从相匹配的标签到 \lstinline|switch| 末尾的每一条语句都会被执行。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  \lstinputlisting[language=c,numbers=left,frame=single]
+  \lstinputlisting
   {slide07/code/switch2.c}
 \end{frame}
 
@@ -82,7 +81,7 @@ Choice other than 1, 2 and 3
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  \lstinputlisting[language=c,numbers=left,frame=single]
+  \lstinputlisting[]
   {slide07/code/switch3.c}
 \end{frame}
 
@@ -97,20 +96,20 @@ After Switch
 
 
 \begin{frame}[fragile]\ft{\secname}
-3、case标签必须是整型常量或整型常量表达式，不能用变量作为case标签。
+3、\lstinline|case| 标签必须是整型常量或整型常量表达式，不能用变量作为 \lstinline|case| 标签。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  \lstinputlisting[language=c,numbers=left,frame=single]
+  \lstinputlisting[]
   {slide07/code/switch4.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-4、default语句块可放在switch结构中的任意位置，若判断表达式与标签均不匹配，它会被执行。
+4、\lstinline|default| 语句块可放在 \lstinline|switch| 结构中的任意位置，若判断表达式与标签均不匹配，它会被执行。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  \lstinputlisting[language=c,numbers=left,frame=single]
+  \lstinputlisting[]
   {slide07/code/switch5.c} \pause 
 \begin{lstlisting}[backgroundcolor=\color{blue!20}]
 Choice other than 1 and 2
@@ -119,12 +118,12 @@ Choice other than 1 and 2
 
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-5、case之前的语句不会被执行。一旦进入switch结构，将直接转入标签匹配。
+5、\lstinline|case| 之前的语句不会被执行。一旦进入 \lstinline|switch| 结构，将直接转入标签匹配。
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
+[]
 {slide07/code/switch6.c}
 \begin{lstlisting}[backgroundcolor=\color{blue!20}]
 Choice is 1
@@ -132,28 +131,28 @@ Choice is 1
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-6、两个case标签不能有相同值。
+6、两个 \lstinline|case| 标签不能有相同值。
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
+[]
 {slide07/code/switch7.c}
 \end{frame}
 
 
 
 \begin{frame}[fragile]\ft{\secname}
-  \begin{li}
-    编制程序，输入一段文字，按{\tf \#}停止输入，然后统计该段文字中字母a, e, i, o, u出现的次数（不计大小写）。
-  \end{li}
+  \begin{free}[例]{}
+    编制程序，输入一段文字，按 \lstinline|#| 停止输入，然后统计该段文字中字母 \lstinline|a, e, i, o, u| 出现的次数（不计大小写）。
+  \end{free}
 \end{frame}
 
 
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
+[]
 {slide07/code/vowels.c}
 \end{frame}
 
@@ -169,16 +168,16 @@ Number of text:    A    E    I    U
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
 \item
-若输入字母为i，则switch语句定位到标签为case 'i':的位置。因没有break同该标签相关联，故程序将前进到下一条语句，即ni++。\\[0.1in]
+若输入字母为 \lstinline|i|，则 \lstinline|switch| 语句定位到标签为 \lstinline|case 'i':| 的位置。因没有 \lstinline|break| 同该标签相关联，故程序将前进到下一条语句，即ni++。\\[0.1in]
 \item 
-若输入字母为I，程序将直接定位到这条语句。\\[0.1in]
+若输入字母为 \lstinline|I|，程序将直接定位到这条语句。\\[0.1in]
 \item 
 本质上，两个标签都指向相同的语句。
 \end{itemize} 
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-在该例中，可通过ctype.h中的toupper函数在进行判断之前将所有的字母转换为大写字母以避免多重标签。
+在该例中，可通过 \lstinline|ctype.h| 中的 \lstinline|toupper()| 在进行判断之前将所有的字母转换为大写字母以避免多重标签。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -202,7 +201,7 @@ switch (ch) {
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-若希望保留ch的值不变，可以这么做
+若希望保留 \lstinline|ch| 的值不变，可以这么做
 \begin{lstlisting}
 switch (toupper(ch)) {
   case 'A':  na++;
@@ -224,14 +223,14 @@ switch (toupper(ch)) {
 \begin{frame}[fragile]\ft{\secname：switch与if else}
 \begin{itemize}
 \item
-若选择是基于求一个浮点型变量或表达式的值，就不能使用switch。\\[0.1in]
+若选择是基于求一个浮点型变量或表达式的值，就不能使用 \lstinline|switch|。\\[0.1in]
 \item
 若变量必须落入某个范围，使用if语句会更方便。如
 \begin{lstlisting}
 if (integer < 1000 && integer > 2)  
 \end{lstlisting}
 \vspace{0.1in}
-\item 若可以使用switch，程序会运行得稍快些，并且代码会更紧凑。 
+\item 若可以使用 \lstinline|switch|，程序会运行得稍快些，并且代码会更紧凑。 
 \end{itemize}         
 \end{frame}
 

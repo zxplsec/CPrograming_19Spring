@@ -10,3 +10,4 @@
 \beamer@sectionintoc {10}{嵌套循环(nested loop)}{135}{0}{10}
 \beamer@sectionintoc {11}{数组}{141}{0}{11}
 \beamer@sectionintoc {12}{使用函数返回值的循环}{152}{0}{12}
+\beamer@sectionintoc {13}{上机操作}{164}{0}{13}

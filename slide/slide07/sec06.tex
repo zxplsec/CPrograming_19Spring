@@ -1,58 +1,57 @@
-\section{continue和break语句}
+\section{ \lstinline|continue| 和 \lstinline|break| 语句}
 \begin{frame}[fragile]\ft{\secname}
-continue和break语句用于循环结构，根据判断条件来忽略部分循环甚至终止循环。
+ \lstinline|continue| 和 \lstinline|break| 语句用于循环结构，根据判断条件来忽略部分循环甚至终止循环。
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
 \begin{itemize}
 \item
-当程序运行到continue语句时，其后的内容将被忽略，开始进入下一次循环。\\[0.1in]
+当程序运行到 \lstinline|continue| 语句时，其后的内容将被忽略，开始进入下一次循环。\\[0.1in]
 \item
-当continue语句用于嵌套结构时，仅影响包含它的那一层循环。
+当 \lstinline|continue| 语句用于嵌套结构时，仅影响包含它的那一层循环。
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
-\begin{li}
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
+\begin{free}[例]{}
 输入1-100之间的多个分数，求其平均分、最低分和最高分。当输入分数不在1-100之间时，程序应该不做处理。
-\end{li}
+\end{free}
 
 \end{frame}
 
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname：continue语句}
+\begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|continue| 语句}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
 {slide07/code/continue.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 Enter the first score (q to quit): 20
 Accepting 20.0:
 Enter next score (q to quit): -1
--1.0 is invalid. Try again: 30
-Accepting 30.0:
+-1.0 is invalid. Try again: 90
+Accepting 90.0:
 Enter next score (q to quit): 110
 110.0 is invalid. Try again: q
-Average of 2 scores is 25.0.
-Low = 0.0, High = 30.0.
+Average of 2 scores is 55.0.
+Low = 20.0, High = 90.0.
 \end{lstlisting}
 
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
 \begin{itemize}
-\item 对于while和do while循环，continue语句之后发生的动作是求循环表达式的值。\\[0.1in]
-\item 而对于for循环，下一个动作是先求更新表达式的值，然后再求判断表达式的值。
+\item 对于 \lstinline|while| 和 \lstinline|do while| 循环， \lstinline|continue| 语句之后发生的动作是求循环表达式的值。\\[0.1in]
+\item 而对于 \lstinline|for| 循环，下一个动作是先求更新表达式的值，然后再求判断表达式的值。
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
-\begin{lstlisting}[language=c,frame=single]
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
+\begin{lstlisting}
 count = 0;
 while (count < 10)
 {
@@ -66,8 +65,8 @@ while (count < 10)
 读取除换行符外的10个字符，并回显它们。注意：换行符不会被计数。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
-\begin{lstlisting}[language=c,frame=single]
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
+\begin{lstlisting}
 for (count = 0; count < 10; count++)
 {
   ch = getchar();
@@ -79,29 +78,29 @@ for (count = 0; count < 10; count++)
 读取包含换行符在内的10个字符，换行符不被回显，但会被计数。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：break语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
 \begin{itemize}
 \item
-当程序运行到break语句时，将会终止包含它的循环，跳出该循环体。\\[0.1in]
+当程序运行到 \lstinline|break| 语句时，将会终止包含它的循环，跳出该循环体。\\[0.1in]
 \item
-当break语句用于嵌套结构时，仅影响包含它的那一层循环。
+当 \lstinline|break| 语句用于嵌套结构时，仅影响包含它的那一层循环。
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：break语句}
-\begin{li}
+\begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
+\begin{free}[例]{}
 输入矩形的长和宽，用一个循环来计算其面积。若输入一个非数字作为矩形的长或宽，终止循环。
-\end{li}
+\end{free}
 \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname：break语句}
+\begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|break| 语句}
 
-\lstinputlisting[language=c,numbers=left,frame=single]
+\lstinputlisting
             {slide07/code/break.c}
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{\secname：continue语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|continue| 语句}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 Enter the length of the rectangle: 10
 Length = 10.00.
@@ -115,16 +114,16 @@ Done.
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：break语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
 \begin{itemize}
-\item break语句使程序直接跳转到该循环后的第一条语句；在for循环中，更新表达式也将被跳过。\\[0.1in]
+\item  \lstinline|break| 语句使程序直接跳转到该循环后的第一条语句；在for循环中，更新表达式也将被跳过。\\[0.1in]
 \item 
-嵌套循环中，break语句只能使程序跳出当前循环，要跳出外层循环还需另外一个break语句。
+嵌套循环中， \lstinline|break| 语句只能使程序跳出当前循环，要跳出外层循环还需另外一个 \lstinline|break| 语句。
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{\secname：break语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
 \begin{lstlisting}[language=c,frame=single]
 int p, q;
 scanf("%d", &p);
@@ -134,7 +133,7 @@ while (p > 0) {
   while (q > 0) {
     printf("%d\n", p*q);
     if (q > 100)
-      break;
+       break;
     scanf("%d", &q);
   }
   if (q > 100)

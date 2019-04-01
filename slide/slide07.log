@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.11.5)  30 MAR 2019 13:51
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.11.5)  1 APR 2019 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2928,6 +2928,30 @@ Package: xeCJK-listings 2018/02/27 v3.6.1 xeCJK patch file for listings
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `slide07.aux'.
 
@@ -3141,67 +3165,7 @@ Overfull \vbox (13.79993pt too high) detected at line 52
 
 
 
-] (./slide07.toc) [2
-
-] (./slide07/sec04.tex [3
-
-]
-\openout4 = `slide07.vrb'.
-
- (./slide07.vrb
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 2.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 4.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 4.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 5.
-
-Package hyperref Warning: Ignoring empty anchor on input line 5.
-
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 7.
-(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
-File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 10.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 10.
-) [4
-
-] (./slide07.vrb
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 4.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 4.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 5.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 10.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 10.
-) [5
-
-]
-\openout4 = `slide07.vrb'.
-
-
-(./slide07.vrb
+] (./slide07.toc
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -3223,7 +3187,1032 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'normal' (m/n) with NFSS spec.: <->"[FandolFang-Regular.otf]/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-) [6
+) [2
+
+] (./slide07/sec01.tex [3
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb (./slide07/code/colddays.c)) [4
+
+] [5
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [6
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 13.
+
+ (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [7
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+[8
+
+]) (./slide07/sec02.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lstinline' on input line 1.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
+[9
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 16.
+ [10
+
+] (./slide07.vrb) [11
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [12
+
+]
+(./slide07.vrb) [13
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [14
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 18
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
+File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
+)
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 18.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 18.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 18.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 18.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 18.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7.6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 18.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 18.
+) [15
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [16
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [17
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [18
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+(./slide07/code/cypher1.c))
+Overfull \vbox (26.81477pt too high) detected at line 172
+ []
+
+[19
+
+] (./slide07.vrb (./slide07/code/cypher1.c))
+Overfull \vbox (26.81477pt too high) detected at line 172
+ []
+
+[20
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [21
+
+] (./slide07.vrb) [22
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [23
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [24
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [25
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+(./slide07/code/cypher2.c)) [26
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [27
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 5; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\TU/FandolHei-Regular(0)/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+
+Overfull \hbox (1.63766pt too wide) in paragraph at lines 5--14
+ [] 
+ []
+
+) [28
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 5; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\T1/lmss/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+
+Overfull \hbox (1.63766pt too wide) in paragraph at lines 5--14
+ [] 
+ []
+
+) [29
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 5; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\T1/lmss/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+
+Overfull \hbox (1.63766pt too wide) in paragraph at lines 5--10
+ [] 
+ []
+
+) [30
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [31
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 6; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\T1/lmss/m/n/7 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 14.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 14.
+) [32
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/electric.c)) [33
+
+] [34
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+[35
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Overfull \hbox (23.44974pt too wide) in paragraph at lines 46--47
+ [] 
+ []
+
+)
+Overfull \vbox (6.58534pt too high) detected at line 374
+ []
+
+[36
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+Overfull \vbox (3.21498pt too high) detected at line 396
+ []
+
+[37
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [38
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [39
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+(./slide07/code/elseif.c)) [40
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [41
+
+] (./slide07.vrb) [42
+
+]
+(./slide07.vrb) [43
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [44
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [45
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [46
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [47
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/divisors.c)) [48
+
+] [49
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+[50
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [51
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [52
+
+]) (./slide07/sec03.tex [53
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [54
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/chcount.c)) [55
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [56
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [57
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 5; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\T1/lmss/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+) [58
+
+] (./slide07.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 5; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\T1/lmss/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+) [59
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [60
+
+] (./slide07.vrb) [61
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 5; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\T1/lmss/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+) [62
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [63
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [64
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [65
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [66
+
+] (./slide07.vrb) [67
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [68
+
+] (./slide07.vrb)
+[69
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [70
+
+] (./slide07.vrb) [71
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [72
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [73
+
+] (./slide07.vrb) [74
+
+]) (./slide07/sec04.tex [75
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 5.
+
+Package hyperref Warning: Ignoring empty anchor on input line 5.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 10.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 10.
+) [76
+
+] (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 5.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 10.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 10.
+) [77
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [78
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [79
+
+]
+(./slide07.vrb) [80
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [81
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [82
+
+] (./slide07.vrb)
+[83
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [84
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [85
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+(./slide07/code/wordcnt.c)) [86
+
+] [87
+
+
+] [88
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [89
+
+])
+(./slide07/sec05.tex [90
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [91
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [92
+
+]
+(./slide07.vrb) [93
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [94
+
+] (./slide07.vrb) [95
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+[96
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [97
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [98
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/paint.c))
+Overfull \vbox (23.555pt too high) detected at line 57
+ []
+
+[99
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [100
+
+]) (./slide07/sec06.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lstinline' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lstinline' on input line 1.
+
+[101
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [102
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [103
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [104
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/continue.c)) [105
+
+] [106
+
+
+] [107
+
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [108
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [109
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [110
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [111
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [112
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [113
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/break.c)) [114
+
+] [115
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+[116
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [117
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [118
+
+]) (./slide07/sec07.tex
+[119
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [120
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/animals.c)) [121
+
+]
+[122
+
+
+] [123
+
+
+] [124
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [125
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [126
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+[127
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/switch1.c))
+Overfull \vbox (9.75507pt too high) detected at line 63
+ []
+
+[128
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [129
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/switch2.c)) [130
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [131
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/switch3.c))
+Overfull \vbox (9.75507pt too high) detected at line 86
+ []
+
+[132
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [133
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [134
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+(./slide07/code/switch4.c))
+Overfull \vbox (9.75507pt too high) detected at line 105
+ []
+
+[135
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [136
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/switch5.c))
+Overfull \vbox (3.95514pt too high) detected at line 117
+ []
+
+[137
+
+] (./slide07.vrb (./slide07/code/switch5.c))
+Overfull \vbox (3.95514pt too high) detected at line 117
+ []
+
+[138
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [139
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/switch6.c)) [140
+
+]
+[141
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [142
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/switch7.c)) [143
+
+]
+[144
+
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 2.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [145
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb (./slide07/code/vowels.c)) [146
+
+] [147
+
+
+] [148
+
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [149
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [150
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [151
+
+]
+\openout4 = `slide07.vrb'.
+
+
+(./slide07.vrb) [152
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb)
+Overfull \vbox (0.95514pt too high) detected at line 221
+ []
+
+[153
+
+]
+\openout4 = `slide07.vrb'.
+
+ (./slide07.vrb) [154
 
 ])
 \tf@nav=\write8
@@ -3246,12 +4235,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 62879 strings out of 493007
- 1458316 string characters out of 6136719
- 1850829 words of memory out of 5000000
- 65767 multiletter control sequences out of 15000+600000
- 562084 words of font info for 52 fonts, out of 8000000 for 9000
+ 64337 strings out of 493007
+ 1483809 string characters out of 6136719
+ 1923607 words of memory out of 5000000
+ 66865 multiletter control sequences out of 15000+600000
+ 590493 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,13n,107p,10417b,1051s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,15n,107p,10417b,1050s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide07.pdf (6 pages).
+Output written on slide07.pdf (154 pages).

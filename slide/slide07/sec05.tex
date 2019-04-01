@@ -1,6 +1,6 @@
 \section{条件运算符}
 \begin{frame}[fragile]\ft{\secname}
-C提供一种简写方式来表示{\tf if else}语句，被称为条件表达式，并使用条件运算符{(\tf ? :)}。它是C语言中唯一的三目操作符。
+  C提供一种简写方式来表示 \lstinline|if else| 语句，被称为条件表达式，并使用条件运算符 \lstinline|? :|。它是C语言中唯一的三目操作符。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -11,7 +11,8 @@ x = (y < 0) ? -y : y;
 
 \begin{itemize}
 \item
-含义：若y小于0，则x = -y；否则，x = y。\\[0.1in]
+  含义：若 \lstinline|y| 小于 \lstinline|0|，则 \lstinline|x = -y|；
+  否则，\lstinline|x = y|。\\[0.1in]
 \item 用if else描述为
 \begin{lstlisting}
 if (y < 0)
@@ -24,12 +25,12 @@ else
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{lstlisting}[title=条件表达式的语法]
-expresion1 ? expression2 : expression3
+expression1 ? expression2 : expression3
 \end{lstlisting}
 \rule{\textwidth}{.8mm} \pause \vspace{.05in}
 
-若expresion1为真，则条件表达式的值等于expression2的值；
-若expresion1为假，则条件表达式的值等于expression3的值。
+若 \lstinline|expression1| 为真，则条件表达式的值等于 \lstinline|expression2|的值；
+若 \lstinline|expression1| 为假，则条件表达式的值等于 \lstinline|expression3|的值。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -40,17 +41,18 @@ max = (a > b) ? a : b;
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-if else语句能完成与条件运算符同样的功能。但是，条件运算符语句更简洁；并且可以产生更精简的程序代码。
+\lstinline|if else| 语句能完成与条件运算符同样的功能。但是，条件运算符语句更简洁；并且可以产生更精简的程序代码。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\begin{li}
+\begin{free}[例]{}
 设每罐油漆可喷200平方英尺，编写程序计算向给定的面积喷油漆，全部喷完需要多少罐油漆。
-\end{li}
+\end{free}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\lstinputlisting[language=c,numbers=left,frame=single]{slide07/code/paint.c}
+  \lstinputlisting
+  {slide07/code/paint.c}
 
 \end{frame}
 

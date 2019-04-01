@@ -1,1 +1,7 @@
-\beamer@sectionintoc {1}{一个统计字数的程序}{3}{0}{1}
+\beamer@sectionintoc {1}{if语句}{3}{0}{1}
+\beamer@sectionintoc {2}{\lstinline |if else| 语句}{9}{0}{2}
+\beamer@sectionintoc {3}{获取逻辑性}{53}{0}{3}
+\beamer@sectionintoc {4}{一个统计字数的程序}{75}{0}{4}
+\beamer@sectionintoc {5}{条件运算符}{90}{0}{5}
+\beamer@sectionintoc {6}{ \lstinline |continue| 和 \lstinline |break| 语句}{101}{0}{6}
+\beamer@sectionintoc {7}{switch语句}{119}{0}{7}
