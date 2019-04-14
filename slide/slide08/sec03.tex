@@ -1,30 +1,30 @@
 \section{终止键盘输入}
 
 \begin{frame}[fragile]\ft{\secname}
-程序{\tf echo.c}在输入{\tf \#}时停止，但有一个问题，{\tf \#}可能就是你想输入的字符。于是，我们自然希望终止字符不出现在文本中。
+程序 \lstinline|echo.c| 在输入 \lstinline|#| 时停止，但有一个问题， \lstinline|#| 可能就是你想输入的字符。于是，我们自然希望终止字符不出现在文本中。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：EOF}
 \begin{itemize}
 \item 
-C让{\tf getchar}在到达文件结尾时返回一个特殊值，其名称为{\tf EOF}(End Of File，文件结尾)。\\[0.1in]
+C让 \lstinline|getchar| 在到达文件结尾时返回一个特殊值，其名称为 \lstinline|EOF| (End Of File，文件结尾)。\\[0.1in]
 \item
-{\tf scanf()}在检测到文件结尾时也返回{\tf EOF}。\\[0.1in]
-\item {\tf EOF}在头文件{\tf stdio.h}中定义
+\lstinline|scanf()| 在检测到文件结尾时也返回 \lstinline|EOF| 。\\[0.1in]
+\item  \lstinline|EOF| 在头文件 \lstinline|stdio.h| 中定义
 \begin{lstlisting}
 #define EOF (-1)
 \end{lstlisting}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：EOF为什么是-1？}
-一般情况下，{\tf getchar()}返回一个{\tf 0-127}之间的值（标准字符集），或一个{\tf 0-255}的值（扩展字符集）。在两种情况下，{\tf -1}都不对应任何字符，故它可以表示文件结尾。
+\begin{frame}[fragile]\ft{\secname：\lstinline|EOF| 为什么是 \lstinline|-1|？}
+一般情况下， \lstinline|getchar()| 返回一个 \lstinline|0-127| 之间的值（标准字符集），或一个 \lstinline|0-255| 的值（扩展字符集）。在两种情况下，\lstinline|-1| 都不对应任何字符，故它可以表示文件结尾。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：如何使用EOF？}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/echo_eof.c}
+[]
+{slide08/code/echo_eof.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：如何使用EOF？}
@@ -35,11 +35,11 @@ Hello world[Ctrl+D]
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：如何使用EOF？}
-要对键盘使用该程序，需要一种键入EOF的方式。\vspace{.1in}
+要对键盘使用该程序，需要一种键入 \lstinline|EOF| 的方式。\vspace{.1in}
 
 \begin{itemize}
-\item 在大多数Unix系统上，在一行的开始位置键入Ctrl+D会导致传送文件尾信号。\\[0.1in]
-\item 其它系统中，可能将一行的开始位置键入的Ctrl+Z识别为文件尾信号，也可能把任意位置键入的Ctrl+Z识别为文件尾信号。
+\item 在大多数Unix系统上，在一行的开始位置键入 \lstinline|Ctrl+D| 会导致传送文件尾信号。\\[0.1in]
+\item 其它系统中，可能将一行的开始位置键入的 \lstinline|Ctrl+Z| 识别为文件尾信号，也可能把任意位置键入的Ctrl+Z识别为文件尾信号。
 \end{itemize}
 \end{frame}
 

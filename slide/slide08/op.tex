@@ -1,0 +1,72 @@
+\section{上机操作}
+
+\begin{frame}[fragile]
+\begin{free}[例]{}
+编写一个程序，把输入作为字符流读取，直至遇到 \lstinline|EOF|。令其报告输入中的大写字母个数和小写字母个数。
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[例]{}
+改写猜数程序：猜 \lstinline|1-100| 中的某个数字 \lstinline|z|，按二分法进行。
+\begin{itemize}
+\item 
+假设你最初猜 \lstinline|50| ，让其询问 \lstinline|z| 是大于、小于还是等于猜测值。
+\item
+若小于 \lstinline|50|，则令下一次猜测值为 \lstinline|50| 和 \lstinline|100| 的平均值 \lstinline|75|。
+\item 
+若大于 \lstinline|75|，则令下一次猜测值为 \lstinline|50| 和 \lstinline|75| 的平均值 \lstinline|62|。
+\end{itemize}
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{free}[例]{}
+编写一个程序，显示一个菜单，提供加法、减法、乘法或除法的选项。获取选择后，该程序请求两个数，然后执行选择的操作。
+\begin{itemize}
+\item 
+该程序应该只接受所提供的菜单选项，应使用 \lstinline|float| 类型的数，并且如果用户未能输入数字应允许其重新输入。
+\item
+在除法的情况下，如果用户输入 \lstinline|0| 作为第二个数，该程序应该提示用户输入一个新的值。
+\end{itemize}
+\end{free}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}
+Enter the operation of your choice:
+a. add         b. substract
+c. multiply    d. divide
+q. quit
+a
+Enter first number: 22.4
+Enter second number: one
+one is not a number.
+Please enter a number,
+such as 2.5, -1.78E8, or 3: 1
+22.40 + 1.00 = 23.40.
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[backgroundcolor=\color{blue!20}]
+Enter the operation of your choice:
+a. add         b. substract
+c. multiply    d. divide
+q. quit
+d
+Enter first number: 1
+Enter second number: 0
+Enter a number other than 0: 0.2
+1.00 / 0.20 = 5.00.
+Enter the operation of your choice:
+a. add         b. substract
+c. multiply    d. divide
+q. quit
+q
+Bye.
+\end{lstlisting}
+\end{frame}
+
+
+

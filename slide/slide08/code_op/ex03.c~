@@ -1,0 +1,11 @@
+// ex03.c: 
+#include <stdio.h>
+int main(void)
+{
+  float a;  
+  puts("Please input a float number:");
+  scanf("%f", &a);
+  printf("a. The input is %4.1f or %8.1e\n", a, a);
+  printf("a. The input is %+7.3f or %9.3E\n", a, a);
+  return 0;
+}

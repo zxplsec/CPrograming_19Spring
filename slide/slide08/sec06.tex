@@ -5,7 +5,6 @@
 在实际情况中，用户并不总是遵循指令，在程序所希望的输入与其实际输入之间可能存在不匹配，这可能会导致程序运行失败。\\[0.1in]
 \item
 作为程序员，你应该预见所有可能的输入错误，修正程序以使其能检测到这些错误并作出处理。
-
 \end{itemize}
 \end{frame}
 
@@ -23,7 +22,7 @@ while (n >= 0)   // detect out-of-range value
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-2、当然用户还可能输入类型错误的值，如字符q。检测这类错误的方式是检测scanf的返回值。 \vspace{0.1in}
+2、当然用户还可能输入类型错误的值，如字符 \lstinline|q|。检测这类错误的方式是检测 \lstinline|scanf()| 的返回值。 \vspace{0.1in}
 
 该函数返回成功读入的项目个数，因此仅当用户输入一个整数时，下列表达式为真：
 \begin{lstlisting}[language=c]
@@ -40,37 +39,40 @@ while (scanf("%d", &n) == 1 && n >= 0)
    // process n 
 }
 \end{lstlisting}
-{\tf while}循环的条件是“当输入是一个整数并且该整数为正”。
+\lstinline|while|循环的条件是“当输入是一个整数并且该整数为正”。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
 上面的例子中，当输入类型有错时，则终止输入。而更合适的处理方式是让程序对用户更加友好，给用户尝试输入正确类型的机会。\vspace{.1in}
 
 \begin{itemize}
-\item 首先要剔除那些有问题的输入，因scanf没有成功读取输入，会将其留在输入队列中。\\[0.1in]
-\item 然后使用{\tf getchar()}来逐个字符地读取输入。
+\item 首先要剔除那些有问题的输入，因 \lstinline|scanf()| 没有成功读取输入，会将其留在输入队列中。\\[0.1in]
+\item 然后使用 \lstinline|getchar()| 来逐个字符地读取输入。
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-编制程序，计算特定范围内所有整数的平方和。限制这个特定范围的上届不应大于1000，下界不应小于-1000。
+  \begin{free}[例]{}
+    编制程序，计算特定范围内所有整数的平方和。限制这个特定范围的上界不应大于$1000$，下界不应小于$-1000$。
+  \end{free}
+
 \end{frame}
 
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/checking.c}
+[]
+{slide08/code/checking.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  对于{\tf get\_int()}，
+  对于 \lstinline|get_int()|，
 \begin{itemize}
 \item 
-该函数试图将一个int值读入变量input。\\[0.1in]
+该函数试图将一个 \lstinline|int| 值读入变量 \lstinline|input|。\\[0.1in]
 \item 
-若失败，则该函数进入外层while循环，然后内层while循环逐个字符地读取那些有问题的输入字符。\\[0.1in]
+若失败，则该函数进入外层 \lstinline|while| 循环，然后内层 \lstinline|while| 循环逐个字符地读取那些有问题的输入字符。\\[0.1in]
 \item
 然后该函数提示用户重新尝试。外层循环继续运行，直至用户成功地输入一个整数。
 \end{itemize}
@@ -78,7 +80,7 @@ while (scanf("%d", &n) == 1 && n >= 0)
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-对于{\tf bad\_limits()}，用户输入一个下界和上界来定义值域。需要的检查可能有 \vspace{.1in}
+对于 \lstinline|bad_limits()|，用户输入一个下界和上界来定义值域。需要的检查可能有 \vspace{.1in}
 \begin{itemize}
 \item 第一个值是否小于等于第二个值；\\[0.1in]
 \item 两个值是否在可接受的范围内。
@@ -86,7 +88,7 @@ while (scanf("%d", &n) == 1 && n >= 0)
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-  \begin{lstlisting}
+  \begin{lstlisting}[basicstyle=\ttfamily\small]
 This program computes the sum of the squares of integers in a range.
 The lower bound should not be less than -1000 and
 the upper bound should not be more than +1000.
@@ -117,13 +119,13 @@ Done.
 
 
 \begin{frame}[fragile]\ft{\secname：模块化编程}
-使用独立的函数来实现不同的功能。\textcolor{acolor1}{程序越大，模块化编程就越重要。} \vspace{0.1in}
+使用独立的函数来实现不同的功能。\red{程序越大，模块化编程就越重要。} \vspace{0.1in}
 
 \begin{itemize}
-\item main函数管理流程，为其它函数指派任务；\\[0.1in]
-\item get\_int函数获取输入；\\[0.1in]
-\item badlimits函数检查值的有效性；\\[0.1in]
-\item sum\_squares函数进行实际的计算。
+\item \lstinline|main()| 管理流程，为其它函数指派任务；\\[0.1in]
+\item \lstinline|get_int()| 获取输入；\\[0.1in]
+\item \lstinline|badlimits()| 检查值的有效性；\\[0.1in]
+\item \lstinline|sum_squares()| 进行实际的计算。
 
 \end{itemize}
 \end{frame}
@@ -136,16 +138,16 @@ is 28 12.4
 在你看来，该输入是一串字符、一个整数、一个浮点值。而对C来说，该输入时一个字节流。\vspace{0.1in}
 
 \begin{itemize}
-\item 第1个字节是字母i的字符编码\\[0.1in]
-\item 第2个字节是字母s的字符编码\\[0.1in]
+\item 第1个字节是字母 \lstinline|i| 的字符编码\\[0.1in]
+\item 第2个字节是字母 \lstinline|s| 的字符编码\\[0.1in]
 \item 第3个字节是空格字符的字符编码\\[0.1in]
-\item 第4个字节是数字2的字符编码\\[0.1in]
+\item 第4个字节是数字 \lstinline|2| 的字符编码\\[0.1in]
 \item ...
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：C输入的工作方式}
-当{\tf getchar()}遇到这一行，以下代码将读取并丢弃整行，包括数字，因为这些数字其实被看做是字符：
+当 \lstinline|getchar()| 遇到这一行，以下代码将读取并丢弃整行，包括数字，因为这些数字其实被看做是字符：
 \begin{lstlisting}[language=c]
 while((ch = getchar()) != '\n')
   putchar(ch);
@@ -157,14 +159,14 @@ while((ch = getchar()) != '\n')
 \begin{lstlisting}
 42
 \end{lstlisting}
-在使用{\tf scanf()}函数时，不同的占位符会导致不同的效果。
+在使用 \lstinline|scanf()| 函数时，不同的占位符会导致不同的效果。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：C输入的工作方式}
 \begin{itemize}
-\item 使用{\tf \%c}，将只读取字符{\tf '4'}并将其存储在一个char型变量中；\\[0.1in]
-\item 使用{\tf \%s}，会读取两个字符，即字符{\tf '4'}和{\tf '2'}，并将它们存储在一个字符串中\\[0.1in]
-\item 使用{\tf \%d}，同样读取两个字符，但随后会计算与它们相应的整数值$4\times 10+2=42$，然后将该整数保存在一个int变量中；\\[0.1in]
-\item 使用{\tf \%f}，同样读取两个字符，计算对应的数值{\tf 42}，然后以浮点表示法表示该值，并将结果保存在一个float型变量中。
+\item 使用 \lstinline|%c|，将只读取字符 \lstinline|4| 并将其存储在一个char型变量中；\\[0.1in]
+\item 使用 \lstinline|%s|，会读取两个字符，即字符 \lstinline|4| 和 \lstinline|2|，并将它们存储在一个字符串中\\[0.1in]
+\item 使用 \lstinline|%d|，同样读取两个字符，但随后会计算与它们相应的整数值$4\times 10+2=42$，然后将该整数保存在一个 \lstinline|int| 变量中；\\[0.1in]
+\item 使用 \lstinline|%f|，同样读取两个字符，计算对应的数值 \lstinline|42|，然后以浮点表示法表示该值，并将结果保存在一个 \lstinline|float| 型变量中。
 \end{itemize}
 \end{frame}

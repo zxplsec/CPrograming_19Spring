@@ -1,13 +1,15 @@
 \section{创建一个更友好的用户界面}
 \begin{frame}[fragile]\ft{\secname}
-编制一个猜字程序，看是否为1-100之间的某个整数。程序会依次问你是否为1、2、3、$\cd$，你回答y表示yes，回答n表示no，直到回答正确为止。
+  \begin{free}[例]{}
+    编制一个猜字程序，看是否为1-100之间的某个整数。程序会依次问你是否为1、2、3、$\cd$，你回答 \lstinline|y| 表示 \lstinline|yes|，回答 \lstinline|n| 表示 \lstinline|no|，直到回答正确为止。
+  \end{free}
 \end{frame}
 
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/guess.c}
+  [basicstyle=\ttfamily\small]
+  {slide08/code/guess.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -28,17 +30,17 @@ I knew I could do it!
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-输入n时，竟然做了两次猜测，Why? \pause \vspace{0.1in}
+输入 \lstinline|n| 时，竟然做了两次猜测，Why? \pause \vspace{0.1in}
 
-是换行符，。。。，换行符在作怪。
+\red{换行符在作怪！}
 \pause \vspace{0.1in}
 
 \begin{itemize}
-\item \tf 读入字符'n'，因'n' != 'y'，故打印
+\item 读入字符 \lstinline|'n'|，因 \lstinline|'n' != 'y'|，故打印
 \begin{lstlisting}
 Well, then, is it 2?
 \end{lstlisting}
-\item 紧接着读入字符'$\backslash$n'，因'$\backslash$n' != 'y'，故打印
+\item 紧接着读入字符 \lstinline|'\n'|，因 \lstinline|'\n' != 'y'|，故打印
 \begin{lstlisting}
 Well, then, is it 3?
 \end{lstlisting}
@@ -46,8 +48,8 @@ Well, then, is it 3?
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：解决方案}
-使用一个while循环来丢弃输入行的其它部分，包括换行符。
-\begin{lstlisting}[language=c,numbers=left,frame=single]
+使用一个 \lstinline|while| 循环来丢弃输入行的其它部分，包括换行符。
+\begin{lstlisting}[]
 while (getchar() != 'y')
 {
   printf("Well, then, is it %d?\n", ++guess);
@@ -55,7 +57,7 @@ while (getchar() != 'y')
     continue;  // skip rest of input line
 }
 \end{lstlisting}
-这种处理办法还能把诸如no和no way这样的输入同简单的n一样看待。
+这种处理办法还能把诸如 \lstinline|no| 和 \lstinline|no way| 这样的输入同简单的n一样看待。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -77,125 +79,125 @@ I knew I could do it!
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname}
-若不希望将f的含义看做与n相同，可使用一个if语句来筛选掉其它响应。
-\begin{lstlisting}[language=c,numbers=left,frame=single]
-char ch;
-...
-while ((ch = getchar()) != 'y')
-{
-  if (ch == 'n')
-    printf("Well, then, is it %d?\n", ++guess);
-  else
-    printf("Sorry, I understand only y or n.\n");
-  while (getchar() != '\n')
-    continue;  // skip rest of input line
-}
-\end{lstlisting}
+% \begin{frame}[fragile]\ft{\secname}
+% 若不希望将f的含义看做与n相同，可使用一个if语句来筛选掉其它响应。
+% \begin{lstlisting}[language=c,numbers=left,frame=single]
+% char ch;
+% ...
+% while ((ch = getchar()) != 'y')
+% {
+%   if (ch == 'n')
+%     printf("Well, then, is it %d?\n", ++guess);
+%   else
+%     printf("Sorry, I understand only y or n.\n");
+%   while (getchar() != '\n')
+%     continue;  // skip rest of input line
+% }
+% \end{lstlisting}
 
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname}
-\begin{lstlisting}
-Pick an integer from 1 to 100. I will try to guess it.
-Respond with a y if my guess is right and with
-an n if it is wrong.
-Uh...is your number 1?
-n
-Well, then, is it 2?
-no
-Well, then, is it 3?
-no sir
-Well, then, is it 4?
-forget it
-Sorry, I understand only y or n.
-n
-Well, then, is it 5?
-y
-I knew I could do it!
-\end{lstlisting}
+% \begin{frame}[fragile]\ft{\secname}
+% \begin{lstlisting}
+% Pick an integer from 1 to 100. I will try to guess it.
+% Respond with a y if my guess is right and with
+% an n if it is wrong.
+% Uh...is your number 1?
+% n
+% Well, then, is it 2?
+% no
+% Well, then, is it 3?
+% no sir
+% Well, then, is it 4?
+% forget it
+% Sorry, I understand only y or n.
+% n
+% Well, then, is it 5?
+% y
+% I knew I could do it!
+% \end{lstlisting}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname}
-当你编写交互式程序时，应试着去预料用户未能遵循指示的可能方式，然后让程序能合理地处理用户的疏忽。并告诉用户哪里出了错误，给予他们另一次机会。
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname}
+% 当你编写交互式程序时，应试着去预料用户未能遵循指示的可能方式，然后让程序能合理地处理用户的疏忽。并告诉用户哪里出了错误，给予他们另一次机会。
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
-若你的程序需要使用{\tf getchar()}输入字符和使用{\tf scanf()}输入数字。两个函数都很很好的独立完成其工作，但不能很好的混合在一起。因为
-\begin{itemize}
-\item
-{\tf getchar()}读取每个字符，包括空格、制表符和换行符
-\item
-{\tf scanf()}在读取数字时会跳过空格、制表符和换行符。
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
+% 若你的程序需要使用{\tf getchar()}输入字符和使用{\tf scanf()}输入数字。两个函数都很很好的独立完成其工作，但不能很好的混合在一起。因为
+% \begin{itemize}
+% \item
+% {\tf getchar()}读取每个字符，包括空格、制表符和换行符
+% \item
+% {\tf scanf()}在读取数字时会跳过空格、制表符和换行符。
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
-编写程序，读取一个字符和两个整数，然后使用这两个整数指定行数和列数打印该字符。
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
+% 编写程序，读取一个字符和两个整数，然后使用这两个整数指定行数和列数打印该字符。
+% \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname：混合输入数字和字符}
-\lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/showchar1.c}
-\end{frame}
+% \begin{frame}[fragile,allowframebreaks]\ft{\secname：混合输入数字和字符}
+% \lstinputlisting
+% [language=c,numbers=left,frame=single]
+% {slide08/code/showchar1.c}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
-\begin{lstlisting}
-Enter a character and two integers:
-c 2 3[enter]
-ccc
-ccc
-Enter another character and two integers;
-Enter a newline to quit.
-Bye.
-\end{lstlisting}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
+% \begin{lstlisting}
+% Enter a character and two integers:
+% c 2 3[enter]
+% ccc
+% ccc
+% Enter another character and two integers;
+% Enter a newline to quit.
+% Bye.
+% \end{lstlisting}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
-\begin{itemize}
-\item
-程序开始时表现很好。当你输入c 2 3时，如期打印2行3列c字符。\\[0.1in]
-\item
-然后程序提示输入第二组数据，但还没等你输入程序就退出了。Why? \pause \\[0.1in]
-\item[] 又是它在作怪！\pause 谁？\pause 换行符！ \pause \\[0.1in]
-\item 
-输入第一组数据后按下了换行符，scanf将它留在了输入队列。
-\\[0.1in]
-\item[] 而{\tf getchar()}并不跳过换行符，故在下一次循环时，{\tf getchar()}读取了该字符，并将其值赋给了ch，而ch为换行符正是终止循环的条件。
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
+% \begin{itemize}
+% \item
+% 程序开始时表现很好。当你输入c 2 3时，如期打印2行3列c字符。\\[0.1in]
+% \item
+% 然后程序提示输入第二组数据，但还没等你输入程序就退出了。Why? \pause \\[0.1in]
+% \item[] 又是它在作怪！\pause 谁？\pause 换行符！ \pause \\[0.1in]
+% \item 
+% 输入第一组数据后按下了换行符，scanf将它留在了输入队列。
+% \\[0.1in]
+% \item[] 而{\tf getchar()}并不跳过换行符，故在下一次循环时，{\tf getchar()}读取了该字符，并将其值赋给了ch，而ch为换行符正是终止循环的条件。
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：解决方案}
-\begin{itemize}
-\item
-程序必须跳过一个输入周期中最后一个数字与下一行开始出键入的字符之间的所有换行符或空格。 \\[0.1in]
-\item
-若除了{\tf getchar()}判断之外还可以在{\tf scanf()}阶段终止程序，则会更好。
-\end{itemize}
-\end{frame}
+% \begin{frame}[fragile]\ft{\secname：解决方案}
+% \begin{itemize}
+% \item
+% 程序必须跳过一个输入周期中最后一个数字与下一行开始出键入的字符之间的所有换行符或空格。 \\[0.1in]
+% \item
+% 若除了{\tf getchar()}判断之外还可以在{\tf scanf()}阶段终止程序，则会更好。
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname：混合输入数字和字符}
-\lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/showchar2.c}
-\end{frame}
-\begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
-\begin{lstlisting}[backgroundcolor=\color{blue!20}]
-Enter a character and two integers:
-c 1 3[enter]
-ccc
-Enter another character and two integers;
-Enter a newline to quit.
-! 3 6[enter]
-!!!!!!
-!!!!!!
-!!!!!!
-Enter another character and two integers;
-Enter a newline to quit.
+% \begin{frame}[fragile,allowframebreaks]\ft{\secname：混合输入数字和字符}
+% \lstinputlisting
+% [language=c,numbers=left,frame=single]
+% {slide08/code/showchar2.c}
+% \end{frame}
+% \begin{frame}[fragile]\ft{\secname：混合输入数字和字符}
+% \begin{lstlisting}[backgroundcolor=\color{blue!20}]
+% Enter a character and two integers:
+% c 1 3[enter]
+% ccc
+% Enter another character and two integers;
+% Enter a newline to quit.
+% ! 3 6[enter]
+% !!!!!!
+% !!!!!!
+% !!!!!!
+% Enter another character and two integers;
+% Enter a newline to quit.
 
-Bye.
-\end{lstlisting}
-\end{frame}
+% Bye.
+% \end{lstlisting}
+% \end{frame}

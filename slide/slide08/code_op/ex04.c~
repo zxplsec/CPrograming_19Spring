@@ -1,0 +1,11 @@
+// ex04.c : 
+#include <stdio.h>
+int main(void)
+{
+  char name[20];
+  float height;  
+  puts("Please input your name and height (cm):");
+  scanf("%s %f", name, &height);
+  printf("%s, you are %f m tall.\n", name, height/100);
+  return 0;
+}

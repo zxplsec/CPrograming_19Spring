@@ -9,22 +9,16 @@ int main(void)
   while ((ch = getchar()) != '#') {
     switch (ch) {
     case 'a':
-    case 'A': na++;
-      break;
+    case 'A': na++; break;
     case 'e':
-    case 'E': ne++;
-      break;
+    case 'E': ne++; break;
     case 'i':
-    case 'I': ni++;
-      break;
+    case 'I': ni++; break;
     case 'o':
-    case 'O': no++;
-      break;
+    case 'O': no++; break;
     case 'u':
-    case 'U': nu++;
-      break;
-    default:
-      break;
+    case 'U': nu++; break;
+    default: break;
     }
   }
   printf("Number of text: %4c %4c %4c %4c\n", 'A', 'E', 'I', 'U');

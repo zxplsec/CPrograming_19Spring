@@ -14,7 +14,7 @@ else
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
-\lstinputlisting
+\lstinputlisting[basicstyle=\ttfamily\small]
 {slide07/code/animals.c}
 \end{frame}
 
@@ -38,10 +38,8 @@ Bye!
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\begin{lstlisting}[language=c,frame=single]
-// switch`语法`
-switch (integer expression)
-{
+\begin{lstlisting}[title=switch语法]
+switch (integer expression) {
   case constant1:
     statements
   case constant2:
@@ -121,10 +119,11 @@ Choice other than 1 and 2
 5、\lstinline|case| 之前的语句不会被执行。一旦进入 \lstinline|switch| 结构，将直接转入标签匹配。
 \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname}
+\begin{frame}[fragile]\ft{\secname}
 \lstinputlisting
-[]
-{slide07/code/switch6.c}
+[basicstyle=\ttfamily\small]
+{slide07/code/switch6.c} \pause 
+
 \begin{lstlisting}[backgroundcolor=\color{blue!20}]
 Choice is 1
 \end{lstlisting}
@@ -148,11 +147,9 @@ Choice is 1
   \end{free}
 \end{frame}
 
-
-
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
 \lstinputlisting
-[]
+[basicstyle=\ttfamily\small]
 {slide07/code/vowels.c}
 \end{frame}
 
@@ -168,7 +165,7 @@ Number of text:    A    E    I    U
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
 \item
-若输入字母为 \lstinline|i|，则 \lstinline|switch| 语句定位到标签为 \lstinline|case 'i':| 的位置。因没有 \lstinline|break| 同该标签相关联，故程序将前进到下一条语句，即ni++。\\[0.1in]
+若输入字母为 \lstinline|i|，则 \lstinline|switch| 语句定位到标签为 \lstinline|case 'i':| 的位置。因没有 \lstinline|break| 同该标签相关联，故程序将前进到下一条语句，即 \lstinline|ni++|。\\[0.1in]
 \item 
 若输入字母为 \lstinline|I|，程序将直接定位到这条语句。\\[0.1in]
 \item 

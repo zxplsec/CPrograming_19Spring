@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{一个统计字数的程序}{3}{0}{1}
+\beamer@sectionintoc {2}{ \lstinline |getchar()| 与 \lstinline |putchar()| 函数}{17}{0}{2}
+\beamer@sectionintoc {3}{缓冲区(Buffer)}{20}{0}{3}
+\beamer@sectionintoc {4}{终止键盘输入}{23}{0}{4}
+\beamer@subsectionintoc {4}{1}{8.4\nobreakspace {}\nobreakspace {}重定向与文件}{31}{0}{4}
+\beamer@sectionintoc {5}{创建一个更友好的用户界面}{33}{0}{5}
+\beamer@sectionintoc {6}{输入确认}{42}{0}{6}
+\beamer@sectionintoc {7}{菜单浏览}{65}{0}{7}
+\beamer@sectionintoc {8}{上机操作}{75}{0}{8}

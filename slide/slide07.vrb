@@ -1,12 +1,1 @@
-\ft{\secname：switch与if else}
-\begin{itemize}
-\item
-若选择是基于求一个浮点型变量或表达式的值，就不能使用 \lstinline|switch|。\\[0.1in]
-\item
-若变量必须落入某个范围，使用if语句会更方便。如
-\begin{lstlisting}
-if (integer < 1000 && integer > 2)
-\end{lstlisting}
-\vspace{0.1in}
-\item 若可以使用 \lstinline|switch|，程序会运行得稍快些，并且代码会更紧凑。
-\end{itemize}
+\lstinputlisting[]{slide07/code_op/ex04.c}

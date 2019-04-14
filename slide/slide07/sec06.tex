@@ -23,7 +23,7 @@
 
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|continue| 语句}
-\lstinputlisting
+\lstinputlisting[basicstyle=\ttfamily\small]
 {slide07/code/continue.c}
 \end{frame}
 
@@ -89,14 +89,14 @@ for (count = 0; count < 10; count++)
 
 \begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
 \begin{free}[例]{}
-输入矩形的长和宽，用一个循环来计算其面积。若输入一个非数字作为矩形的长或宽，终止循环。
+  输入矩形的长和宽，用一个循环来计算其面积。若输入一个非数字作为矩形的长或宽，终止循环。
 \end{free}
 \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{\secname： \lstinline|break| 语句}
+\begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
 
-\lstinputlisting
-            {slide07/code/break.c}
+\lstinputlisting[basicstyle=\ttfamily\small]
+{slide07/code/break.c}
 \end{frame}
 
 
@@ -116,7 +116,7 @@ Done.
 
 \begin{frame}[fragile]\ft{\secname： \lstinline|break| 语句}
 \begin{itemize}
-\item  \lstinline|break| 语句使程序直接跳转到该循环后的第一条语句；在for循环中，更新表达式也将被跳过。\\[0.1in]
+\item  \lstinline|break| 语句使程序直接跳转到该循环后的第一条语句；在 \lstinline|for| 循环中，更新表达式也将被跳过。\\[0.1in]
 \item 
 嵌套循环中， \lstinline|break| 语句只能使程序跳出当前循环，要跳出外层循环还需另外一个 \lstinline|break| 语句。
 \end{itemize}

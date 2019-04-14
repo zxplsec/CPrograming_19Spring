@@ -29,18 +29,22 @@ expression1 ? expression2 : expression3
 \end{lstlisting}
 \rule{\textwidth}{.8mm} \pause \vspace{.05in}
 
-若 \lstinline|expression1| 为真，则条件表达式的值等于 \lstinline|expression2|的值；
-若 \lstinline|expression1| 为假，则条件表达式的值等于 \lstinline|expression3|的值。
+\begin{itemize}
+\item 若 \lstinline|expression1| 为真，则条件表达式的值等于 \lstinline|expression2| 的值；
+\item 若 \lstinline|expression1| 为假，则条件表达式的值等于 \lstinline|expression3| 的值。
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-若希望将两个可能的值中的一个赋给变量时，可使用条件表达式。典型的例子是将两个值中的最大值赋给变量：
+  若希望将两个可能值中的一个赋给变量时，可使用条件表达式。
+
+
+  典型的例子是将两个值中的最大值赋给变量：
 \begin{lstlisting}[frame=single]
 max = (a > b) ? a : b;
-\end{lstlisting}
-\end{frame}
+\end{lstlisting} \pause 
 
-\begin{frame}[fragile]\ft{\secname}
+
 \lstinline|if else| 语句能完成与条件运算符同样的功能。但是，条件运算符语句更简洁；并且可以产生更精简的程序代码。
 \end{frame}
 
