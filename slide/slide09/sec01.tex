@@ -19,7 +19,7 @@
 \end{frame}
 
 \begin{frame}[fragile]\ft{为什么使用函数？}
-\begin{lstlisting}[language=c,numbers=left,frame=single]
+\begin{lstlisting}[]
 #include <stdio.h>
 #define SIZE 50
 int main(void)
@@ -43,7 +43,7 @@ int main(void)
 \item
 函数可看做是一个“黑盒子”，你只需关注函数的功能及使用方法，而其内部行为你无需考虑，除非你是该函数的编写者。\\[0.1in]
 \item
-如我们在使用{\tf printf()}时，只需输入一个控制字符串，或者还有其它一些参数，就可以预测{\tf printf()}的执行结果，而无须了解{\tf printf()}内部的代码。
+如我们在使用 \lstinline|printf()| 时，只需输入一个控制字符串，或者还有其它一些参数，就可以预测 \lstinline|printf()| 的执行结果，而无须了解 \lstinline|printf()| 内部的代码。
 \\[0.1in]
 \item
 以这种方式看待函数，有助于集中精力投入到程序的整体设计而不是实现细节。
@@ -72,13 +72,13 @@ Wuhan, PR China 430072
 
 \begin{frame}[fragile,allowframebreaks]\ft{一个简单的例子}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/letterhead1.c}
+[]
+{slide09/code/letterhead1.c}
 \end{frame}
 
 
-\begin{frame}[fragile]\ft{程序分析}
-{\tf starbar}在不同位置出现了三次：\vspace{0.1in}
+\begin{frame}[fragile]\ft{程序分析 }
+  \lstinline|starbar()| 在不同位置出现了三次：\vspace{0.1in}
 
 \begin{itemize}
 \item 函数原型{\tf (function prototype)}：告知编译器starbar的函数类型\\[0.1in]
@@ -90,17 +90,17 @@ Wuhan, PR China 430072
 \begin{frame}[fragile]\ft{程序分析}
 
 函数同变量一样有多种类型。 
-函数在被使用之前都要声明其类型，故{\tf main()}之前出现了代码
+函数在被使用之前都要声明其类型，故 \lstinline|main()| 之前出现了代码
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 void starbar(void);
 \end{lstlisting}
 \begin{itemize}
 \item
-圆括号表明{\tf starbar}是一个函数名。\\[0.1in]
+圆括号表明 \lstinline|starbar()| 是一个函数名。\\[0.1in]
 \item 
-第一个{\tf void}指的是函数类型，表明该函数没有返回值。\\[0.1in]
+第一个 \lstinline|void| 指的是函数类型，表明该函数没有返回值。\\[0.1in]
 \item 
-第二个{\tf void}表明该函数不接受任何参数。\\[0.1in]
+第二个 \lstinline|void| 表明该函数不接受任何参数。\\[0.1in]
 \item 
 分号表示该语句是进行函数声明，而不是函数定义。 
 \end{itemize}
@@ -128,24 +128,24 @@ int main(void)
 \end{frame}
 
 \begin{frame}[fragile]\ft{程序分析}
-程序在{\tf main()}中通过使用以下方式调用{\tf starbar()}：
+程序在 \lstinline|main()| 中通过使用以下方式调用 \lstinline|starbar()| ：
 \begin{lstlisting}
 starbar();
 \end{lstlisting}
 \begin{itemize}
 \item
-当程序执行到该语句时，它找到{\tf starbar()}并执行其中的指令。\\[0.1in]
+当程序执行到该语句时，它找到 \lstinline|starbar()| 并执行其中的指令。\\[0.1in]
 \item 
-执行完{\tf starbar()}中的代码后，程序将返回到调用函数{\tf (calling function)}的下一条语句继续执行。 
+执行完 \lstinline|starbar()| 中的代码后，程序将返回到调用函数{\tf (calling function)}的下一条语句继续执行。 
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{程序分析}
 \begin{itemize}
 \item
-程序中，{\tf starbar()}和{\tf main()}有相同的定义格式，即首先以类型、名称和圆括号开始，接着是开始花括号、变量声明、函数语句定义以及结束花括号。\\[0.1in]
+程序中 \lstinline|starbar()| 和 \lstinline|main()| 有相同的定义格式，即首先以类型、名称和圆括号开始，接着是开始花括号、变量声明、函数语句定义以及结束花括号。\\[0.1in]
 \item 
-注意此处的{\tf starbar()}后跟花括号，告诉编译器这是在定义函数，而不是调用它或声明其原型。
+注意此处的 \lstinline|starbar()| 后跟花括号，告诉编译器这是在定义函数，而不是调用它或声明其原型。
 \end{itemize}
 
 \end{frame}
@@ -153,21 +153,20 @@ starbar();
 \begin{frame}[fragile]\ft{程序分析}
 \begin{itemize}
 \item
-该程序中，{\tf starbar()}和{\tf main()}在同一个文件中，也可以将它们放在不同文件中。\\[0.1in]
+该程序中 \lstinline|starbar()| 和 \lstinline|main()| 在同一个文件中，也可以将它们放在不同文件中。\\[0.1in]
 \item 
 单文件形式比较容易编译，而使用多个文件则有利于在不同的程序中使用相同的函数。\\[0.1in]
 \item 
-若使用多文件形式，则每个文件中都必须包含{\tf \#define}和{\tf \#include}指令。
+若使用多文件形式，则每个文件中都必须包含 \lstinline|#define| 和 \lstinline|#include| 指令。
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]\ft{程序分析}
 \begin{itemize}
-\item
-{\tf starbar()}中的变量{\tf count}是一个局部变量，这意味着该变量只在{\tf starbar()}中可用。\\[0.1in]
+\item \lstinline|starbar()| 中的变量 \lstinline|count| 是一个局部变量，这意味着该变量只在 \lstinline|starbar()| 中可用。\\[0.1in]
 \item 
-即使你在其它函数中使用名称{\tf count}，也不会出现任何冲突。
+即使你在其它函数中使用名称 \lstinline|count| ，也不会出现任何冲突。
 \end{itemize}
 
 \end{frame}
@@ -205,8 +204,8 @@ starbar();
 
 \begin{frame}[fragile,allowframebreaks]\ft{程序实现}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/letterhead2.c}
+[]
+{slide09/code/letterhead2.c}
 \end{frame}
 
 
@@ -295,7 +294,7 @@ void show_n_char();
 show_n_char(SPACE, 12);
 \end{lstlisting}
 实参是空格字符和{\tf 12}，它们被赋给{\tf show\_n\_char()}中相应的形参：{\tf ch}和{\tf num}。\\[0.1in]
-\item \textcolor{acolor1}{实参可以是常量、变量或一个复杂的表达式。}\\[0.1in]
+\item \red{实参可以是常量、变量或一个复杂的表达式。}\\[0.1in]
 \item 但无论何种形式的实参，执行时首先要计算其值，然后将该值赋值给被调函数中相应的形参。
 \end{itemize}
 \end{frame}
@@ -304,7 +303,7 @@ show_n_char(SPACE, 12);
 实参赋值给形参，被调函数使用的值是从调用函数中复制而来的，故不管在被调函数中对赋值数值进行了什么操作，调用函数中的原数值不受影响。
 \end{frame}
 
-\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+\begin{frame}[fragile]\ft{使用 \lstinline|return| 从函数中返回一个值}
 \begin{itemize}
 \item
 将实参赋值给形参，实现了从调用函数到被调函数的通信。\\[0.1in]
@@ -314,19 +313,19 @@ show_n_char(SPACE, 12);
 
 \end{frame}
 
-\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
-  \begin{wenti}
+\begin{frame}[fragile]\ft{使用 \lstinline|return| 从函数中返回一个值}
+  \begin{free}[例]{}
     编写函数，比较两个整数的大小，并返回较小值。同时编制一个驱动程序来测试该函数。
-  \end{wenti}
+  \end{free}
 \end{frame}
 
-\begin{frame}[fragile,allowframebreaks]\ft{使用return从函数中返回一个值}
+\begin{frame}[fragile,allowframebreaks]\ft{使用 \lstinline|return| 从函数中返回一个值}
 \lstinputlisting
-[language=c,numbers=left,frame=single]
-{Code/lesser.c}
+[]
+{slide09/code/lesser.c}
 \end{frame}
 
-\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+\begin{frame}[fragile]\ft{使用 \lstinline|return| 从函数中返回一个值}
 
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 Enter two integers (q to quit):
@@ -341,12 +340,12 @@ Bye.
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]\ft{使用return从函数中返回一个值}
+\begin{frame}[fragile]\ft{使用 \lstinline|return| 从函数中返回一个值}
 \begin{itemize}
 \item
-关键字{\tf return}指明了其后的表达式的值即为该函数的返回值。\\[0.1in]
+关键字 \lstinline|return| 指明了其后的表达式的值即为该函数的返回值。\\[0.1in]
 \item 
-{\tf imin()}中的变量{\tf min}是其私有的，但{\tf return}语句将它的值返回给了调用函数。\\[0.1in]
+{\tf imin()}中的变量{\tf min}是其私有的，但 \lstinline|return| 语句将它的值返回给了调用函数。\\[0.1in]
 \item 
 语句
 \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
@@ -360,7 +359,7 @@ lesser = imin(m, n);
 imin(m, n);
 lesser = min;
 \end{lstlisting} \pause
-{\Huge 当然不行的啦！！！}
+{\Huge 当然不行！！！}
 \end{itemize}
 \end{frame}
 
@@ -397,12 +396,12 @@ int what_if(int n)
 \pause 
 \vspace{0.1in}
 
-\textcolor{acolor1}{将把{\tf doule}型变量{\tf z}的值强制转换为{\tf int}型。}
+\red{将把{\tf doule}型变量{\tf z}的值强制转换为{\tf int}型。}
 
 \end{frame}
 
 \begin{frame}[fragile]\ft{使用return从函数中返回一个值}
-{\tf return}的另一个作用是终止函数的执行，并把控制返回给调用函数的下一条语句，即使{\tf return}语句不在函数尾部。如{\tf imin()}可以写成
+ \lstinline|return| 的另一个作用是终止函数的执行，并把控制返回给调用函数的下一条语句，即使 \lstinline|return| 语句不在函数尾部。如{\tf imin()}可以写成
 \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
 int imin(int n, int m)
 {  
@@ -413,7 +412,7 @@ int imin(int n, int m)
   printf("Oh my god!\n");    
 }
 \end{lstlisting}
-{\tf return}语句使得{\tf printf}语句永远不会执行。
+ \lstinline|return| 语句使得{\tf printf}语句永远不会执行。
 \end{frame}
 
 \begin{frame}[fragile]\ft{使用return从函数中返回一个值}
@@ -421,7 +420,7 @@ int imin(int n, int m)
 \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]
 return;
 \end{lstlisting}
-该语句会终止执行函数，并把控制返回给调用函数。此时，{\tf return}后没有任何表达式，故没有返回值，该形式只能用于{\tf void}类型的函数。
+该语句会终止执行函数，并把控制返回给调用函数。此时， \lstinline|return| 后没有任何表达式，故没有返回值，该形式只能用于 \lstinline|void| 类型的函数。
 \end{frame}
 
 \begin{frame}[fragile]\ft{函数类型}
@@ -429,7 +428,7 @@ return;
 \item
 函数应该进行类型声明，同时其类型应和返回值类型相同。\\[0.1in]
 \item
-无返回值的函数应该被声明为{\tf void}类型。\\[0.1in]
+无返回值的函数应该被声明为 \lstinline|void| 类型。\\[0.1in]
 \item
 类型声明是函数定义的一部分，该类型指的是返回值类型。如函数头
 \begin{lstlisting}[language=c,backgroundcolor=\color{red!10}]

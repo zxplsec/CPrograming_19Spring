@@ -4,38 +4,38 @@
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-假如你把某个指针变量命名为{\tf ptr}，就可以使用以下语句
+假如你把某个指针变量命名为 \lstinline|ptr|，就可以使用以下语句
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 ptr = &var;
 \end{lstlisting}
-即把变量{\tf var}的地址赋给指针变量{\tf ptr}，称为\textcolor{acolor1}{\tf ptr“指向”var}。
+即把变量{\tf var}的地址赋给指针变量 \lstinline|ptr| ，称为\red{\lstinline|ptr| “指向” \lstinline|var|}。
 \pause \vspace{0.1in}
 
-{\tf ptr}和{\tf \&var}的区别在于，前者为一变量，后者是一个常量。
+ \lstinline|ptr| 和 \lstinline|&var|的区别在于，前者为一变量，后者是一个常量。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-{\tf ptr}可以指向任何地址，即可以把任何地址赋值给{\tf ptr}：
+ \lstinline|ptr| 可以指向任何地址，即可以把任何地址赋值给 \lstinline|ptr| ：
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 ptr = &var1;
 \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-  \begin{wenti}
+  \begin{free}[问题]
     如何创建一个指针变量？
-  \end{wenti}
+  \end{free}
   \pause \vskip.1in
   
-  首先需要声明其类型。在介绍其类型之前，我们先介绍一个新运算符{\tf *}。
+  首先需要声明其类型。在介绍其类型之前，我们先介绍一个新运算符\lstinline|*|。
 \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：间接运算符或取值运算符：*}
-假定{\tf ptr}指向{\tf var}，即
+\begin{frame}[fragile]\ft{\secname：间接运算符或取值运算符：\lstinline|*|}
+假定 \lstinline|ptr| 指向\lstinline|var|，即
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 ptr = &var;
 \end{lstlisting}
-就可以用间接运算符{\tf *}来获取{\tf var}中存放的数值：
+就可以用间接运算符 \lstinline|*| 来获取 \lstinline|var| 中存放的数值：
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 value = *ptr;
 \end{lstlisting}
@@ -92,20 +92,20 @@ float * pf, * pg;   // pf`和`pg`是指向浮点变量的指针`
 
 \begin{itemize}
 \item
-类型标识符表明了被指向变量的类型，{\tf *}表示该变量为一个指针。\\[0.1in]
+类型标识符表明了被指向变量的类型，\lstinline|*|表示该变量为一个指针。\\[0.1in]
 \item 
-声明{\tf int * pi;}的含义是：{\tf pi}是一个指针，且{\tf *pi}是{\tf int}类型的。\\[0.1in]
+声明 \lstinline|int * pi;| 的含义是：\lstinline|pi| 是一个指针，且 \lstinline|*pi| 是 \lstinline|int| 类型的。\\[0.1in]
 \item 
-{\tf *}与指针名之间的空格可选。通常在声明中使用空格，在指向变量时将其省略。
+\lstinline|*| 与指针名之间的空格可选。通常在声明中使用空格，在指向变量时将其省略。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：指针声明}
 \begin{itemize}
 \item
-{\tf pc}所指向的值{\tf (*pc)}是{\tf char}类型的，而{\tf pc}本身是“指向{\tf char}的指针”类型。\\[0.1in]
+\lstinline|pc| 所指向的值 \lstinline|(*pc)| 是 \lstinline|char| 类型的，而 \lstinline|pc| 本身是“指向 \lstinline|char| 的指针”类型。\\[0.1in]
 \item 
-{\tf pc}的值是一个地址，在大多数系统中，它由一个无符号整数表示。但这并不表示可以把指针看做是整数类型。\\[0.1in]
+\lstinline|pc| 的值是一个地址，在大多数系统中，它由一个无符号整数表示。但这并不表示可以把指针看做是整数类型。\\[0.1in]
 \item 
 一些处理整数的方法不能用来处理指针，反之亦然。如两个整数可以相乘，但指针不能。\\[0.1in]
 \item 
@@ -119,8 +119,8 @@ float * pf, * pg;   // pf`和`pg`是指向浮点变量的指针`
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname：使用指针在函数间通信}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]  
-  {Code/swap3.c}
+  []
+  {slide09/code/swap3.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -142,7 +142,7 @@ Now       : x = 10, y =  5.
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 interchange(&x, &y);
 \end{lstlisting}
-故函数传递的是{\tf x}和{\tf y}的地址而不是它们的值。\\[0.15in]
+故函数传递的是\lstinline|x|和\lstinline|y|的地址而不是它们的值。\\[0.15in]
 \item 
 函数声明为
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
@@ -163,13 +163,13 @@ void interchange(int *, int *);
 int temp;
 \end{lstlisting}
 \item
-为了把{\tf x}的值存在{\tf temp}中，需使用以下语句
+为了把\lstinline|x|的值存在{\tf temp}中，需使用以下语句
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 temp = *u; 
 \end{lstlisting}
-因{\tf u}的值为{\tf \&x}，即{\tf x}的地址，故{\tf *u}代表了{\tf x}的值。\\[0.1in]
+因{\tf u}的值为{\tf \&x}，即\lstinline|x|的地址，故{\tf *u}代表了\lstinline|x|的值。\\[0.1in]
 \item 
-同理，为了把{\tf y}的值赋给{\tf x},需用以下语句
+同理，为了把\lstinline|y|的值赋给\lstinline|x|,需用以下语句
 \begin{lstlisting}[backgroundcolor=\color{blue!10}]
 *u = *v;
 \end{lstlisting}
@@ -177,13 +177,13 @@ temp = *u;
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：使用指针在函数间通信}
-该例中，用一个函数实现了{\tf x}和{\tf y}的数值交换。\vspace{0.1in}
+该例中，用一个函数实现了\lstinline|x|和\lstinline|y|的数值交换。\vspace{0.1in}
 
 \begin{itemize}
 \item
-首先函数使用{\tf x}和{\tf y}的地址作为参数，这使得它可以访问{\tf x}和{\tf y}变量。\\[0.1in]
+首先函数使用\lstinline|x|和\lstinline|y|的地址作为参数，这使得它可以访问\lstinline|x|和\lstinline|y|变量。\\[0.1in]
 \item 
-通过使用指针和运算符{\tf *}，函数可以获得相应存储地址的数据，从而就可以改变这些数据。
+通过使用指针和运算符\lstinline|*|，函数可以获得相应存储地址的数据，从而就可以改变这些数据。
 \end{itemize}
 \end{frame}
 

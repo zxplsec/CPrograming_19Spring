@@ -1,11 +1,10 @@
-\beamer@endinputifotherversion {3.36pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {1}{一个统计字数的程序}{3}{一个统计字数的程序}{0}}
 \headcommand {\beamer@sectionpages {1}{2}}
 \headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{一个统计字数的程序}{3}{一个统计字数的程序}{0}}
 \headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\slideentry {1}{0}{2}{4/4}{}{0}}
@@ -30,25 +29,25 @@
 \headcommand {\beamer@framepages {14}{15}}
 \headcommand {\slideentry {1}{0}{11}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\sectionentry {2}{ \lstinline |getchar()| 与 \lstinline |putchar()| 函数}{17}{ \lstinline |getchar()| 与 \lstinline |putchar()| 函数}{0}}
 \headcommand {\beamer@sectionpages {3}{16}}
 \headcommand {\beamer@subsectionpages {3}{16}}
+\headcommand {\sectionentry {2}{ \lstinline |getchar()| 与 \lstinline |putchar()| 函数}{17}{ \lstinline |getchar()| 与 \lstinline |putchar()| 函数}{0}}
 \headcommand {\slideentry {2}{0}{1}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
 \headcommand {\slideentry {2}{0}{2}{18/19}{}{0}}
 \headcommand {\beamer@framepages {18}{19}}
-\headcommand {\sectionentry {3}{缓冲区(Buffer)}{20}{缓冲区(Buffer)}{0}}
 \headcommand {\beamer@sectionpages {17}{19}}
 \headcommand {\beamer@subsectionpages {17}{19}}
+\headcommand {\sectionentry {3}{缓冲区(Buffer)}{20}{缓冲区(Buffer)}{0}}
 \headcommand {\slideentry {3}{0}{1}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
 \headcommand {\slideentry {3}{0}{2}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
 \headcommand {\slideentry {3}{0}{3}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\sectionentry {4}{终止键盘输入}{23}{终止键盘输入}{0}}
 \headcommand {\beamer@sectionpages {20}{22}}
 \headcommand {\beamer@subsectionpages {20}{22}}
+\headcommand {\sectionentry {4}{终止键盘输入}{23}{终止键盘输入}{0}}
 \headcommand {\slideentry {4}{0}{1}{23/23}{}{0}}
 \headcommand {\beamer@framepages {23}{23}}
 \headcommand {\slideentry {4}{0}{2}{24/24}{}{0}}
@@ -65,14 +64,15 @@
 \headcommand {\beamer@framepages {29}{29}}
 \headcommand {\slideentry {4}{0}{8}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{31}{8.4\nobreakspace {}\nobreakspace {}重定向与文件}}\headcommand {\beamer@subsectionpages {23}{30}}
+\headcommand {\beamer@subsectionpages {23}{30}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{31}{8.4\nobreakspace {}\nobreakspace {}重定向与文件}}
 \headcommand {\slideentry {4}{1}{1}{31/31}{8.4\nobreakspace {}\nobreakspace {}重定向与文件}{0}}
 \headcommand {\beamer@framepages {31}{31}}
 \headcommand {\slideentry {4}{1}{2}{32/32}{8.4\nobreakspace {}\nobreakspace {}重定向与文件}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\sectionentry {5}{创建一个更友好的用户界面}{33}{创建一个更友好的用户界面}{0}}
 \headcommand {\beamer@sectionpages {23}{32}}
 \headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\sectionentry {5}{创建一个更友好的用户界面}{33}{创建一个更友好的用户界面}{0}}
 \headcommand {\slideentry {5}{0}{1}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
 \headcommand {\slideentry {5}{0}{2}{34/34}{}{0}}
@@ -87,9 +87,9 @@
 \headcommand {\beamer@framepages {40}{40}}
 \headcommand {\slideentry {5}{0}{7}{41/41}{}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\sectionentry {6}{输入确认}{42}{输入确认}{0}}
 \headcommand {\beamer@sectionpages {33}{41}}
 \headcommand {\beamer@subsectionpages {33}{41}}
+\headcommand {\sectionentry {6}{输入确认}{42}{输入确认}{0}}
 \headcommand {\slideentry {6}{0}{1}{42/42}{}{0}}
 \headcommand {\beamer@framepages {42}{42}}
 \headcommand {\slideentry {6}{0}{2}{43/43}{}{0}}
@@ -136,9 +136,9 @@
 \headcommand {\beamer@framepages {63}{63}}
 \headcommand {\slideentry {6}{0}{16}{64/64}{}{0}}
 \headcommand {\beamer@framepages {64}{64}}
-\headcommand {\sectionentry {7}{菜单浏览}{65}{菜单浏览}{0}}
 \headcommand {\beamer@sectionpages {42}{64}}
 \headcommand {\beamer@subsectionpages {42}{64}}
+\headcommand {\sectionentry {7}{菜单浏览}{65}{菜单浏览}{0}}
 \headcommand {\slideentry {7}{0}{1}{65/65}{}{0}}
 \headcommand {\beamer@framepages {65}{65}}
 \headcommand {\slideentry {7}{0}{2}{66/66}{}{0}}
@@ -159,9 +159,9 @@
 \headcommand {\beamer@framepages {70}{73}}
 \headcommand {\slideentry {7}{0}{6}{70/74}{}{0}}
 \headcommand {\beamer@framepages {70}{74}}
-\headcommand {\sectionentry {8}{上机操作}{75}{上机操作}{0}}
 \headcommand {\beamer@sectionpages {65}{74}}
 \headcommand {\beamer@subsectionpages {65}{74}}
+\headcommand {\sectionentry {8}{上机操作}{75}{上机操作}{0}}
 \headcommand {\slideentry {8}{0}{1}{75/75}{}{0}}
 \headcommand {\beamer@framepages {75}{75}}
 \headcommand {\slideentry {8}{0}{2}{76/76}{}{0}}
@@ -178,4 +178,4 @@
 \headcommand {\beamer@subsectionpages {75}{80}}
 \headcommand {\beamer@sectionpages {75}{80}}
 \headcommand {\beamer@documentpages {80}}
-\headcommand {\def \inserttotalframenumber {65}}
+\headcommand {\gdef \inserttotalframenumber {65}}

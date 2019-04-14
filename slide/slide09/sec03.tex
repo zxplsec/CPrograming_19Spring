@@ -13,8 +13,8 @@ C允许一个函数调用其自身，这种调用过程被称为递归(recursion
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/recur.c}
+  []
+  {slide09/code/recur.c}
 \end{frame}
 
 
@@ -28,35 +28,35 @@ LEVEL 4: n location 0x7fff5fbff75c
 LEVEL 3: n location 0x7fff5fbff77c
 LEVEL 2: n location 0x7fff5fbff79c
 LEVEL 1: n location 0x7fff5fbff7bc
-\end{lstlisting}
-\end{frame}
+\end{lstlisting} \pause 
+% \end{frame}
 
 
-\begin{frame}[fragile]\ft{\secname}
-{\tf \&}为地址运算符，{\tf \&n}表示存储n的内存地址，{\tf printf()}使用占位符{\tf \%p}来指示地址。
+% \begin{frame}[fragile]\ft{\secname}
+ \lstinline|&| 为地址运算符， \lstinline|&n| 表示存储n的内存地址， \lstinline|printf()| 使用占位符 \lstinline|%p| 来指示地址。
 \end{frame}
 
 
 \begin{frame}[fragile]\ft{\secname：程序分析}
 \begin{itemize}
-\item 首先，{\tf main()}使用实参1调用{\tf up\_and\_down()}，打印语句{\tf \#1}输出{\tf Level 1}。\\[0.1in]
-\item 然后，由于$n<4$，故{\tf up\_and\_down()}(第1级)使用实参2调用{\tf up\_and\_down()}(第2级)，打印语句{\tf \#1}输出{\tf Level 2}。\\[0.1in]
+\item 首先， \lstinline|main()| 使用实参1调用\lstinline|up_and_down()|，打印语句 \lstinline|#1|输出\lstinline|Level 1|。\\[0.1in]
+\item 然后，由于$n<4$，故\lstinline|up_and_down()|(第1级)使用实参2调用\lstinline|up_and_down()|(第2级)，打印语句 \lstinline|#1|输出\lstinline|Level 2|。\\[0.1in]
 \item 类似地，下面的两次调用打印{\tf Level 3}和{\tf Level 4}。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：程序分析}
 \begin{itemize}
-\item 当开始执行第4级调用时，$n$的值为4，故if语句不满足条件，不再继续调用{\tf up\_and\_down()}，接着执行打印语句{\tf \#2}，输出{\tf Level 4}，至此第4级调用结束，把控制返回给第3级调用函数。\\[0.1in]
-\item 第3级调用函数中前一个执行过的语句是在if语句中执行第4级调用，因此，它开始执行后续代码，即执行打印语句{\tf \#2}，输出{\tf Level 3}。\\[0.1in]
-\item 当第3级调用结束后，第2级调用函数开始继续执行，输出{\tf Level 2}。以此类推。
+\item 当开始执行第4级调用时，$n$的值为4，故if语句不满足条件，不再继续调用\lstinline|up_and_down()|，接着执行打印语句 \lstinline|#2|，输出{\tf Level 4}，至此第4级调用结束，把控制返回给第3级调用函数。\\[0.1in]
+\item 第3级调用函数中前一个执行过的语句是在if语句中执行第4级调用，因此，它开始执行后续代码，即执行打印语句 \lstinline|#2|，输出\lstinline|Level 3|。\\[0.1in]
+\item 当第3级调用结束后，第2级调用函数开始继续执行，输出\lstinline|Level 2|。以此类推。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：递归的基本原理}
 \begin{itemize}
 \item
-\textcolor{acolor1}{每一级的递归都使用其私有变量n。}\\[0.1in]
+\red{每一级的递归都使用其私有变量 \lstinline|n|。}\\[0.1in]
 \item
 每一次函数调用都会有一次返回。当程序执行到某一级递归的结尾处时，它会转移到前一级递归继续执行。
 \end{itemize}
@@ -70,7 +70,7 @@ LEVEL 1: n location 0x7fff5fbff7bc
 \item 
 递归函数中，位于递归调用后的语句和各级被调函数具有相反的执行次序。\\[0.1in]
 \item[] 
-如打印语句{\tf \#2}位于递归调用语句之后，执行次序为：第4级、第3级、第2级和第1级。
+如打印语句 \lstinline|#2|位于递归调用语句之后，执行次序为：第4级、第3级、第2级和第1级。
 \end{itemize}
 \end{frame}
 
@@ -82,7 +82,7 @@ LEVEL 1: n location 0x7fff5fbff7bc
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：尾递归}
-最简单的递归方式是\textcolor{acolor1}{把递归调用语句放在函数结尾，return语句之前。}这种形式被称为\textcolor{acolor1}{尾递归(tail recursion)}。尾递归的作用相当于一条循环语句，它是最简单的递归形式。
+最简单的递归方式是\red{把递归调用语句放在函数结尾，return语句之前。}这种形式被称为\red{尾递归(tail recursion)}。尾递归的作用相当于一条循环语句，它是最简单的递归形式。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：尾递归}
@@ -91,8 +91,8 @@ LEVEL 1: n location 0x7fff5fbff7bc
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname：尾递归}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/factor.c}
+  []
+  {slide09/code/factor.c}
 \end{frame}
 
 
@@ -140,46 +140,49 @@ Bye.
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname：递归与反向计算}
-编写程序，将一个整数转换为二进制形式。
-\end{frame}
+  \begin{free}[例]{}
+    编写程序，将一个整数转换为二进制形式。
+  \end{free} \pause 
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：递归与反向计算}
-对于奇数，其二进制形式的末位为1；而对于偶数，其二进制形式的末位为0。于是，\textcolor{acolor1}{对于n，其二进制数的末位为n\%2。}
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-628
-628%10=8  628/10=62  62%10=2   62/10=6   6%10=6
-     8                     2                  6
-\end{lstlisting}
+% \begin{frame}[fragile]\ft{\secname：递归与反向计算}
+对于奇数，其二进制形式的末位为1；而对于偶数，其二进制形式的末位为0。于是，\red{对于n，其二进制数的末位为 \lstinline|n\%2|。} \pause 
+% \begin{lstlisting}[backgroundcolor=\color{red!10}]
+% 628
+% 628%10=8  628/10=62  62%10=2   62/10=6   6%10=6
+%      8                     2                  6
+% \end{lstlisting}
 
-\begin{lstlisting}[backgroundcolor=\color{red!10}]
-5  
- 5%2=1  5/2=2  2%2=0  2/2=1  1%2=1
-     1             0             1 
-10
-10%2=0  10/2=5  5%2=1  5/2=2  2%2=0  
-     0              1             0
-2/2=1  1%2=1
-           1
-\end{lstlisting}
+% \begin{lstlisting}[backgroundcolor=\color{red!10}]
+% 5  
+%  5%2=1  5/2=2  2%2=0  2/2=1  1%2=1
+%      1             0             1 
+% 10
+% 10%2=0  10/2=5  5%2=1  5/2=2  2%2=0  
+%      0              1             0
+% 2/2=1  1%2=1
+%            1
+% \end{lstlisting}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}[fragile]\ft{\secname：递归与反向计算}
-规律：
-\vspace{0.1in}
+% \begin{frame}[fragile]\ft{\secname：递归与反向计算}
 
+\begin{free}[规律]{}
 \begin{itemize}
 \item 
-在递归调用之前，计算{\tf n\%2}的值，在递归调用之后输出。\\[0.1in]
+在递归调用之前，计算 \lstinline|n%2| 的值，在递归调用之后输出。\\[0.1in]
 \item
 为算下一个数字，需把原数值除以2。若此时得出的为偶数，则下一个二进制位为0；若得出的是奇数，则下一个二进制位为1。
-\end{itemize}
+\end{itemize}  
+\end{free}
+
 \end{frame}
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname：递归与反向计算}
 \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/binary.c}
+[]
+{slide09/code/binary.c}
 \end{frame}
 
 
@@ -218,13 +221,16 @@ Done.
 
 
 \begin{frame}[fragile]\ft{\secname：递归的优缺点}
-编写程序，计算斐波那契数列。
-$$
-\begin{aligned}
-&F_1=F_2=1,\\[0.1in]
-&F_n=F_{n-1}+F_{n-2}, \quad n=3,4,\cd.
-\end{aligned}
-$$
+
+  \begin{free}[例]{}
+    编写程序，计算斐波那契数列。
+    $$
+    \begin{aligned}
+      &F_1=F_2=1,\\[0.1in]
+      &F_n=F_{n-1}+F_{n-2}, \quad n=3,4,\cd.
+    \end{aligned}
+    $$    
+  \end{free}
 \end{frame}
 
 
@@ -239,7 +245,7 @@ long Fibonacci(int n)
 }
 \end{lstlisting}
 
-该函数使用了双重递归(double recursion)，即函数对本身进行了两次调用。这会导致一个弱点。{\Huge What?}
+该函数使用了双重递归(double recursion)，即函数对本身进行了两次调用。这会导致一个弱点。
 \end{frame}
 
 

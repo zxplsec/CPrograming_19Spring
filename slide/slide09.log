@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.11.5)  14 APR 2019 14:13
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.11.5)  14 APR 2019 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**slide08.tex
-(./slide08.tex
+**slide09.tex
+(./slide09.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -2924,10 +2924,7 @@ Package: xeCJK-listings 2018/02/27 v3.6.1 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count430
 \l__xeCJK_listings_flag_int=\count431
 )
-(./slide08.aux
-
-LaTeX Warning: Label `' multiply defined.
-
+(./slide09.aux
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -2938,7 +2935,7 @@ LaTeX Warning: Label `' multiply defined.
 LaTeX Warning: Label `' multiply defined.
 
 )
-\openout1 = `slide08.aux'.
+\openout1 = `slide09.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
@@ -3041,9 +3038,9 @@ LaTeX Info: Redefining \ref on input line 50.
 LaTeX Info: Redefining \pageref on input line 50.
 LaTeX Info: Redefining \nameref on input line 50.
 
-(./slide08.out) (./slide08.out)
+(./slide09.out) (./slide09.out)
 \@outlinefile=\write7
-\openout7 = `slide08.out'.
+\openout7 = `slide09.out'.
 
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
 (Font)              `operators' in the math version `normal' on input line 50.
@@ -3136,7 +3133,7 @@ LaTeX Info: Redefining \selectfont on input line 50.
 *** you should *not* be loading the inputenc package
 *** XeTeX expects the source to be in UTF8 encoding
 *** some features of other encodings may conflict, resulting in poor output.
-(./slide08.nav)
+(./slide09.nav)
 Overfull \vbox (13.79993pt too high) detected at line 52
  []
 
@@ -3150,14 +3147,14 @@ Overfull \vbox (13.79993pt too high) detected at line 52
 
 
 
-] (./slide08.toc
+] (./slide09.toc
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count434
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 2.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 3.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -3174,196 +3171,210 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 .................................................
 ) [2
 
-] (./slide08/sec00.tex [3
+] (./slide09/sec01.tex [3
 
 ]
-\openout4 = `slide08.vrb'.
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 8.
 
-
-(./slide08.vrb) [4
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 3.
- (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-[5
+) [4
+
+] [5
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [6
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [7
-
-] (./slide08.vrb) [8
+ (./slide09.vrb) [6
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [9
 
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [10
-
-] (./slide08.vrb) [11
+(./slide09.vrb) [7
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [12
-
-]
-\openout4 = `slide08.vrb'.
-
-
-(./slide08.vrb) [13
+ (./slide09.vrb) [8
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb (./slide08/code/wordcnt.c)) [14
+ (./slide09.vrb) [9
 
-] [15
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[10
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb (./slide09/code/letterhead1.c)) [11
+
+] [12
 
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
-
-(./slide08.vrb) [16
-
-]) (./slide08/sec01.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 1.
-
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
-[17
+ (./slide09.vrb)
+[13
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb (./slide08/code/echo.c)
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 6.
+ (./slide09.vrb) [14
 
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [15
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [16
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [17
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [18
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [19
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[20
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 16
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 6.
+(Font)              scaled to size 9.19998pt on input line 16.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 6.
+(Font)              scaled to size 6.99199pt on input line 16.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 6.
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+(Font)              scaled to size 5.51999pt on input line 16.
+LaTeX Font Info:    Try loading font information for U+msa on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 6.
+(Font)              scaled to size 9.19998pt on input line 16.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 6.
+(Font)              scaled to size 6.99199pt on input line 16.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 6.
+(Font)              scaled to size 5.51999pt on input line 16.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7.6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 6.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 16.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 6.
-)
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 16.
+) [21
+
+] (./slide09.vrb) [22
+
+] (./slide09.vrb) [23
+
+] (./slide09.vrb) [24
+
+] (./slide09.vrb) [25
+
+]
+(./slide09.vrb) [26
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb (./slide09/code/letterhead2.c)) [27
+
+]
+[28
+
+
+] [29
+
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [30
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [31
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [32
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [33
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [34
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [35
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[36
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [37
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 17.
- [18
-
-] (./slide08.vrb (./slide08/code/echo.c)) [19
-
-]) (./slide08/sec02.tex [20
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 314.
+ [38
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb)
-[21
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [22
-
-]) (./slide08/sec03.tex [23
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [24
-
-]
-\openout4 = `slide08.vrb'.
-
-
-(./slide08.vrb) [25
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [26
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb
-(./slide08/code/echo_eof.c)) [27
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [28
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [29
-
-]
-\openout4 = `slide08.vrb'.
-
-
-(./slide08.vrb) [30
-
-]) (./slide08/sec04.tex [31
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [32
-
-])
-(./slide08/sec05.tex [33
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb
+ (./slide09.vrb
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
@@ -3376,293 +3387,622 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 4.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 4.
-) [34
+) [39
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb (./slide08/code/guess.c)) [35
+ (./slide09.vrb (./slide09/code/lesser.c)) [40
 
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [36
-
-]
-\openout4 = `slide08.vrb'.
-
-
-(./slide08.vrb) [37
-
-] (./slide08.vrb) [38
-
-] (./slide08.vrb) [39
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb)
-[40
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [41
-
-]) (./slide08/sec06.tex [42
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [43
-
-]
-\openout4 = `slide08.vrb'.
-
-
-(./slide08.vrb) [44
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [45
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [46
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb)
-[47
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 2.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 4.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 4.
-) [48
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb (./slide08/code/checking.c)) [49
-
-] [50
-
-
-] [51
-
-
-] [52
-
-
-] [53
+] [41
 
 
 ]
-[54
+\openout4 = `slide09.vrb'.
 
-
-] [55
-
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [56
+ (./slide09.vrb)
+[42
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [57
+ (./slide09.vrb) [43
 
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [58
+] (./slide09.vrb) [44
 
 ]
-[59
+\openout4 = `slide09.vrb'.
 
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [60
+ (./slide09.vrb) [45
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [61
 
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [62
+(./slide09.vrb) [46
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
+ (./slide09.vrb) [47
 
-(./slide08.vrb) [63
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [64
-
-]) (./slide08/sec07.tex [65
+] (./slide09.vrb) [48
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
-
-(./slide08.vrb) [66
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [67
+ (./slide09.vrb)
+[49
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb)
-Overfull \vbox (9.75507pt too high) detected at line 39
+ (./slide09.vrb) [50
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [51
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [52
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb)
+Overfull \vbox (11.18257pt too high) detected at line 483
  []
 
-[68
+[53
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [69
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb (./slide08/code/menu.c)) [70
-
-] [71
-
+ (./slide09.vrb) [54
 
 ]
-[72
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [55
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [56
+
+]
+\openout4 = `slide09.vrb'.
 
 
-] [73
+(./slide09.vrb) [57
+
+]) (./slide09/sec03.tex [58
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [59
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb (./slide09/code/recur.c)) [60
+
+] [61
+
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [62
+
+]
+(./slide09.vrb) [63
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [64
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [65
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[66
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [67
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [68
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [69
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [70
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb (./slide09/code/factor.c)) [71
+
+] [72
+
+
+]
+[73
 
 
 ] [74
 
 
-]) (./slide08/op.tex [75
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+Overfull \vbox (9.75507pt too high) detected at line 118
+ []
+
+[75
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb
+ (./slide09.vrb) [76
+
+] (./slide09.vrb) [77
+
+] (./slide09.vrb) [78
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [79
+
+] (./slide09.vrb) [80
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1.
+(mdframed)              on input line 2.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 1.
+Package hyperref Warning: Ignoring empty anchor on input line 2.
 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 30.
+
+Package hyperref Warning: Ignoring empty anchor on input line 30.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 37.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 37.
+) [81
+
+] (./slide09.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 30.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 37.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 37.
+) [82
+
+] (./slide09.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 30.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 37.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 37.
+) [83
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
+(./slide09/code/binary.c)) [84
+
+] [85
+
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [86
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[87
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 3.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 3.
-) [76
-
-]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 1.
+Package hyperref Warning: Ignoring empty anchor on input line 3.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 11.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 11.
-) [77
+) [88
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb
+ (./slide09.vrb) [89
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored on line 6; it cannot be used with a font that
+* wasn't selected by a fontspec command.
+*  
+*  The current font is "\TU/FandolHei-Regular(0)/bx/n/9 ".
+*   The requested feature is "Numbers={Monospaced}". 
+*************************************************
+) [90
+
+]) (./slide09/sec05.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lstinline' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `alignment tab' on input line 1.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
+[91
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [92
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [93
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [94
+
+]
+(./slide09.vrb) [95
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [96
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
+(./slide09/code/loccheck.c)) [97
+
+] [98
+
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [99
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[100
+
+]) (./slide09/sec06.tex [101
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [102
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+[103
+
+] (./slide09.vrb) [104
+
+] (./slide09.vrb) [105
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [106
+
+]
+(./slide09.vrb) [107
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb (./slide09/code/swap1.c)) [108
+
+] [109
+
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [110
+
+] (./slide09.vrb) [111
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
+(./slide09/code/swap2.c)) [112
+
+] [113
+
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [114
+
+] (./slide09.vrb)
+[115
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb)
+Overfull \vbox (0.95514pt too high) detected at line 103
+ []
+
+[116
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [117
+
+] (./slide09.vrb) [118
+
+] (./slide09.vrb) [119
+
+])
+(./slide09/sec07.tex [120
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [121
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [122
+
+]
+(./slide09.vrb) [123
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [124
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 1.
-
+(mdframed)              on input line 3.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 9.
+(mdframed)              on input line 4.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 9.
-) [78
+ mdframed uses option nobreak mdframed on input line 4.
+) [125
 
 ]
-\openout4 = `slide08.vrb'.
-
- (./slide08.vrb) [79
+(./slide09.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 4.
+) [126
 
 ]
-\openout4 = `slide08.vrb'.
+\openout4 = `slide09.vrb'.
 
- (./slide08.vrb) [80
+ (./slide09.vrb) [127
+
+] (./slide09.vrb) [128
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [129
+
+] (./slide09.vrb) [130
+
+] (./slide09.vrb) [131
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [132
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [133
+
+] (./slide09.vrb) [134
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [135
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [136
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb
+(./slide09/code/swap3.c)) [137
+
+] [138
+
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [139
+
+] (./slide09.vrb)
+[140
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [141
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [142
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [143
+
+]
+\openout4 = `slide09.vrb'.
+
+
+(./slide09.vrb) [144
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [145
+
+]
+\openout4 = `slide09.vrb'.
+
+ (./slide09.vrb) [146
 
 ])
 \tf@nav=\write8
-\openout8 = `slide08.nav'.
+\openout8 = `slide09.nav'.
 
 \tf@toc=\write9
-\openout9 = `slide08.toc'.
+\openout9 = `slide09.toc'.
 
 \tf@snm=\write10
-\openout10 = `slide08.snm'.
+\openout10 = `slide09.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
- (./slide08.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 70.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 70.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
+
+(./slide09.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 69.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 69.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 63797 strings out of 493007
- 1477739 string characters out of 6136719
- 2037797 words of memory out of 5000000
- 66506 multiletter control sequences out of 15000+600000
- 588377 words of font info for 87 fonts, out of 8000000 for 9000
+ 64027 strings out of 493007
+ 1485614 string characters out of 6136719
+ 1926002 words of memory out of 5000000
+ 66604 multiletter control sequences out of 15000+600000
+ 590527 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,13n,107p,10417b,1034s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,13n,107p,10417b,1101s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide08.pdf (80 pages).
+Output written on slide09.pdf (146 pages).

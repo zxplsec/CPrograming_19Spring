@@ -1,28 +1,29 @@
-\section{地址运算符：\&}
+\section{地址运算符：\lstinline|&|}
+
 \begin{frame}[fragile]\ft{\secname}
-C最重要的、也是最复杂的一个概念是指针(pointer)，即\textcolor{acolor1}{用来存储地址的变量}。
+C最重要的、也是最复杂的一个概念是指针(pointer)，即\red{用来存储地址的变量}。
 
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
 \item
-scanf函数使用地址作为参数。\\[0.1in]
+\lstinline|scanf()| 使用地址作为参数。\\[0.1in]
 \item
 更一般地，若想在无返回值的被调函数中修改调用函数的某个数据，必须使用地址参数。
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-\&为单目运算符，可以取得变量的存储地址。 
+\lstinline|&| 为单目运算符，可以取得变量的存储地址。 
 \pause 
 \vspace{0.4in}
 
-设var为一个变量，则\&var为该变量的地址。
+设var为一个变量，则\lstinline|&var|为该变量的地址。
 
 \vspace{0.1in}
 
-\textcolor{acolor1}{一个变量的地址就是该变量在内存中的地址。} 
+\red{一个变量的地址就是该变量在内存中的地址。} 
 
 \end{frame}
 
@@ -31,7 +32,7 @@ scanf函数使用地址作为参数。\\[0.1in]
 \begin{lstlisting}
 var = 24;
 \end{lstlisting}
-并假定var的存储地址为07BC，则执行语句
+并假定 \lstinline|var| 的存储地址为 \lstinline|07BC|，则执行语句
 \begin{lstlisting}
 printf("%d %p\n", var, &var);
 \end{lstlisting}
@@ -43,8 +44,8 @@ printf("%d %p\n", var, &var);
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/loccheck.c}
+  []
+  {slide09/code/loccheck.c}
 \end{frame}
 
 
@@ -59,8 +60,8 @@ In func(), var2 =  5 and &var2 = 0x7fff5fbff7ac
 
 \begin{frame}[fragile]\ft{\secname}
 \begin{itemize}
-\item 两个{\tf var1}变量具有不同的地址，两个{\tf var2}变量也是如此。\\[0.1in]
-\item 调用{\tf func}函数时，把实参({\tf main}函数中的{\tf var2})的值5传递给了形参({\tf func}函数中的{\tf var2})。但这种传递只是进行了数值传递，两个变量仍是独立的。
+\item 两个 \lstinline|var1| 变量具有不同的地址，两个 \lstinline|var2| 变量也是如此。\\[0.1in]
+\item 调用 \lstinline|func| 函数时，把实参( \lstinline|main()| 中的 \lstinline|var2| )的值5传递给了形参( \lstinline|func()| 中的 \lstinline|var2| )。但这种传递只是进行了数值传递，两个变量仍是独立的。
 \end{itemize}
 \end{frame}
 

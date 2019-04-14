@@ -1,10 +1,11 @@
 \section{改变调用函数中的变量}
+
 \begin{frame}[fragile]\ft{\secname}
 有些时候，我们需要用一个函数改变另一个函数的变量。如排序问题中，一个常见的任务是交换两个变量的值。
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-以下代码能否交换变量x和y的值{\Large ？}
+以下代码能否交换变量 \lstinline|x| 和 \lstinline|y| 的值{\Large ？}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 x = y;
 y = x;
@@ -22,7 +23,7 @@ y = x;
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-那以下代码能否交换变量x和y的值{\Large ？}
+那以下代码能否交换变量 \lstinline|x| 和 \lstinline|y| 的值{\Large ？}
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 temp = y;
 x = y;
@@ -38,8 +39,8 @@ y = temp;
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/swap1.c}
+  []
+  {slide09/code/swap1.c}
 \end{frame}
 
 
@@ -59,8 +60,8 @@ Now       : x = 5, y = 10.
 
 \begin{frame}[fragile,allowframebreaks]\ft{\secname}
   \lstinputlisting
-  [language=c,numbers=left,frame=single]
-  {Code/swap2.c}
+  []
+  {slide09/code/swap2.c}
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
@@ -74,15 +75,15 @@ Now       : x =  5, y = 10.
 
 \begin{itemize}
 \item
-函数interchange中，u和v的值确实得到了交换。问题出在了把执行结果传递给函数main的时候。\\[0.1in]
+在 \lstinline|interchange()| 中， \lstinline|u| 和 \lstinline|v| 的值确实得到了交换。问题出在了把执行结果传递给函数main的时候。\\[0.1in]
 \item
-函数interchange中的变量独立于函数main，因此交换u和v的值对x和y的值没有任何影响。
+  \lstinline|interchange()| 中的变量独立于 \lstinline|main()| ，因此交换 \lstinline|u| 和 \lstinline|v| 的值对 \lstinline|x| 和 \lstinline|y| 的值没有任何影响。
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-能否使用return？如
+能否使用 \lstinline|return|？如
 \begin{lstlisting}[backgroundcolor=\color{red!10}]
 int main(void)
 {
@@ -102,7 +103,7 @@ int interchange(int u, int v)
 \end{frame}
 
 \begin{frame}[fragile]\ft{\secname}
-此时，x的值得以更新，但y的值仍未做改变。因为\textcolor{acolor1}{return语句只能把一个数值传递给调用函数}，而现在却需要传递两个数值。
+此时， \lstinline|x| 的值得以更新，但 \lstinline|y| 的值仍未做改变。因为\red{ \lstinline|return| 语句只能把一个数值传递给调用函数}，而现在却需要传递两个数值。
 \pause \vspace{0.1in}
 
 \begin{center}
